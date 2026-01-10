@@ -1,0 +1,38 @@
+﻿require('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+const userRoutes = require('./Route/userRoute');
+const profilRoutes = require('./Route/profilRoute');
+const progressionRoutes = require('./Route/progressionRoute');
+
+mongoose.set('strictQuery', true);
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const PORT = process.env.PORT || 5000;
+const URI = process.env.MONGO_URI;
+
+// Connexion à MongoDB
+mongoose.connect(URI)
+    .then(() => console.log('✅ Connecté à MongoDB via Mongoose !'))
+    .catch(err => {
+        console.error('❌ Erreur connexion Mongoose :', err);
+        process.exit(1);
+    });
+
+// Routes
+app.get('/', (req, res) => res.send('API opérationnelle.'));
+
+app.use('/API/API_User', userRoutes);     
+app.use('/API/API_Profil', profilRoutes);
+app.use('/API/API_Progression', progressionRoutes);
+
+
+app.listen(PORT, () => {
+    console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+});

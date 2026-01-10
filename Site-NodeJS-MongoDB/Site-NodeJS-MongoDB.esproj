@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2752196">
+  <PropertyGroup>
+    <StartupCommand>node index.js</StartupCommand>
+    <StartupCommandWorkingDirectory>C:\Projets-Dev\Site-NodeJS-MongoDB\Server</StartupCommandWorkingDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Server\.vscode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="server\.vscode\launch.json" />
+  </ItemGroup>
+</Project>

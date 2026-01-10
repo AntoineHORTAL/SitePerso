@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Lancer Serveur",
+      "program": "${workspaceFolder}/Server/index.js",
+      "cwd": "${workspaceFolder}/Server",
+      "console": "integratedTerminal"
+    }
+  ]
+}

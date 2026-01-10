@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "site-reactjs", "Site-ReactJS\site-reactjs.esproj", "{F025A526-B251-5F5F-6D88-9DE2DD2F8960}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Site-NodeJS-MongoDB", "..\Site-NodeJS-MongoDB\Site-NodeJS-MongoDB.esproj", "{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F025A526-B251-5F5F-6D88-9DE2DD2F8960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F025A526-B251-5F5F-6D88-9DE2DD2F8960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F025A526-B251-5F5F-6D88-9DE2DD2F8960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F025A526-B251-5F5F-6D88-9DE2DD2F8960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F025A526-B251-5F5F-6D88-9DE2DD2F8960}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80AC0C1-E26E-F38D-1117-9D1CEC946E01}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2430B0A-4716-4534-BA80-DE6DAF9FA939}
+	EndGlobalSection
+EndGlobal
