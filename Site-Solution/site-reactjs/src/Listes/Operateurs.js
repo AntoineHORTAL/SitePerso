@@ -15,7 +15,7 @@
             Charisme: "6",
             Protection: "3",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Droniste.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Droniste.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Vision Standard.",
@@ -104,7 +104,7 @@
         Id: "Eclaireurcanin",
         Titre: "Éclaireur canin",
         Description: "Un éclaireur qui contrôle des chiens pôur explorer et s'attaquer aux différentes menaces.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Eclaireur Canin.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Eclaireur Canin.png",
         Chemin: "/EclaireurCanin",
         Icone: "\u{1F415}",
         Details: {
@@ -116,7 +116,7 @@
             Charisme: "12",
             Protection: "3",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Eclaireur Canin.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Eclaireur Canin.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Collier de communication : Permet de parler au chien à distance.",
@@ -214,7 +214,7 @@
             Charisme: "12",
             Protection: "3",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Eclaireur Cyber-sensoriel.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Eclaireur Cyber-sensoriel.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "",
@@ -278,7 +278,7 @@
             Charisme: "12",
             Protection: "4",
             PointsVie: "12",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Capitaine Spatial.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Capitaine Spatial.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Réparation d'Urgence : Capable d'effectuer des réparations sommaires sur les systèmes endommagés pour les maintenir en état de marche.",
@@ -342,7 +342,7 @@
             Charisme: "12",
             Protection: "6",
             PointsVie: "10",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Capitaine Force Speciale.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Capitaine Force Speciale.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Esprit de Corps : Sait comment motiver son équipe et la faire travailler ensemble.",
@@ -395,7 +395,7 @@
         Id: "Artificier",
         Titre: "Artificier",
         Description: "Un soldat qui manie les explosifs à la perfection.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Artificier.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Artificier.png",
         Chemin: "/Artificier",
         Icone: "\u{1F4A3}",
         Details: {
@@ -407,7 +407,7 @@
             Charisme: "6",
             Protection: "6",
             PointsVie: "12",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Artificier.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Artificier.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Main Cybernétique avec Lanceur Intégré (lance les grenades plus loins)",
@@ -508,7 +508,7 @@
         Id: "Berserker",
         Titre: "Berserker",
         Description: "Un soldat qui préfère s'attaquer à ses adversaires au corps à corps.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Berserk.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Berserk.png",
         Chemin: "/Berserker",
         Icone: "\u{1FA93}",
         Details: {
@@ -520,7 +520,7 @@
             Charisme: "12",
             Protection: "10",
             PointsVie: "10",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Berserker.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Berserker.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Endosquelette Renforcé (Léger) : Améliore la force et la résistance de base.",
@@ -584,7 +584,7 @@
             Charisme: "6",
             Protection: "2",
             PointsVie: "20",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/CommandoFurtif.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/CommandoFurtif.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Bottes Silencieuses Intégrées : Réduisent le bruit des pas.",
@@ -637,7 +637,7 @@
         Id: "MedecinDeCampagne",
         Titre: "Médecin De Campagne",
         Description: "Un médecin qui opère dans les pires zones de conflits sur les pires blessures.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Medecin Campagne.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Medecin Campagne.png",
         Chemin: "/MedecinDeCampagne",
         Icone: "\u{2695}",
         Details: {
@@ -649,7 +649,7 @@
             Charisme: "6",
             Protection: "6",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Medecin Campagne.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Medecin Campagne.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Premiers Secours de Base : Sait soigner les blessures légères, arrêter les saignements et stabiliser une victime.",
@@ -702,7 +702,7 @@
         Id: "NanoMedecin",
         Titre: "Nano Médecin",
         Description: "Un médecin qui utilise des nano technologie pour opérer et soigner les blessés.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Nano Medecin.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Nano Medecin.png",
         Chemin: "/NanoMedecin",
         Icone: "\u{1F493}",
         Details: {
@@ -714,7 +714,7 @@
             Charisme: "6",
             Protection: "6",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Nano Medecin.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Nano Medecin.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Injection de Nanites de Soin : Peut injecter une faible dose de nanites pour soigner des blessures légères.",
@@ -767,7 +767,7 @@
         Id: "TechnicienDeLespace",
         Titre: "Technicien De L'espace",
         Description: "Un technicien qui peut réparer tout ce qui lui passe sous la mains.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Technicien Espace.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Technicien Espace.png",
         Chemin: "/TechnicienDeLespace",
         Icone: "\u{1F527}",
         Details: {
@@ -779,7 +779,7 @@
             Charisme: "6",
             Protection: "8",
             PointsVie: "15",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Technicien Espace.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Technicien Espace.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Réparation Basique : Peut réparer des dégâts mineurs et des dysfonctionnements simples sur des vaisseaux.",
@@ -832,7 +832,7 @@
         Id: "SentinelleDeDefense",
         Titre: "Sentinelle De Défense",
         Description: "Une sentinelle qui poste des défense pour empêcher le contournement des alliés par des menaces.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Defense.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Defense.png",
         Chemin: "/SentinelleDeDefense",
         Icone: "\u{265C}",
         Details: {
@@ -844,7 +844,7 @@
             Charisme: "6",
             Protection: "3",
             PointsVie: "20",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Defense.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Defense.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Vision Standard.",
@@ -945,7 +945,7 @@
         Id: "SentinelleDeControleDacces",
         Titre: "Sentinelle De Contrôle D'accès",
         Description: "Une sentinelle qui bloque des zone et empêche le passage des menaces.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Controle Acces.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Controle Acces.png",
         Chemin: "/SentinelleDeControleDacces",
         Icone: "\u{1F512}",
         Details: {
@@ -957,7 +957,7 @@
             Charisme: "6",
             Protection: "4",
             PointsVie: "18",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Controle Acces.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Controle Acces.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Illusion de Réalité (Active) : La Sentinelle utilise son réseau de caméras, de capteurs et de drones interconnectés pour générer des hologrammes, des signaux fantômes ou de fausses lectures de capteurs.",
@@ -1034,7 +1034,7 @@
         Id: "SentinelleDeSurveillance",
         Titre: "Sentinelle De Surveillance",
         Description: "Une sentinelle qui pose des caméra et autre matériel de surveillance.",
-        CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Surveillance.png",
+        CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Surveillance.png",
         Chemin: "/SentinelleDeSurveillance",
         Icone: "\u{1F4BB}",
         Details: {
@@ -1046,7 +1046,7 @@
             Charisme: "6",
             Protection: "4",
             PointsVie: "18",
-            CheminImage: " ./public/Images/CygnusProjects/Operateurs/Sentinelle Surveillance.png",
+            CheminImage: " /Images/CygnusProjects/Operateurs/Sentinelle Surveillance.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Déclenchement Silencieux : Le piège s'active sans faire de bruit, ce qui permet de surprendre l'ennemi.",
@@ -1130,7 +1130,7 @@
             Charisme: "6",
             Protection: "6",
             PointsVie: "12",
-            CheminImage: "./public/Images/CygnusProjects/Operateurs/Saboteur.png",
+            CheminImage: "/Images/CygnusProjects/Operateurs/Saboteur.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Dysfonctionnement Basique : Peut causer des dysfonctionnements mineurs sur des appareils électroniques simples.",
@@ -1194,7 +1194,7 @@
             Charisme: "6",
             Protection: "0",
             PointsVie: "25",
-            CheminImage: "./public/Images/CygnusProjects/Operateurs/Spectre.png",
+            CheminImage: "/Images/CygnusProjects/Operateurs/Spectre.png",
             Niveaux: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
             Competences: [
                 "Se faufiler dans l'ombre et utiliser des abris pour passer inaperçu.",
