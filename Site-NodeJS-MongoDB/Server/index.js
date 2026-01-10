@@ -34,5 +34,10 @@ app.use('/API/API_Progression', progressionRoutes);
 
 
 app.listen(PORT, () => {
-    console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+    const mode = process.env.NODE_ENV === 'production' ? 'Production' : 'Local';
+    const host = process.env.NODE_ENV === 'production'
+        ? 'https://site-perso-jdr.onrender.com'
+        : `http://localhost:${PORT}`;
+
+    console.log(`🚀 [${mode}] Serveur lancé sur ${host}`);
 });
