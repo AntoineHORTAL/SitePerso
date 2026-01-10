@@ -18,6 +18,8 @@ function Inscription() {
     const [erreur, setErreur] = useState('');
     const [loading, setLoading] = useState(false);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     const navigate = useNavigate();
 
     const IdentifiantonChange = (e) => {
@@ -50,7 +52,7 @@ function Inscription() {
 
         if (!MotDePasseNonConfirmer) {
             try {
-                const response = await axios.post('http://localhost:5000/API/API_User', {
+                const response = await axios.post(`${API_URL}/API/API_User`, {
                     User: {
                         Identifiant: IdentifiantInput,
                         MotDePasse: MotDePasseInput

@@ -14,6 +14,8 @@ function ListeProfils() {
     const [isHoveredRetour, setIsHoveredRetour] = useState(false);
     const [isHoveredCrea, setIsHoveredCrea] = useState(false);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     const ChevronLeftIcon = Lucide.ChevronLeft;
     const Trash = Lucide.Trash;
     const Pencil = Lucide.Pencil;
@@ -46,7 +48,7 @@ function ListeProfils() {
             return;
         }
 
-        axios.get(`http://localhost:5000/API/API_Profil/user/${user.Id}`)
+        axios.get(`${API_URL}/API/API_Profil/user/${user.Id}`)
             .then(res => {
                 console.log("Réponse complète API profils :", res.data);
                 // Si l'API retourne un objet avec une clé "profils", adapte
@@ -81,7 +83,7 @@ function ListeProfils() {
         try {
             console.log("📡 Envoi requête création profil...");
 
-            const response = await axios.post('http://localhost:5000/API/API_Profil/', {
+            const response = await axios.post(`${API_URL}/API/API_Profil/`, {
                 Profil: {
                     NomProfil: NomProfilTrim,
                     IdUser: User.Id
@@ -91,7 +93,7 @@ function ListeProfils() {
             const nouvelProfilId = response.data.profil.idProfil;
 
             try {
-                const progressionResponse = await axios.post('http://localhost:5000/API/API_Progression/', {
+                const progressionResponse = await axios.post(`${API_URL}/API/API_Progression/`, {
                     Progression: {
                         IdProfil: nouvelProfilId
                     }
@@ -105,7 +107,7 @@ function ListeProfils() {
             setMessage(response.data.message || 'Profil créé avec succès !');
 
             // Recharger la liste des profils
-            const profilsResponse = await axios.get('http://localhost:5000/API/API_Profil/user/' + User.Id);
+            const profilsResponse = await axios.get(`${API_URL}/API/API_Profil/user/${User.Id}`);
             setProfils(profilsResponse.data);
 
             setTimeout(() => {
@@ -133,12 +135,12 @@ function ListeProfils() {
         setLoading(true);
 
         try {
-            const response = await axios.delete(`http://localhost:5000/API/API_Profil/${profilId}`);
+            const response = await axios.delete(`${API_URL}/API/API_Profil/${profilId}`);
 
             setMessage(response.data.message || 'Profil supprimé avec succès !');
 
             try {
-                const responseProg = await axios.delete(`http://localhost:5000/API/API_Progression/${profilId}`);
+                const responseProg = await axios.delete(`${API_URL}/API/API_Progression/${profilId}`);
                 console.log("Progression supprimée :", responseProg.data);
             } catch (progError) {
                 if (progError.response?.status === 404) {
@@ -183,7 +185,7 @@ function ListeProfils() {
         setLoading(true);
 
         try {
-            const response = await axios.patch(`http://localhost:5000/API/API_Profil/${profilId}`, {
+            const response = await axios.patch(`${API_URL}/API/API_Profil/${profilId}`, {
                 NomProfil: nouveauNom.trim()
             });
 
@@ -254,7 +256,7 @@ function ListeProfils() {
         setLoading(true);
 
         try {
-            const response = await axios.get(`http://localhost:5000/API/API_Progression/${idProfil}`);
+            const response = await axios.get(`${API_URL}/API/API_Progression/${idProfil}`);
 
             console.log("Progression reçue :", response.data);
 

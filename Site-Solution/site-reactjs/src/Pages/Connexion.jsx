@@ -15,6 +15,8 @@ function Connexion() {
 
     const navigate = useNavigate();
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage('');
@@ -31,7 +33,7 @@ function Connexion() {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/API/API_User/login', {
+            const response = await axios.post(`${API_URL}/API/API_User/login`, {
                 User: {
                     Identifiant: identifiantTrim,
                     MotDePasse: motDePasseTrim
