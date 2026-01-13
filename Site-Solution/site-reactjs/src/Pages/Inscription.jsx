@@ -2,7 +2,6 @@
 import InputMDP from '../Composants/Login-Signin/InputMotDePasse.jsx'
 import BoutonInscription from '../Composants/Login-Signin/BoutonInscription.jsx'
 import InputConfMotDePasse from '../Composants/Login-Signin/InputConfMotDePasse.jsx'
-import '../CSS/Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import axios from 'axios';

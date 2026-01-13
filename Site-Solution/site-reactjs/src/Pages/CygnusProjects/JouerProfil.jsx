@@ -7,7 +7,6 @@ import { ListeProgression } from '../../Listes/Progression_';
 
 function JouerProfil() {
     const [isHoveredRetour, setIsHoveredRetour] = useState(false);
-    const [isFocusDDL, setIsFocusDDL] = useState(false);
     const [activePersonnage, setActivePersonnage] = useState("Ktharr");
     const [isLoading, setIsLoading] = useState(true);
     const [progression, setProgression] = useState(null);

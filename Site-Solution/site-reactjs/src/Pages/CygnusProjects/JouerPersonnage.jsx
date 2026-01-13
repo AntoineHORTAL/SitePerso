@@ -110,17 +110,17 @@ function JouerPersonnage() {
                   (
                       <h2>Chargement en cours ...</h2>
                   ) : (
-                      <div style={{display: 'flex', flexDirection: 'column', width: '100rem', marginBottom: '20rem'}}>
+                      <div className="Container-Jouer-Personnage">
                           <h1>{activePersonnage.toUpperCase()}</h1>
-                          <div style={{ display: 'flex', flexDirection: 'row' }}>
-                              <div style={{ width: '50%' }}>
-                                  <img src={personnage.Details.CheminImage} style={{width: '50%', margin: 'auto', display: 'block'}} />
+                          <div className="Container-Personnage-Except-Competences">
+                              <div className="Container-Image">
+                                  <img src={personnage.Details.CheminImage} />
                               </div>
-                              <div style={{display:'flex', flexDirection:'column'}}>
-                                  <div style={{ width: '50%', display: 'flex', flexDirection: 'row', marginTop: 'auto', marginBottom: 'auto' }}>
-                                      <div style={{ marginLeft: '2rem', marginRight: '2rem' }}>
-                                          <label style={{ textAlign: 'center', width: '100%', display:'block' }}>Points de vie</label>
-                                          <div style={{ display: 'flex', flexDirection: 'row' }}>
+                              <div className="Container-PV-Prot-Attributs">
+                                  <div className="Container-PV-Prot">
+                                      <div className="Container-PV">
+                                          <label>Points de vie</label>
+                                          <div className="Conntainer-Input-PV-Prot">
                                               <button
                                                   className="Bouton-Input-PV-Prot-Gauche"
                                                   onClick={() => EnleveInputPV()}
@@ -132,9 +132,9 @@ function JouerPersonnage() {
                                               >+</button>
                                           </div>
                                       </div>
-                                      <div style={{ marginLeft: '2rem', marginRight: '2rem' }}>
+                                      <div className="Container-Prot">
                                           <label style={{ textAlign: 'center', width: '100%', display: 'block' }}>Protection</label>
-                                          <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                          <div className="Conntainer-Input-PV-Prot">
                                               <button
                                                   className="Bouton-Input-PV-Prot-Gauche"
                                                   onClick={() => EnleveInputProt()}
@@ -147,7 +147,7 @@ function JouerPersonnage() {
                                           </div>
                                       </div>
                                   </div>
-                                  <table style={{ marginTop: 'auto', marginBottom: '5rem', backgroundColor: 'black', textAlign:'center' }}>
+                                  <table className="Container-Table-Attributs">
                                       <thead>
                                           <tr>
                                               <td>
@@ -216,7 +216,7 @@ function JouerPersonnage() {
                               </div>
                           </div>
                           <h4>COMPÉTENCES</h4>
-                          <div style={{display:'flex', flexDirection:'column', gap:'3rem', marginBottom: '5rem'}}>
+                          <div className="Container-Compétences">
                               {
                                   competences.map((comp, index) => (
                                       <label key={index}>{comp}</label>

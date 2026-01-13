@@ -1,6 +1,5 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import '../../CSS/CygnussProjects.css';
 import { Link, useNavigate } from 'react-router-dom'
 import * as Lucide from 'lucide-react'
 

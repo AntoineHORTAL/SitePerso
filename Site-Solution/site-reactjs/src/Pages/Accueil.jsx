@@ -1,10 +1,11 @@
 import CygnusProjects from '../Composants/Accueil/CygnussProjectsCarte.jsx'
-import '../CSS/Accueil.css'
 
 function Acceuil() {
   return (
       <>
-          <CygnusProjects />
+          <div className="Container-Carte-JDR">
+              <CygnusProjects />
+          </div>
       </>
   );
 }

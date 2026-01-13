@@ -12,8 +12,8 @@ import CygnusProjects_Operateurs from './Pages/CygnusProjects/Operateurs.jsx'
 import CygnusProjects_ListeProfils from './Pages/CygnusProjects/ListeProfils.jsx'
 import CygnusProjects_JouerProfils from './Pages/CygnusProjects/JouerProfil'
 import CygnusProjects_JouerPersonnage from './Pages/CygnusProjects/JouerPersonnage'
-import './CSS/Login.css'
-import './CSS/CygnussProjects.css'
+import './CSS/Base.css'
+import './CSS/Responsive.css'
 
 function App() {
   const [count, setCount] = useState(0)

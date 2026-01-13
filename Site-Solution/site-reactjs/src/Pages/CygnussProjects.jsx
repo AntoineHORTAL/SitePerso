@@ -58,6 +58,7 @@ function CygnusProjects() {
                       <ChevronRightIcon
                           size={40}
                           color={isHoveredBouton1 ? "black" : "hsl(0 0% 60%)"}
+                          style={{ margin: 'auto' }}
                       />
                   </div>
               </Link>

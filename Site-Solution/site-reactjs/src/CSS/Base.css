@@ -1,0 +1,1118 @@
+﻿:root {
+    --main-color: hsl(0 0% 60%);
+}
+
+/*#region
+  ======================================================
+            PAGE DE CONNEXION ET D'INSCRIPTION
+  ======================================================*/
+/*l'effet de label qui est dans l'input et qui passe au dessus de l'input*/
+.floating-input-fixed {
+    width: 100%;
+    font-size: 1.75rem;
+    padding: 1.5rem 2rem;
+    padding-top: 2rem;
+    letter-spacing: 0.2ch;
+    border-radius: 6px;
+    color: hsl(0 0% 90%);
+    border: 2px solid hsl(0 0% 40%);
+    background: hsl(0 0% 0% / 0.2);
+    outline: none;
+    box-sizing: border-box;
+}
+
+    .floating-label-fixed {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.75rem;
+        color: hsl(0 0% 60%);
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: transparent;
+        padding: 0 0.3rem;
+    }
+
+    .floating-input-fixed:focus ~ .floating-label-fixed,
+    .floating-input-fixed:not(:placeholder-shown) ~ .floating-label-fixed {
+        top: calc(-1.2rem - 10px);
+        left: calc(2rem - 20px);
+    }
+
+    .input-wrapper {
+        position: relative;
+        margin-top: 70px;
+    }
+
+
+    /*contenu de la page de connexion*/
+    .Input-Login {
+        font-family: "Geist Mono", monospace;
+        font-size: 1.75rem;
+        padding: 1rem 2rem;
+        padding-right: 4rem;
+        letter-spacing: 0.2ch;
+        border-radius: 6px;
+        color: hsl(0 0% 60%);
+        border-color: hsl(0 0% 60%);
+        border-style: solid;
+        background: hsl(0 0% 0% / 0.2);
+        outline: none;
+    }
+
+    label {
+        color: hsl(0 0% 60%);
+    }
+
+    .Container-Connexion {
+        border: 1px solid hsl(0 0% 40%);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 10px;
+        padding: 50px;
+        background-color: black;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+        .Container-Connexion p {
+            color: hsl(0 0% 60%);
+            text-align: center;
+        }
+
+    h1 {
+        color: hsl(0 0% 60%);
+        text-align: center;
+    }
+
+
+    .Bouton-Login {
+        font-family: "Geist Mono", monospace;
+        font-size: 1.75rem;
+        letter-spacing: 0.2ch;
+        border-radius: 6px;
+        color: hsl(0 0% 60%);
+        border-color: hsl(0 0% 60%);
+        border-style: solid;
+        border: 2px solid hsl(0 0% 60%);
+        margin: auto;
+        display: block;
+        margin-top: 70px;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        .Bouton-Login:hover {
+            border-radius: 6px;
+            border-color: hsl(0 0% 60%);
+            border-style: solid;
+            background-color: hsl(0 0% 60%);
+            color: black;
+            text-decoration: none;
+        }
+
+        .Bouton-Login a {
+            text-decoration: none;
+        }
+
+            .Bouton-Login a:hover {
+                text-decoration: none;
+            }
+
+            .Bouton-Login a:visited {
+                text-decoration: none;
+            }
+
+    .label-erreur-MDP {
+        color: darkred;
+        margin-top: 15px;
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: large;
+        display: block;
+    }
+
+
+/* #endregion */
+
+
+
+/*#region
+======================================================
+                    ACCUEIL
+======================================================*/
+
+.CarteJDR {
+    border: 2px solid hsl(0 0% 40%);
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: black;
+}
+
+.CarteJDR h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.CarteJDR img {
+    border-radius: 28px;
+}
+
+.CarteJDR a {
+    color: hsl(0 0% 40%);
+    text-decoration: none;
+}
+
+    .CarteJDR a:hover {
+        color: hsl(0 0% 40%);
+        text-decoration: none;
+    }
+
+    .CarteJDR a:visited {
+        color: hsl(0 0% 40%);
+        text-decoration: none;
+    }
+
+body {
+    font-family: "Geist Mono", monospace;
+    font-size: 1.75rem;
+    color: hsl(0 0% 40%);
+}
+/*#endregion*/
+
+
+
+/*#region
+ ======================================================
+                    BOUTON RETOUR JDR
+======================================================*/
+.Container-Bouton-Retour-JDR {
+    position: absolute;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.75rem;
+    background-color: black;
+}
+
+    .Container-Bouton-Retour-JDR .Bouton-Retour-JDR {
+        display: flex;
+    }
+
+    .Container-Bouton-Retour-JDR a {
+        text-decoration: none;
+    }
+
+        .Container-Bouton-Retour-JDR a:hover {
+            text-decoration: none;
+        }
+
+        .Container-Bouton-Retour-JDR a:visited {
+            text-decoration: none;
+        }
+
+    .Container-Bouton-Retour-JDR span {
+        align-content: center;
+        cursor: pointer;
+        color: var(--main-color);
+    }
+
+    .Container-Bouton-Retour-JDR .IconeChevron-Left-Bouton-Retour {
+        width: 40px;
+        height: 40px;
+    }
+
+    .Container-Bouton-Retour-JDR:hover {
+        background-color: var(--main-color);
+    }
+
+        .Container-Bouton-Retour-JDR:hover span {
+            color: black !important;
+        }
+/*#endregion*/
+
+
+
+/*#region
+ ======================================================
+                PAGE CYGNUS'S PROJECTS
+ ======================================================*/
+    .Container-Bouton-CygnusProjects-Redirect span {
+        align-content: center;
+    }
+
+    .Container-Bouton-CygnusProjects-Redirect a {
+        text-decoration: none;
+    }
+
+        .Container-Bouton-CygnusProjects-Redirect a:hover {
+            text-decoration: none;
+        }
+
+        .Container-Bouton-CygnusProjects-Redirect a:visited {
+            text-decoration: none;
+        }
+
+
+    .Bouton-CygnusProjects-Redirect {
+        border: 2px solid var(--main-color);
+        font-family: "Geist Mono", monospace;
+        letter-spacing: 0.2ch;
+        border-radius: 10px;
+        display: flex;
+        margin: auto;
+        background-color: black;
+        color: var(--main-color);
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+        .Bouton-CygnusProjects-Redirect span {
+            cursor: pointer;
+        }
+
+        .Bouton-CygnusProjects-Redirect:hover span {
+            color: black;
+        }
+
+
+            .UsersIcone-Bouton-Container-CygnusProjects-Redirect:hover {
+                background-color: #2563eb;
+            }
+
+            .ArchiveIcone-Bouton-Container-CygnusProjects-Redirect:hover {
+                background-color: #9333ea;
+            }
+
+            .BookOpenIcone-Bouton-Container-CygnusProjects-Redirect:hover {
+                background-color: #ea580c;
+            }
+
+            .GamePad2Icon-Bouton-Container-CygnusProjects-Redirect:hover {
+                background-color: #db2777;
+            }
+
+            .SkullIcon-Bouton-Container-CygnusProjects-Redirect:hover {
+                background-color: #16a34a;
+            }
+
+
+
+    .Container-Bouton-CygnusProjects-Redirect span {
+        align-content: center;
+    }
+
+    .Container-Bouton-CygnusProjects-Redirect a {
+        text-decoration: none;
+    }
+
+        .Container-Bouton-CygnusProjects-Redirect a:hover {
+            text-decoration: none;
+        }
+
+        .Container-Bouton-CygnusProjects-Redirect a:visited {
+            text-decoration: none;
+        }
+
+    .Icone-Bouton-CygnusProjects-Redirect {
+        padding: 1rem;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+        .UsersIcone-Bouton-CygnusProjects-Redirect {
+            background-color: #2563eb;
+        }
+            .UsersIcone-Bouton-Container-CygnusProjects-Redirect:hover .UsersIcone-Bouton-CygnusProjects-Redirect {
+                background-color: var(--main-color);
+            }
+
+        .ArchiveIcone-Bouton-CygnusProjects-Redirect {
+            background-color: #9333ea;
+        }
+            .ArchiveIcone-Bouton-Container-CygnusProjects-Redirect:hover .ArchiveIcone-Bouton-CygnusProjects-Redirect {
+                background-color: var(--main-color);
+            }
+
+        .BookOpenIcone-Bouton-CygnusProjects-Redirect {
+            background-color: #ea580c;
+        }
+            .BookOpenIcone-Bouton-Container-CygnusProjects-Redirect:hover .BookOpenIcone-Bouton-CygnusProjects-Redirect {
+                background-color: var(--main-color);
+            }
+
+        .GamePad2Icon-Bouton-CygnusProjects-Redirect {
+            background-color: #db2777;
+        }
+            .GamePad2Icon-Bouton-Container-CygnusProjects-Redirect:hover .GamePad2Icon-Bouton-CygnusProjects-Redirect {
+                background-color: var(--main-color);
+            }
+
+        .SkullIcon-Bouton-CygnusProjects-Redirect {
+            background-color: #16a34a;
+        }
+            .SkullIcon-Bouton-Container-CygnusProjects-Redirect:hover .SkullIcon-Bouton-CygnusProjects-Redirect {
+                background-color: var(--main-color);
+            }
+
+    .Icone-Chevron-Right-CygnusProjects-Redirect {
+        align-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 1rem;
+        margin-right: 0;
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+/*#endregion*/
+
+
+
+/*#region
+    ======================================================
+                    RÈGLES DU JEU
+    ======================================================*/
+
+.Container-Regles {
+    background-color: black;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+    width: 70vw;
+    margin: auto;
+    margin-top: 10rem;
+    padding: 1rem;
+    color: var(--main-color);
+    text-align: left;
+    margin-bottom: 10rem;
+}
+
+    .Container-Regles h2 {
+        text-align: center;
+    }
+
+    .Container-Regles strong {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .Container-Regles table {
+        border: 3px solid var(--main-color);
+        border-radius: 20px;
+        border-collapse: collapse;
+        margin: auto;
+    }
+
+    .Container-Regles td {
+        border: 1px solid var(--main-color);
+    }
+
+    .Container-Regles thead {
+        border-bottom: 3px solid var(--main-color);
+    }
+
+/*#endregion*/
+
+
+
+/*#region
+    ======================================================
+                MODES DE JEU
+    ======================================================*/
+.Container-Modes-De-Jeu {
+    background-color: black;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+    color: var(--main-color);
+    text-align: left;
+    position: relative;
+    margin-top: 5rem;
+}
+
+    .Container-Modes-De-Jeu h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .Container-Modes-De-Jeu table {
+        border: 3px solid var(--main-color);
+        border-radius: 20px;
+        border-collapse: collapse;
+    }
+
+    .Container-Modes-De-Jeu td {
+        border: 1px solid var(--main-color);
+    }
+
+    .Container-Modes-De-Jeu thead {
+        border-bottom: 3px solid var(--main-color);
+    }
+
+
+
+.Container-Carac {
+    margin-top: 1rem;
+}
+.ListeCarac ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.Bouton-Affiche-Mode {
+    position: relative;
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 30px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+    .Bouton-Affiche-Mode span {
+        position: absolute;
+        height: 110%;
+        top: 0;
+        align-content: center;
+    }
+
+/*#endregion*/
+
+
+
+/*#region
+    ======================================================
+                    ALIENS
+    ======================================================*/
+.Container-Bouton-Select-Alien {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+    .Container-Bouton-Select-Alien .Bouton-Select-Alien {
+        background-color: black;
+        margin: 1rem;
+        border: 2px solid;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+.Bouton-Select-Alien label {
+    cursor: pointer;
+}
+
+.Bouton-Select-Alien-Actif {
+    background-color: var(--main-color) !important;
+    color: black !important;
+    margin: 0.5rem !important;
+}
+
+    .Bouton-Select-Alien-Actif label {
+        color: black !important;
+    }
+
+.Container-Icone-Bouton-Select-Alien {
+    margin-right: 1rem;
+}
+
+
+
+.Container-Details {
+    margin: auto;
+    display: none;
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+}
+
+.Container-Details-Actif {
+    display: block;
+}
+
+    .Container-Details-Actif table {
+        border: 2px solid;
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .Container-Details-Actif tr td {
+        border: 2.5px solid;
+        overflow: hidden;
+    }
+
+    .Container-Details-Actif td.long-text, th.long-text {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .Container-Details-Actif thead {
+        border-bottom: 4px solid;
+    }
+
+    .Container-Details-Actif img {
+        border: 2px solid;
+    }
+
+.Container-Global-Infos-Principales {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*larve*/
+.Container-Details-Larve {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+/*genitrix*/
+.Container-Infos-Evolution-Genitrix {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+.Container-Infos-Evolution {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+/*phylactère*/
+.Container-Infos-Receptacle{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Table-Competences-Mobile {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: black;
+}
+
+    .Table-Competences-Mobile thead {
+        position: sticky;
+        top: 0;
+        background-color: #1a1a1a;
+        z-index: 2;
+    }
+
+    .Table-Competences-Mobile th,
+    .Table-Competences-Mobile td {
+        border: 1px solid #444;
+        padding: 12px 14px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+.Niveau {
+    width: 14%;
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.Comp-Capa {
+    width: 86%;
+    white-space: normal;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.competence strong,
+.capacite strong {
+    display: block;
+}
+
+.Table-Competences-Mobile th:nth-child(1),
+.Table-Competences-Mobile td:nth-child(1) {
+    width: 12%;
+    text-align: center;
+}
+
+.Table-Competences-Mobile th:nth-child(2),
+.Table-Competences-Mobile td:nth-child(2) {
+    width: 44%;
+}
+
+.Table-Competences-Mobile th:nth-child(3),
+.Table-Competences-Mobile td:nth-child(3) {
+    width: 44%;
+}
+/*#endregion*/
+
+
+
+/*#region
+    ======================================================
+                    OPÉRATEUR
+    ======================================================*/
+
+.Container-Bouton-Select-Operateur {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+    .Container-Bouton-Select-Operateur .Bouton-Select-Alien {
+        background-color: black;
+        border: 2px solid;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+.Container-Operateur {
+    margin-top: 10rem;
+}
+
+.Image-Details-Operateur {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10rem;
+    border: 2px solid;
+    border-radius: 30px;
+}
+
+/*#endregion*/
+
+
+
+/*#region 
+    ======================================================
+                        PROFIl
+    ======================================================*/
+.Container-Bouton-Creation-Profil {
+    margin: auto;
+    display: block;
+    background-color: black;
+    color: var(--main-color);
+    border-radius: 10px;
+    border: 2px solid;
+    position: absolute;
+}
+
+    .Container-Bouton-Creation-Profil:hover {
+        background-color: var(--main-color);
+        color: black;
+        cursor: pointer;
+    }
+
+.Bouton-Creation-Profil {
+    display: flex;
+}
+
+
+.Grand-Container-Form-Creation-Profil {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.Container-Form-Creation-Profil {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.Form-Creation-Profil {
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: black;
+    position: absolute;
+}
+
+.Bouton-Valider {
+    margin-right: 0;
+    margin-left: auto;
+    background-color: black;
+    border: 1px solid green;
+    color: green;
+}
+
+    .Bouton-Valider:hover {
+        background-color: green;
+        color: white;
+        border-color: white;
+    }
+
+.Bouton-Annuler {
+    margin-right: auto;
+    margin-left: 0;
+    background-color: black;
+    border: 1px solid red;
+    color: red;
+}
+
+    .Bouton-Annuler:hover {
+        background-color: red;
+        color: white;
+        border-color: white;
+    }
+
+.Table-Listage-Profil {
+    background-color: black;
+    hyphens: auto;
+}
+
+    .Table-Listage-Profil td, tr {
+        padding: 1rem;
+    }
+
+.Bouton-Table-Listage-Profil {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    background-color: black;
+    padding: 1rem;
+}
+/*#endregion*/
+
+
+
+/*#region
+    ======================================================
+                    JOUER PROFIL
+    ======================================================*/
+
+.Container-Table-Competences-Capacites {
+    display: flex;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+    flex-direction: column;
+}
+
+    .Container-Table-Competences-Capacites table {
+        width: 100%;
+        border: 2px solid;
+        border-collapse: collapse;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+        background-color: black;
+    }
+
+    .Container-Table-Competences-Capacites tr {
+        height: 70px;
+        border: 2px solid;
+    }
+
+    .Container-Table-Competences-Capacites h2 {
+        background-color: black;
+        margin: auto;
+        display: block;
+        width: fit-content;
+    }
+
+    .Container-Table-Competences-Capacites .TR {
+        cursor: pointer;
+    }
+
+        .Container-Table-Competences-Capacites .TR label {
+            cursor: pointer;
+            display: block;
+            padding: 1rem;
+        }
+
+        .Container-Table-Competences-Capacites .TR :hover {
+            color: white;
+        }
+
+    .Container-Table-Competences-Capacites tr:has(input[type="checkbox"]:checked) label {
+        color: black;
+    }
+
+    .Container-Table-Competences-Capacites tr:has(input[type="checkbox"]:checked) {
+        color: black;
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+    }
+
+.chevron-down {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: color 0.3s;
+}
+
+/*jouer personnage*/
+.Container-Global-Carte-Personnage h2 {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.Container-Carte-Personnage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Carte-Personnage {
+    flex: 1 1 300px;
+    max-width: 19rem;
+    background: #111;
+    border: 2px solid #444;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 3rem;
+    position: relative;
+    height: 500px;
+    cursor: pointer;
+}
+
+    .Carte-Personnage img {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        background: #222;
+        border-radius: 15px,
+    }
+
+    .Carte-Personnage label {
+        margin-top: 1rem;
+    }
+
+.Container-Niveau-Barre {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.Progress-Barre {
+    width: 100%;
+    background: #333;
+    border-radius: 8px;
+}
+
+.Barre {
+    height: 20px;
+    background: linear-gradient(to right, #00ff00, #00aa00);
+    border-radius: 8px;
+}
+/*barre navigation*/
+.barre-navigation-fixe {
+    position: fixed;
+    top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    padding: 1rem;
+    border-radius: 40px;
+    z-index: 1000;
+    border: 1px solid;
+    font-size: 20px;
+}
+
+    .barre-navigation-fixe .button-nav {
+        background: transparent;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--main-color);
+    }
+
+        .barre-navigation-fixe .button-nav:hover {
+            color: black;
+            background-color: var(--main-color);
+            border-color: var(--main-color);
+        }
+
+        .barre-navigation-fixe .button-nav:focus {
+            color: black;
+            background-color: var(--main-color);
+            border-color: var(--main-color);
+        }
+
+    .barre-navigation-fixe label {
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        color: white;
+    }
+/*#endregion*/
+
+
+
+
+
+/*#region 
+    ======================================================
+                    JOUER PERSONNAGE
+    ======================================================*/
+.Container-Jouer-Personnage {
+    display: flex; 
+    flex-direction: column;
+}
+
+.Container-Personnage-Except-Competences {
+    display: flex; 
+}
+    .Container-Jouer-Personnage img {
+        margin: auto; 
+        display: block;
+    }
+    .Container-Jouer-Personnage label {
+        background-color: black;
+    }
+
+.Container-Image {
+    margin-bottom: 2rem;
+}
+.Container-PV-Prot-Attributs {
+    display: flex; 
+    flex-direction: column;
+}
+.Container-PV-Prot {
+    display: flex; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+.Container-PV, Container-Prot label {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.Conntainer-Input-PV-Prot {
+    display: flex;
+    flex-direction: row;
+}
+.Container-Table-Attributs {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    background-color: black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.Container-Compétences {
+    display: flex; 
+    flex-direction: column; 
+    gap: 3rem; 
+    margin-bottom: 5rem;
+}
+
+    .Bouton-Jeu-Avec-Personnage-Complet {
+        background-color: black;
+        color: green;
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        margin-top: 2rem;
+    }
+
+    .Bouton-Jeu-Avec-Personnage-Complet:hover {
+        border-color: green;
+        background-color: green;
+        color: white;
+    }
+
+    .Bouton-Jeu-Avec-Personnage-Complet a {
+        text-decoration: none;
+        color: green;
+    }
+
+        .Bouton-Jeu-Avec-Personnage-Complet a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Bouton-Jeu-Avec-Personnage-Complet a:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+.Bouton-Input-PV-Prot-Gauche,
+.Bouton-Input-PV-Prot-Droite {
+    color: var(--main-color);
+    padding: 0;
+    background-color: black;
+    border: 2px solid var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    padding-bottom: 4px;
+}
+
+.Bouton-Input-PV-Prot-Gauche {
+    border-radius: 12px 0 0 12px;
+}
+
+.Bouton-Input-PV-Prot-Droite {
+    border-radius: 0 12px 12px 0;
+}
+
+    .Bouton-Input-PV-Prot-Gauche:hover,
+    .Bouton-Input-PV-Prot-Droite:hover {
+        background-color: var(--main-color);
+        color: black;
+        border-color: var(--main-color);
+    }
+
+.Input-PV-Prot {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+    .Input-PV-Prot::-webkit-inner-spin-button,
+    .Input-PV-Prot::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+    }
+/*#endregion*/
+
+
+
+
+
+
+
+
+
+

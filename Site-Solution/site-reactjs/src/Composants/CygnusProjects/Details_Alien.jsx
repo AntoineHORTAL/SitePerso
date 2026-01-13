@@ -5,7 +5,7 @@
             <div className={`Container-Details ${IsActive ? 'Container-Details-Actif' : ''}`}>
                 {
                     !Details.Phylactere && (
-                        <img src={Details.CheminImage} width="500px" className="Image-Details-Alien" />
+                        <img src={Details.CheminImage} className="Image-Details-Alien" />
                     )
                 }
                 {
@@ -14,7 +14,7 @@
                     <div className="Container-Details-Supplementaire">
                         {Details.Necrosia &&
                             <div className="Container-Details-Supplementaire-Necrosia">
-                                <img src={Details.Necrosia.Larve.CheminImage} width="500px" className="Image-Details-Alien" />
+                                <img src={Details.Necrosia.Larve.CheminImage} className="Image-Details-Alien" />
                                 <div className="Container-Details-Larve">
                                     <label>Nom: {Details.Necrosia.Larve.Nom}</label>
                                     <label>Protection: {Details.Necrosia.Larve.Protection}</label>
@@ -33,7 +33,7 @@
                                     {
                                         Details.Genitrix.Type_Evolution.map((Evol, index) => ( 
                                             <div key={index} className="Type-Evolution">
-                                                <img src={Evol.CheminImage} width="500px" />
+                                                <img src={Evol.CheminImage} />
                                                 <div className="Container-Infos-Evolution">
                                                     <label>{Evol.Nom}</label>
                                                     <label>Protection : {Evol.Protection}</label>
@@ -101,7 +101,7 @@
                                         {
                                             Details.Phylactere.Receptacle.map((Recep, index) => (
                                                 <div index={index} className="Receptacle">
-                                                    <img src={Recep.CheminImage} width="500px" />
+                                                    <img src={Recep.CheminImage} />
                                                     <div className="Container-Infos-Receptacle">
                                                         <label>Nom: {Recep.Nom}</label>
                                                         <label>Niveau de débloquage: {Recep.Niveau}</label>
@@ -135,17 +135,17 @@
                         <label>PointsVie: {Details.PointsVie}</label>
                     </div>
                 </div>
-                <table className="Table-Competences">
+                <table className="Table-Competences-Desktop">
                     <thead>
                         <tr>
-                            <td style={{ width: "0%" }}>
-                                <label>NIVEAU</label>
+                            <td>
+                                <label style={{ width:'12%' }}>NIVEAU</label>
                             </td>
-                            <td style={{ width: "45%" }}>
-                                <label>COMPÉTENCES</label>
+                            <td>
+                                <label style={{ width: '44%' }}>COMPÉTENCES</label>
                             </td>
-                            <td style={{ width: "45%" }}>
-                                <label>CAPACITÉS SPÉCIALES</label>
+                            <td>
+                                <label style={{ width: '44%' }}>CAPACITÉS SPÉCIALES</label>
                             </td>
                         </tr>
                     </thead>
@@ -154,8 +154,35 @@
                             <tr key={index}>
                                 <td style={{textAlign: "center"}}>{Niveaux}</td>
                                 <td>{Details.Competences[index]}</td>
-                                <td>
-                                    {Details.Capacites[index]}
+                                <td>{Details.Capacites[index]}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <table className="Table-Competences-Mobile">
+                    <thead>
+                        <tr>
+                            <td>
+                                <label>NIVEAU</label>
+                            </td>
+                            <td>
+                                <label>COMPÉTENCES / CAPACITÉS SPÉCIALES</label>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Details.Niveaux.map((Niveaux, index) => (
+                            <tr key={index}>
+                                <td className="Niveau">{Niveaux}</td>
+                                <td className="Comp-Capa">
+                                    <div className="Competence">
+                                        <strong>Compétence :</strong><br />
+                                        {Details.Competences[index]}
+                                    </div>
+                                    <div className="Capacite">
+                                        <strong>Capacité spéciale :</strong><br />
+                                        {Details.Capacites[index]}
+                                    </div>
                                 </td>
                             </tr>
                         ))}

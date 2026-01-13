@@ -431,7 +431,7 @@
                         Protection: "12",
                         PointsVie: "35",
                         Niveau: "16",
-                        CheminImage: "/Images/CygnusProjects/Aliens/Phylactère type 4.png",
+                        CheminImage: "/Images/CygnusProjects/Aliens/Phylactère Type 4.png",
                         ImageWidth: "300px",
                         ImageHeight: "660px",
                         Details: "4m, mini lance missile sur chaque épaule, lance flamme ou mitrailleuse bras gauche, marteau ou main grapin bras droit"

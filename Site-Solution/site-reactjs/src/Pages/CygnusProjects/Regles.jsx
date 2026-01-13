@@ -43,7 +43,7 @@ function Regles() {
               <br/>
               <br/>
               <strong>Les Personanges</strong><br/>
-              Tous les personnages ont les caractéristiques suivantes :<br/>
+              Tous les personnages ont les caractéristiques suivantes :
               <ul>
                   <li>Points de Vie</li>
                   <li>Protection</li>
@@ -54,7 +54,7 @@ function Regles() {
                   <li>3 Passifs (une fois la progression terminée)</li>
               </ul>
               </p>
-            <strong>Les Attributs</strong><br/>
+            <strong>Les Attributs</strong>
             <ul>
                 <li>Force</li>
                 <li>Dextérité</li>
