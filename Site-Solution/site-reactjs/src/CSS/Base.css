@@ -867,10 +867,13 @@ body {
 }
 
 /*jouer personnage*/
-.Container-Global-Carte-Personnage h2 {
-    width: fit-content;
+.Container-Global-Carte-Personnage {
+    display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.Container-Global-Carte-Personnage h2 {
+    width: fit-content;
     display: block;
     margin-left: auto;
     margin-right: auto;
