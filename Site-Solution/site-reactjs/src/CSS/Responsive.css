@@ -2080,6 +2080,10 @@
     .Container-Connexion {
         width: 20vw;
     }
+        .Container-Connexion h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
 
     .Bouton-Login {
         width: 65%;
@@ -2186,7 +2190,9 @@
     .ListeCarac h2 {
         font-size: 3rem;
     }
-
+    .ListeCarac ul {
+        gap: 5rem;
+    }
     .ListeCarac li {
         font-size: 2rem;
     }
@@ -2326,8 +2332,9 @@
     /*#region PROFIL*/
     .Container-Bouton-Creation-Profil {
         top: 5rem;
-        right: -120rem;
-        width: 18vw;
+        right: 2rem;
+        left: auto;
+        width: 14vw;
     }
 
     .Form-Creation-Profil {
@@ -2363,7 +2370,7 @@
     }
     /*barre navigation*/
     .barre-navigation-fixe {
-        left: 38%;
+        left: calc(50% - (600px / 2));
     }
     /*#endregion*/
 
@@ -2411,14 +2418,23 @@
 
     .Container-PV-Prot {
         width: 50%;
-        flex-direction: column;
+        flex-direction: row;
         margin: auto;
         gap: 2rem;
         font-size: 2rem;
     }
+        .Container-PV-Prot .Container-PV,
+        .Container-PV-Prot .Container-Prot {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
     .Container-Table-Attributs {
         font-size: 2rem;
+    }
+
+    .Container-Comp-Capa-Perso{
+        width: calc(100% - 25vw);
     }
 
     /*#endregion JOUER PERSONNAGE*/

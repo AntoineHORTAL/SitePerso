@@ -76,7 +76,7 @@ function Connexion() {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="Container-Connexion">
-                    <h1>Connexion</h1>
+                    <h2>Connexion</h2>
 
                     {/* On passe value et onChange pour que les inputs soient contrôlés */}
                     <InputIdentifiant
@@ -90,7 +90,7 @@ function Connexion() {
                     />
 
                     <button type="submit" className="Bouton-Login" disabled={loading}>
-                        {loading ? 'Connexion en cours...' : 'Se Connecter'}
+                        {loading ? 'Connexion en cours ...' : 'Se Connecter'}
                     </button>
 
                     <p>

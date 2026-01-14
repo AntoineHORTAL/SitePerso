@@ -87,7 +87,7 @@ function Inscription() {
       <>
         <form onSubmit={SubmitForm}>
             <div className="Container-Connexion">
-                <h1>Inscription</h1>
+                <h2>Inscription</h2>
                 <InputIdentifiant
                     value={IdentifiantInput}
                     onChange={IdentifiantonChange}

@@ -463,6 +463,7 @@ body {
 .ListeCarac ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .Bouton-Affiche-Mode {
@@ -871,6 +872,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Container-Carte-Personnage {
@@ -976,8 +979,6 @@ body {
 
 
 
-
-
 /*#region 
     ======================================================
                     JOUER PERSONNAGE
@@ -1061,6 +1062,10 @@ body {
             text-decoration: none;
             color: white;
         }
+
+.Container-Comp-Capa-Perso{
+    margin: auto;
+}
 
 .Bouton-Input-PV-Prot-Gauche,
 .Bouton-Input-PV-Prot-Droite {

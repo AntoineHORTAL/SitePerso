@@ -215,16 +215,18 @@ function JouerPersonnage() {
                                   </table>
                               </div>
                           </div>
-                          <h4>COMPÉTENCES</h4>
-                          <div className="Container-Compétences">
-                              {
-                                  competences.map((comp, index) => (
-                                      <label key={index}>{comp}</label>
-                                  ))
-                              }
+                          <div className="Container-Comp-Capa-Perso">
+                              <h4>COMPÉTENCES</h4>
+                              <div className="Container-Compétences">
+                                  {
+                                      competences.map((comp, index) => (
+                                          <label key={index}>{comp}</label>
+                                      ))
+                                  }
+                              </div>
+                              <h4>CAPACITÉ SPÉCIALE</h4>
+                              <label>{capacites}</label>
                           </div>
-                          <h4>CAPACITÉ SPÉCIALE</h4>
-                          <label>{capacites}</label>
                       </div>
                   )
           }
