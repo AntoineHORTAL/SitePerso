@@ -1379,6 +1379,11 @@
         width: 30vw;
     }
 
+        .Container-Connexion h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
+
     .Bouton-Login {
         width: 70%;
     }
@@ -1483,6 +1488,10 @@
 
     .ListeCarac h2 {
         font-size: 2rem;
+    }
+
+    .ListeCarac ul {
+        gap: 2rem;
     }
 
     .ListeCarac li {
@@ -1623,8 +1632,8 @@
     
     /*#region PROFIL*/
     .Container-Bouton-Creation-Profil {
-        top: 3rem;
-        right: -55rem;
+        right: 2rem;
+        left: auto;
         width: 30vw;
     }
 
@@ -1632,6 +1641,10 @@
         padding: 1rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+    }
+
+    .barre-navigation-fixe {
+        left: calc(50% - (600px / 2));
     }
 
     .Table-Listage-Profil {
@@ -1658,10 +1671,6 @@
     .Carte-Personnage {
         margin: auto;
         margin-top: 2rem;
-    }
-    /*barre navigation*/
-    .barre-navigation-fixe {
-        left: 35%;
     }
     /*#endregion JOUER PROFIL*/
 
@@ -1708,10 +1717,25 @@
 
     .Container-PV-Prot {
         width: 50%;
-        flex-direction: column;
+        flex-direction: row;
         margin: auto;
         gap: 2rem;
     }
+
+    .Container-Comp-Capa-Perso {
+        width: calc(100% - 25vw);
+        margin: auto;
+    }
+
+    .Container-PV-Prot .Container-PV,
+    .Container-PV-Prot .Container-Prot {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
     .Container-Table-Attributs {
         font-size: 2rem;
     }
