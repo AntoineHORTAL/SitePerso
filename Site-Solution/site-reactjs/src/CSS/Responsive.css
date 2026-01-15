@@ -1729,6 +1729,10 @@
     .Container-Connexion {
         width: 20vw;
     }
+        .Container-Connexion h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
 
     .Bouton-Login {
         width: 70%;
@@ -1834,6 +1838,10 @@
 
     .ListeCarac h2 {
         font-size: 2.5rem;
+    }
+
+    .ListeCarac ul {
+        gap: 5rem;
     }
 
     .ListeCarac li {
@@ -1974,9 +1982,9 @@
 
     /*#region PROFIL*/
     .Container-Bouton-Creation-Profil {
-        top: 4rem;
-        right: -70rem;
-        width: 30vw;
+        right: 2rem;
+        left: auto;
+        width: 23vw;
     }
 
     .Form-Creation-Profil {
@@ -1989,6 +1997,10 @@
         width: 80vw;
         max-width: 80vw;
         margin-top: 10rem;
+    }
+
+    .barre-navigation-fixe {
+        left: calc(50% - (600px / 2));
     }
     /*#endregion PROFIL*/
 
@@ -2059,17 +2071,26 @@
 
     .Container-PV-Prot {
         width: 50%;
-        flex-direction: column;
+        flex-direction: row;
         margin: auto;
         gap: 2rem;
     }
+        .Container-PV-Prot .Container-PV,
+        .Container-PV-Prot .Container-Prot {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
+        .Container-Comp-Capa-Perso{
+            width: calc(100% - 25vw);
+        }
     .Container-Table-Attributs {
         font-size: 2rem;
     }
 
     /*#endregion JOUER PERSONNAGE*/
 }
+/*#endregion*/
 
     /*#region
  =======================================================
@@ -2442,6 +2463,4 @@
 
     /*#endregion JOUER PERSONNAGE*/
 }
-
-/*#region*/
 /*#endregion*/
