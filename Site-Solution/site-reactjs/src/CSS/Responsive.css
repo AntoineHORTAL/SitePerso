@@ -321,6 +321,8 @@
 }
 /*#endregion*/
 
+
+
 /*#region
   ======================================================
     Tablette portrait / mobile landscape confortable                                768-1024
@@ -330,6 +332,11 @@
     .Container-Connexion {
         width: 60vw;
     }
+
+        .Container-Connexion h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
 
     .Bouton-Login {
         width: 70%;
@@ -437,6 +444,10 @@
 
 .ListeCarac h2 {
     font-size: 1.5rem;
+}
+
+.ListeCarac ul {
+    gap: 2rem;
 }
 
 .ListeCarac li {
@@ -575,10 +586,10 @@
 
     /*#region PROFIL*/
 .Container-Bouton-Creation-Profil {
-    top: 8rem;
-    left: 1rem;
-    padding: 1rem;
-    width: 60vw;
+    right: 2rem;
+    left: auto;
+    width: 56vw;
+    top: 30px;
 }
 
 .Form-Creation-Profil {
@@ -590,6 +601,10 @@
 .Table-Listage-Profil {
     width: 90vw;
     max-width: 90vw;
+}
+
+.barre-navigation-fixe {
+    left: calc(50% - (600px / 2));
 }
 /*#endregion PROFIL*/
 
@@ -667,6 +682,20 @@
     flex-direction: column;
     margin: auto;
     gap: 2rem;
+}
+
+.Container-Comp-Capa-Perso {
+    width: calc(100% - 25vw);
+    margin: auto;
+}
+
+.Container-PV-Prot .Container-PV,
+.Container-PV-Prot .Container-Prot {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 /*#endregion JOUER PERSONNAGE*/
@@ -1809,7 +1838,7 @@
 
 /*#region
  =======================================================
-    Grand (TV, gros écrans)                                               1920-1080
+    Grand (TV, gros écrans)                                                         1920-1080
  =======================================================*/
 @media (min-width: 1920px) {
     /*#region PAGE CONNEXION ET INSCRIPTION*/
