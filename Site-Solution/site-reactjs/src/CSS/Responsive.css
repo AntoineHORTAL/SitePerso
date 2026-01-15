@@ -1021,6 +1021,8 @@
 }
 /*#endregion*/
 
+
+
 /*#region
  =======================================================
     Laptop / desktop classique                                                      1200-700
@@ -1033,6 +1035,11 @@
 
     .Bouton-Login {
         width: 70%;
+    }
+
+    .Container-Connexion h2 {
+        font-size: 4rem;
+        text-align: center;
     }
     /*#endregion PAGE CONNEXION ET INSCRIPTION*/
 
@@ -1135,6 +1142,10 @@
 
     .ListeCarac h2 {
         font-size: 1.5rem;
+    }
+
+    .ListeCarac ul {
+        gap: 2rem;
     }
 
     .ListeCarac li {
@@ -1275,8 +1286,9 @@
     /*#region PROFIL*/
     .Container-Bouton-Creation-Profil {
         top: 30px;
-        right: -38rem;
-        width: 40vw;
+        right: 2rem;
+        left: auto;
+        width: 36vw;
     }
 
     .Form-Creation-Profil {
@@ -1289,6 +1301,10 @@
         width: 90vw;
         max-width: 90vw;
         margin-top: 10rem;
+    }
+
+    .barre-navigation-fixe {
+        left: calc(50% - (600px / 2));
     }
     /*#endregion PROFIL*/
 
@@ -1358,9 +1374,24 @@
         width: 50%;
     }
 
+
+    .Container-Comp-Capa-Perso {
+        width: calc(100% - 25vw);
+        margin: auto;
+    }
+
+    .Container-PV-Prot .Container-PV,
+    .Container-PV-Prot .Container-Prot {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
     .Container-PV-Prot {
         width: 50%;
-        flex-direction: column;
+        flex-direction: row;
         margin: auto;
         gap: 2rem;
     }
@@ -1368,6 +1399,8 @@
     /*#endregion JOUER PERSONNAGE*/
 }
 /*#endregion*/
+
+
 
 /*#region
  =======================================================
@@ -1634,7 +1667,7 @@
     .Container-Bouton-Creation-Profil {
         right: 2rem;
         left: auto;
-        width: 30vw;
+        width: 25vw;
     }
 
     .Form-Creation-Profil {
@@ -1743,6 +1776,8 @@
     /*#endregion JOUER PERSONNAGE*/
 }
 /*#endregion*/
+
+
 
 /*#region
  =======================================================
@@ -2116,7 +2151,9 @@
 }
 /*#endregion*/
 
-    /*#region
+ 
+
+/*#region
  =======================================================
     Ultra grand (TV, très gros écrans)                                               2560-1440
  =======================================================*/
