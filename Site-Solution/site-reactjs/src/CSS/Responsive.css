@@ -7,15 +7,16 @@
     .Container-Connexion{
         width: 60vw;
     }
+        .Container-Connexion h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
     .Bouton-Login {
         width: 100%;
     }
     /*#endregion PAGE CONNEXION ET INSCRIPTION*/
 
     /*#region ACCUEIL*/
-    .Container-Carte-JDR{
-        padding: 50px;
-    }
     .CarteJDR{
         max-width: 400px;
     }
@@ -98,6 +99,9 @@
 
     .ListeCarac h2 {
         font-size: 1.5rem;
+    }
+    .ListeCarac ul {
+        gap: 2rem;
     }
     .ListeCarac li {
         font-size: 1rem;
@@ -231,10 +235,10 @@
 
     /*#region PROFIL*/
     .Container-Bouton-Creation-Profil {
-        top: 8rem;
-        left: 1rem;
-        padding: 1rem;
-        width: 70vw;
+        right: 2rem;
+        left: auto;
+        width: 54vw;
+        top: 30px;
     }
     .Form-Creation-Profil {
         padding: 1rem;
@@ -245,6 +249,10 @@
         width: 30vw;
         max-width: 30vw;
         margin-top: 10rem;
+    }
+
+    .barre-navigation-fixe {
+        left: calc(50% - (600px / 2));
     }
     /*#endregion PROFIL*/
 
@@ -266,10 +274,6 @@
     .Carte-Personnage {
         margin: auto;
         margin-top: 2rem;
-    }
-    /*barre navigation*/
-    .barre-navigation-fixe {
-        left: 0;
     }
     .Container-Bouton-Retour-JDR {
         top: 19rem;
@@ -315,6 +319,20 @@
         flex-direction: column;
         margin: auto;
         gap: 2rem;
+    }
+
+    .Container-Comp-Capa-Perso {
+        width: calc(100% - 25vw);
+        margin: auto;
+    }
+
+    .Container-PV-Prot .Container-PV,
+    .Container-PV-Prot .Container-Prot {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%;
+        display: block;
     }
 
     /*#endregion JOUER PERSONNAGE*/
@@ -588,7 +606,7 @@
 .Container-Bouton-Creation-Profil {
     right: 2rem;
     left: auto;
-    width: 56vw;
+    width: 46vw;
     top: 30px;
 }
 
@@ -626,10 +644,6 @@
     .Carte-Personnage {
         margin: auto;
         margin-top: 2rem;
-    }
-    /*barre navigation*/
-    .barre-navigation-fixe {
-        left: 10%;
     }
     .Container-Bouton-Retour-JDR{
         top:19rem;
