@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./Route/userRoute');
 const profilRoutes = require('./Route/profilRoute');
 const progressionRoutes = require('./Route/progressionRoute');
+const personnageRoute_WrathAdngGlory = require('./Route/WrathAndGlory/personnageRoute');
 
 mongoose.set('strictQuery', true);
 
@@ -31,6 +32,7 @@ app.get('/', (req, res) => res.send('API opérationnelle.'));
 app.use('/API/API_User', userRoutes);     
 app.use('/API/API_Profil', profilRoutes);
 app.use('/API/API_Progression', progressionRoutes);
+app.use('/API/API_Personnages_WrathAndGlory', personnageRoute_WrathAdngGlory);
 
 
 app.listen(PORT, () => {

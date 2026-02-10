@@ -1,0 +1,72 @@
+﻿export const ListeDomaineMaleficarum = [
+    {
+        Id: 1,
+        Nom: "Flétrissement de l'âme",
+        CoûtPX: "20",
+        SD: "Défense de la cible",
+        Activation: "Action",
+        Durée: "Instantané",
+        Portée: "20 mètres",
+        CiblesMultiples: "Oui",
+        MotsClés: "CHAOS, PSYCHIQUE",
+        Prerequis: "le Psyker doit avoir le Mot-clé CHAOS",
+        Effet: "vous ouvrez une minuscule fissure dans l'Immaterium près de votre ennemi, afin de drainer l'énergie vitale de son esprit. La cible subit 1d3 Blessures mortelles et doit faire un Test de Corruption SD 3.",
+        Surpuissance: "[2] +1 Blessure mortelle. [1] Portée augmentée de 10 m."
+    },
+    {
+        Id: 2,
+        Nom: "Possession",
+        CoûtPX: "20",
+        SD: "Force mentale de la cible (Test opposé)",
+        Activation: "Action complexe",
+        Durée: "Maintien",
+        Portée: "30 mètres",
+        CiblesMultiples: "Non",
+        MotsClés: "CHAOS, PSYCHIQUE",
+        Prerequis: "le Psyker doit avoir le Mot-clé CHAOS",
+        Effet: "vous brisez l'esprit de votre ennemi. Sa volonté est entièrement anéantie et son corps devient votre marionnette. Vous et votre cible effectuez un Test opposé de Force mentale. Si vous réussissez, la cible est complètement dominée et n'a plus aucun libre arbitre. Avec une simple pensée, vous pouvez contraindre la cible à effectuer n'importe quelle tâche que vous choisissez tant que le pouvoir est maintenu. Ce contrôle est sans limites et les victimes exécutent tous vos ordres sans hésiter. Vous gagnez immédiatement 1 Corruption à l'activation de ce pouvoir, et la cible doit faire un Test de Corruption SD 6 à la fin du pouvoir. Le pouvoir Possession est mentalement éprouvant, car vous devez constamment dominer la personnalité de la cible. Vous subissez 1d3+1 Stress à chaque Round où vous maintenez le pouvoir. Vous ne pouvez pas récupérer de Stress tant que vous maintenez ce pouvoir.",
+        Surpuissance: "[1] Activation réduite à une Action. [2] Le pouvoir peut être maintenu pendant une minute avant de subir du Stress."
+    },
+    {
+        Id: 3,
+        Nom: "Regard infernal",
+        CoûtPX: "10",
+        SD: "Défense de la cible",
+        Activation: "Action",
+        Durée: "Maintien",
+        Portée: "25 mètres",
+        CiblesMultiples: "Oui",
+        MotsClés: "CHAOS, PSYCHIQUE",
+        Prerequis: "le Psyker doit avoir le Mot-clé CHAOS",
+        Effet: "vous vous frayez un chemin dans l'esprit de votre victime, qui se retrouve forcée à découvrir des choses terrifiantes que seul le Warp peut dévoiler. La cible perd temporairement 1 Intelligence et doit réussir un Test de Force mentale SD 7 ou souffrir d'hallucinations intenses. Ces hallucinations prennent la forme d'illusions surnaturelles qu'elle seule peut voir. La cible lance immédiatement un jet sur le Tableau Périls du Warp. Les effets de ces hallucinations durent aussi longtemps que vous maintenez le pouvoir ou jusqu'à ce que les effets des Périls du Warp prennent fin, selon la durée la plus longue. Dans certaines circonstances, lorsque la cible peut se demander pourquoi les personnes qui l'entourent ne sont pas affectées par l'impressionnant événement surnaturel déterminé par le jet sur le Tableau, la cible peut être autorisée à refaire un Test de Force mentale. L'Intelligence temporairement perdue revient à raison de 1 point par jour. Le pouvoir Regard infernal est mentalement éprouvant. Vous subissez 1 Stress pour chaque minute où vous maintenez le pouvoir. Vous ne pouvez pas récupérer de Stress tant que vous maintenez ce pouvoir.",
+        Surpuissance: "[1] +1 dégâts d'Intelligence temporaire. [3] La cible doit ajouter le score de Corruption du Psyker au premier chiffre de son jet de d66 sur le Tableau Périls du Warp."
+    },
+    {
+        Id: 4,
+        Nom: "Sombre flamme",
+        CoûtPX: "15",
+        SD: "7",
+        Activation: "Action",
+        Durée: "Instantané",
+        Portée: "20 mètres",
+        CiblesMultiples: "Non",
+        MotsClés: "CHAOS, PSYCHIQUE",
+        Prerequis: "le Psyker doit avoir le Mot-clé CHAOS",
+        Effet: "vous déchaînez toute votre rage ardente. Le pouvoir affecte toutes les créatures dans un rayon de 6 m à partir d'un point à portée, des flammes impies brûlant jusqu'à leurs âmes. Les cibles affectées subissent 1d3 + votre niveau de Corruption en dégâts de Stress et doivent réussir un Test d'Endurance SD 5 ou subir également 1d3 Blessures mortelles.",
+        Surpuissance: "[2] +1 Blessure mortelle. [2] Rayon d'explosion multiplié par deux."
+    },
+    {
+        Id: 5,
+        Nom: "Toucher de corruption",
+        CoûtPX: "15",
+        SD: "Défense de la cible",
+        Activation: "Action",
+        Durée: "Maintien",
+        Portée: "Au Toucher",
+        CiblesMultiples: "Oui",
+        MotsClés: "CHAOS, PSYCHIQUE",
+        Prerequis: "le Psyker doit avoir le Mot-clé CHAOS",
+        Effet: "vous libérez les énergies mutagènes du Warp pour corrompre de force la chair de votre cible. La cible subit 1 Corruption et obtient une mutation aléatoire dans le Tableau Mutations mineures (p. 288). La mutation qui en résulte est horrible, mais temporaire. La chair de la cible redevient normale à la fin du pouvoir. Le pouvoir Toucher de corruption est mentalement éprouvant. Vous subissez 1 Stress pour chaque minute où vous maintenez le pouvoir. Vous ne pouvez pas récupérer de Stress tant que vous maintenez ce pouvoir.",
+        Surpuissance: "[1] La cible subit +2 dégâts de Stress. [2] La cible subit 1 Corruption supplémentaire."
+    }
+]

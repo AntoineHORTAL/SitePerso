@@ -196,6 +196,7 @@ body {
     cursor: pointer;
     padding: 0.75rem;
     background-color: black;
+    z-index: 10000;
 }
 
     .Container-Bouton-Retour-JDR .Bouton-Retour-JDR {
@@ -236,6 +237,7 @@ body {
 
 
 
+/*#region CyGnUsSPrOjEcTs*/
 /*#region
  ======================================================
                 PAGE CYGNUS'S PROJECTS
@@ -1117,10 +1119,1213 @@ body {
 
 
 
+/*#endregion CyGnUsSPrOjEcTs*/
+
+/*#region WrAtHaNdGlOrY*/
+
+    /*#region WrathAdGlory*/
+    .OrbitIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: purple;
+    }
+    .OrbitIcon-Bouton-Container-WrathAndGlory-Redirect:hover{
+        background-color: purple;
+    }
+        .OrbitIcon-Bouton-Container-WrathAndGlory-Redirect:hover .OrbitIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .UsersIcone-Bouton-WrathAndGlory-Redirect {
+        background-color: #2563eb;
+    }
+    .UsersIcone-Bouton-Container-WrathAndGlory-Redirect:hover{
+        background-color: #2563eb;
+    }
+        .UsersIcone-Bouton-Container-WrathAndGlory-Redirect:hover .UsersIcone-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .BookOpenIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: orange;
+    }
+    .BookOpenIcon-Bouton-Container-WrathAndGlory-Redirect:hover{
+        background-color: orange;
+    }
+        .BookOpenIcon-Bouton-Container-WrathAndGlory-Redirect:hover .BookOpenIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .SwordIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: #ef4444;
+    }
+    .SwordIcon-Bouton-Container-WrathAndGlory-Redirect:hover {
+        background-color: #ef4444;
+    }
+        .SwordIcon-Bouton-Container-WrathAndGlory-Redirect:hover .SwordIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .BicepsFlexedIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: #ea580c;
+    }
+    .BicepsFlexedIcon-Bouton-Container-WrathAndGlory-Redirect:hover {
+        background-color: #ea580c;
+    }
+        .BicepsFlexedIcon-Bouton-Container-WrathAndGlory-Redirect:hover .BicepsFlexedIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .BrainIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: #9333ea;
+    }
+    .BrainIcon-Bouton-Container-WrathAndGlory-Redirect:hover {
+        background-color: #9333ea;
+    }
+        .BrainIcon-Bouton-Container-WrathAndGlory-Redirect:hover .BrainIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+
+    .ShieldIcon-Bouton-WrathAndGlory-Redirect {
+        background-color: #71717a;
+    }
+    .ShieldIcon-Bouton-Container-WrathAndGlory-Redirect:hover {
+        background-color: #71717a;
+    }
+        .ShieldIcon-Bouton-Container-WrathAndGlory-Redirect:hover .ShieldIcon-Bouton-WrathAndGlory-Redirect {
+            background-color: var(--main-color);
+        }
+    /*#endregion WrathAdGlory*/
+
+    /*#region SystèmeGilead*/
+    /*#region Modile_Low_Desktop*/
+
+    .SystemGilead_Mobil_LowDesktop_Display{
+        min-height: 100vh;
+        margin-top: 15vh;
+    }
+
+    .Container_Global_Btn_Planete {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .Container_Btn_Image_Planete {
+        display: flex;
+        flex-direction: column;
+        width: 204px;
+    }
+    .Container_Btn_Image_Planete span{
+        text-align: center;
+        width: 204px;
+        color: black;
+    }
+        .Container_Btn_Image_Planete:hover{
+            cursor: pointer;
+        }
+        .Container_Btn_Image_Planete:hover .Btn_Image_Planete {
+            border-color: purple;
+        }
+        .Container_Btn_Image_Planete:hover span{
+            color: purple;
+            text-shadow: 1px 1px 2px black;
+        }
+    .Btn_Image_Planete {
+        width: 204px;
+        height: 204px;
+        padding: 0;
+        border-radius: 10px;
+        border: 2px solid var(--main-color);
+    }
+        .Btn_Image_Planete img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+    .Container_Infos_Planetes_Mobile{
+        border: 2px solid;
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 50vw;
+        margin: auto;
+    }
+        .Container_Infos_Planetes_Mobile h2{
+            text-align: center;
+        }
+    /*#endregion Modile_Low_Desktop*/
+    /*#region Desktop*/
+        @keyframes orb {
+            from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* --- SOLAR SYSTEM STRUCTURE --- */
+
+.solar-syst {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+    .solar-syst:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 2px;
+        top: -2px;
+        background: white;
+        box-shadow: 200px 400px white, 800px 500px rgba(255,255,255,0.5), 400px 100px white, 1200px 300px white, 600px 800px white;
+        border-radius: 100px;
+    }
+
+    .solar-syst div {
+        border-radius: 1000px;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        z-index: 999;
+    }
+
+        .solar-syst div:not(.sun) {
+            border: 1px solid rgba(102, 166, 229, 0.12);
+        }
+
+            .solar-syst div:not(.sun):before {
+                left: 50%;
+                border-radius: 100px;
+                content: "";
+                position: absolute;
+            }
+
+        .solar-syst div:not(.asteroids-belt):before {
+            box-shadow: inset 0 6px 0 -2px rgba(0, 0, 0, 0.25);
+        }
+
+/* --- PLANETS --- */
+/*soleil*/
+.sun {
+    background: radial-gradient(ellipse at center, #ffd000 1%, #f9b700 39%, #f9b700 39%, #e06317 100%);
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    background-clip: padding-box;
+    border: 0 !important;
+    background-position: -28px -103px;
+    background-size: 175%;
+    box-shadow: 0 0 10px 2px rgba(255, 107, 0, 0.4), 0 0 22px 11px rgba(255, 203, 0, 0.13);
+}
+/*avachrus*/
+.avachrus {
+    height: 100px;
+    width: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: orb 4s linear infinite;
+}
+
+    .avachrus:before {
+        height: 5px;
+        width: 5px;
+        background: #9D1E1E;
+        margin-top: -3px;
+        margin-left: -3px;
+    }
+
+/*nethreus*/
+.nethreus {
+    height: 150px;
+    width: 150px;
+    margin-top: -75px;
+    margin-left: -75px;
+    animation: orb 5s linear infinite;
+}
+
+    .nethreus:before {
+        height: 6px;
+        width: 6px;
+        background: #c76e2a;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*ostia*/
+.ostia {
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    animation: orb 6s linear infinite;
+}
+
+    .ostia:before {
+        height: 6px;
+        width: 6px;
+        background: #3C892A;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*enoch*/
+.enoch {
+    height: 250px;
+    width: 250px;
+    margin-top: -125px;
+    margin-left: -125px;
+    animation: orb 7s linear infinite;
+}
+
+    .enoch:before {
+        height: 6px;
+        width: 6px;
+        background: #9BC213;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*gilead-primus*/
+.gilead-primus {
+    height: 300px;
+    width: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+    animation: orb 8s linear infinite;
+}
+
+    .gilead-primus:before {
+        height: 6px;
+        width: 6px;
+        background-color: gold;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+    .gilead-primus:after {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 50%;
+        top: 0px;
+        margin-left: -9px;
+        margin-top: -9px;
+        border-radius: 100px;
+        box-shadow: 0 -10px 0 -8px grey;
+        animation: orb 2.24s linear infinite;
+    }
+
+/*charybdion*/
+.charybdion {
+    height: 350px;
+    width: 350px;
+    margin-top: -175px;
+    margin-left: -175px;
+    animation: orb 9.5s linear infinite;
+}
+
+    .charybdion:before {
+        height: 6px;
+        width: 6px;
+        background: #1725AC;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*bourbier-vide*/
+.bourbier-vide {
+    height: 400px;
+    width: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    animation: orb 11s linear infinite;
+}
+
+    .bourbier-vide:before {
+        height: 6px;
+        width: 6px;
+        background: #7C149D;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*persephones-regret*/
+.persephones-regret {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    animation: orb 120s linear infinite;
+    border: none !important;
+    z-index: 90;
+    overflow: visible;
+}
+
+.epaves {
+    position: absolute;
+    border-radius: 50%;
+    transition: none;
+}
+
+/*vulkaris*/
+.vulkaris {
+    height: 550px;
+    width: 550px;
+    margin-top: -275px;
+    margin-left: -275px;
+    animation: orb 20s linear infinite;
+}
+
+    .vulkaris:before {
+        height: 6px;
+        width: 6px;
+        background: #707755;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+
+/*trollius*/
+.trollius {
+    height: 600px;
+    width: 600px;
+    margin-top: -300px;
+    margin-left: -300px;
+    animation: orb 25s linear infinite;
+    box-shadow: 0px 0px 20px 200px black;
+    background-color: black;
+    z-index: 900 !important;
+}
+
+    .trollius:before {
+        height: 6px;
+        width: 6px;
+        background: white;
+        margin-top: -4px;
+        margin-left: -4px;
+    }
+/*#endregion*/
+    /*#endregion*/
+
+    /*#region Règles*/
+    .Container_Regles_WrathAndGlory{
+        width: 60vw;
+        background-color: black;
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        margin: auto;
+        margin-top: 20rem;
+        margin-bottom: 20rem;
+        padding: 5rem;
+    }
+    .Container_Regles_WrathAndGlory table{
+        border: 2px solid var(--main-color);
+        border-collapse: collapse;
+    }
+    .Container_Regles_WrathAndGlory tr, td{
+        border: 2px solid var(--main-color);
+    }
+    .Bouton-Redirect-Pouvoirs-Psychiques{
+        background-color: black;
+        border: 2px solid hsl(0 0% 60%);
+        border-radius: 10px;
+        padding: 1rem;
+        color: hsl(0 0% 60%);
+        text-decoration: none;
+    }
+        .Bouton-Redirect-Pouvoirs-Psychiques:visited{
+            color: var(--main-color);
+            text-decoration: none;
+        }
 
 
 
 
 
 
+
+
+
+
+
+
+    .regles-nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        background-color: black;
+        border: 2px solid hsl(0 0% 60%);
+        border-radius: 10px;
+        color: hsl(0 0% 60%);
+        transition: all 0.3s;
+        min-width: 100px;
+    }
+        .regles-nav-btn:hover{
+            background-color: var(--main-color);
+            color: black;
+            border-color: var(--main-color);
+        }
+        .regles-nav-btn.active {
+            background-color: hsl(0 0% 60%);
+            color: black;
+        }
+        .regles-nav-btn:focus {
+            outline: none;
+        }
+    .regle-card{
+        background: rgba(255, 255, 255, 0.02);
+        border: 2px solid hsl(0 0% 60%);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .info-box {
+        background: rgba(59, 130, 246, 0.1);
+        border-radius: 10px;
+    }
+    .exemple-box {
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .success {
+        background: rgba(34, 197, 94, 0.1);
+        border: 1px solid #22c55e;
+    }
+
+    .critical {
+        background: rgba(234, 179, 8, 0.1);
+        border: 1px solid #eab308;
+    }
+
+    .fail {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid #ef4444;
+    }
+
+    .complication {
+        background: rgba(168, 85, 247, 0.1);
+        border: 1px solid #a855f7;
+    }
+    .exemple-grid-equipement {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    .exemple-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .exemple {
+        background-color: rgba(255, 255, 255, 0.02);
+        border-radius: 10px;
+        padding: 2rem;
+    }
+        .exemple h4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    .highlight-box {
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+    .highlight-box {
+        background: rgba(147, 51, 234, 0.1);
+    }
+    .regles-navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        justify-content: center;
+    }
+    .nav-text {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+
+    /*#endregion*/
+
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global{
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        padding: 5rem;
+        margin: auto;
+        width: 60vw;
+        background-color: black;
+        margin-top: 10rem;
+        margin-bottom: 20rem;
+    }
+    .Container-Augmentique{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5rem;
+    }
+        .Container-Augmentique strong{
+            text-decoration: underline;
+        }
+    .Augmentique {
+        width: 80%;
+        margin: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global{
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        padding: 5rem;
+        margin: auto;
+        width: 60vw;
+        background-color: black;
+        margin-top: 10rem;
+        margin-bottom: 20rem;
+    }
+    .Container-Equipement{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5rem; 
+    }
+        .Container-Equipement strong {
+            text-decoration: underline;
+        }
+    .Equipement {
+        width: 80%;
+        margin: auto;
+    }
+    /*#endregion Equipement*/
+
+    /*#region CreationArchetype*/
+    .Container-Archetype-Global{
+        width: 70vw;
+        margin-top: 20rem;
+        height: 75vh;
+    }
+        .Container-Archetype-Global h1{
+            font-size: 3.5rem;
+            text-align: center;
+        }
+    .Container-Bouton-Tier {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin: auto;
+        width: fit-content;
+    }
+    .Bouton-Tier{
+        border: 2px solid var(--main-color);
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: black;
+        padding: 1rem;
+    }
+        .Bouton-Tier:hover{
+            background-color: var(--main-color);
+            color: black;
+        }
+    .Active-Tier{
+        background-color: var(--main-color);
+        color: black;
+    }
+    .Container-Filtre{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        gap: 3rem;
+        margin: auto; 
+        width: fit-content;
+    }
+    .Filtre{
+        border: 2px solid var(--main-color);
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: black;
+        padding: 1rem;
+    }
+        .Filtre:hover{
+            background-color: var(--main-color);
+            color: black;
+        }
+    .Container-Archetype{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 20rem;
+    }
+    .Archetype{
+        background-color: black;
+        border-radius: 20px;
+        border: 2px solid var(--main-color);
+        padding: 5rem;
+        position: relative;
+        margin-bottom: 5rem;
+    }
+        .Archetype h4 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 0px;
+        }
+        .Archetype table{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .Archetype button{
+            background-color: black;
+            border: 2px solid var(--main-color);
+            color: green;
+            margin: auto;
+            display: block;
+            margin-top: 5rem;
+        }
+            .Archetype button:hover{
+                background-color: green;
+                border-color: green;
+                color: black;
+            }
+
+
+
+
+
+.dropdown {
+    width: 20vw;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    background-color: black;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+    margin-bottom: 5rem;
+    /* IMPORTANT: On retire overflow: auto ici */
+    position: relative; /* Pour que le body se place par rapport à lui */
+}
+
+.dropdown-header {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.dropdown-body {
+    /* Changement majeur : positionnement flottant */
+    position: absolute;
+    top: 105%; /* Se place juste en dessous du bord du header */
+    left: -2px; /* Aligné avec la bordure du parent (à cause du border 2px) */
+    width: calc(100% + 4px); /* Compense les bordures */
+
+    background-color: black;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    /* On déplace le scroll ici si la liste est trop longue */
+    max-height: 15rem;
+    overflow-y: auto;
+    display: none;
+    z-index: 9999;
+}
+
+    .dropdown-body.open {
+        display: block;
+    }
+
+.dropdown-item {
+    padding: 10px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Petit effet de survol */
+    }
+
+    .dropdown-item-dot {
+        opacity: 0;
+        color: #91A5BE;
+        transition: all .2s ease-in-out;
+    }
+
+        .dropdown-item-dot.selected {
+            opacity: 1;
+        }
+
+    .icon {
+        font-size: 13px;
+        color: #91A5BE;
+        transform: rotate(0deg);
+        transition: all .2s ease-in-out;
+    }
+
+        .icon.open {
+            transform: rotate(90deg);
+            z-index: 9999;
+        }
+
+
+
+    .Liste-Attributs-Archétype {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5rem;
+        list-style-type: none;
+    }
+
+
+    .Liste-Armes-Archétype {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        list-style-type: none;
+    }
+        .Liste-Armes-Archétype .Liste-Armes-Archétype {
+            list-style-type: circle;
+        }
+
+
+
+
+
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: black;
+    border: 2px solid var(--main-color);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+}
+
+.option-row {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.confirm-btn {
+    background: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+.Div-Checkbox-Confirmation {
+    position: relative;
+    margin: .5rem;
+    font-family: Arial, sans-serif;
+    line-height: 135%;
+    cursor: pointer;
+}
+
+.Checkbox-Confirmation {
+    position: relative;
+    top: rem(-6);
+    margin: 0 1rem 0 0;
+    cursor: pointer;
+
+    &:before {
+        transition: all .3s ease-in-out;
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #f2f2f2;
+        background: black;
+    }
+
+    &:checked {
+        &:before {
+            transform: rotate(-45deg);
+            height: .5rem;
+            border-color: green;
+            border-top-style: none;
+            border-right-style: none;
+            background: black;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: rem(-2);
+        left: 0;
+        width: 1.1rem;
+        height: 1.1rem;
+        background: #fff;
+        cursor: pointer;
+        background: black;
+    }
+}
+
+    /*#endregion*/
+
+    /*#region CreationAvancee*/
+    .Container-Creation-Avancee-Global{
+        width: 90vw;
+        margin-top: 20rem;
+        min-height: 75vh;
+        margin-bottom: 20rem;
+    }
+        .Container-Creation-Avancee-Global h1 {
+            font-size: 3.5rem;
+            text-align: center;
+        }
+        .Container-Creation-Avancee-Global .Input{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-left: 15rem;
+        }
+        .Container-Creation-Avancee-Global table{
+            border-collapse: collapse;
+            background-color: black;
+            width: 50%;
+            border: 2px solid var(--main-color);
+        }
+            .Container-Creation-Avancee-Global tr, tb{
+                border: 2px solid var(--main-color);
+            }
+        .Container-Creation-Avancee-Global input {
+            width: 100px;
+        }
+        .Container-Creation-Avancee-Global textarea{
+            background-color: black;
+            border: 2px solid var(--main-color);
+            border-radius: 10px;
+            color: var(--main-color);
+            font-size: 1.5rem;
+        }
+            .Container-Creation-Avancee-Global textarea:focus {
+                border: none;
+            }
+    .Input-Personage{
+        background-color: black;
+        border: none;
+        color: var(--main-color);
+        font-size: 1.5rem;
+    }
+        .Input-Personage:focus{
+            border: none;
+            outline: none;
+        }
+
+    .Bouton-Pouvoirs-Psychiques{
+        width: fit-content; 
+        background-color: black;
+        border-radius: 10px; 
+        border: 2px solid var(--main-color);
+        padding: 0.5rem;
+        color: var(--main-color);
+        cursor: pointer;
+    }
+        .Bouton-Pouvoirs-Psychiques:hover{
+            background-color: var(--main-color);
+        }
+        .Bouton-Pouvoirs-Psychiques label:hover {
+            color: black;
+            background-color: var(--main-color);
+            cursor: pointer;
+        }
+
+/* Le fond noir transparent qui couvre tout */
+.Grand-Container-Select-Pouvoir-Psychique {
+    position: fixed; /* Fixé par rapport à la fenêtre du navigateur */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% de la largeur de l'écran */
+    height: 100vh; /* 100% de la hauteur de l'écran */
+    background-color: rgba(0, 0, 0, 0.9); /* Fond très sombre */
+    z-index: 10000; /* Pour passer par-dessus TOUT le reste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+    .Grand-Container-Select-Pouvoir-Psychique.show {
+        display: flex; /* ✅ AJOUTÉ - affiche quand classe "show" */
+    }
+
+/* Le conteneur interne qui centre la boîte */
+.Container-Select-Pouvoir-Psychique {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La boîte blanche/noire qui contient les infos */
+.Select-Pouvoir-Psychique {
+    background-color: black;
+    border: 2px solid var(--main-color);
+    width: 90%; /* Largeur sur mobile */
+    max-width: 800px; /* Largeur max sur PC pour pas que ce soit trop large */
+    max-height: 90vh; /* Ne dépasse pas la hauteur de l'écran */
+    overflow-y: auto; /* Permet de scroller à l'intérieur si c'est trop long */
+    border-radius: 15px;
+    position: relative;
+}
+
+    /*.Grand-Container-Select-Pouvoir-Psychique{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 999999;
+    }
+    .Container-Select-Pouvoir-Psychique{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        overflow-y: auto;
+        align-items: flex-start;
+        padding: 40px 0;
+    }
+    .Select-Pouvoir-Psychique {
+        position: relative;
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        background-color: black;
+        min-width: 40vw;
+        min-height: 40vh;
+        max-width: 95%;
+        margin-bottom: 20px;
+    }*/
+        .Select-Pouvoir-Psychique .DDL-Pouvoir-Psychique{
+            margin: auto;
+            margin-top: 2rem;
+        }
+    .Bouton-Achat-Pouvoir-Psychique{
+        border: 2px solid #f1c40f;
+        border-radius: 20px;
+        color: #f1c40f;
+        background-color: black;
+        margin: auto;
+        display: block;
+        margin-top: 2rem;
+    }
+        .Bouton-Achat-Pouvoir-Psychique:hover {
+            color: black;
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+        }
+
+    .Bouton-Enregistrer-Personnage-Avancée{
+        color: green;
+        border: 2px solid green;
+        background-color: black;
+        margin: auto;
+        margin-top: 5rem;
+        display: block;
+    }
+        .Bouton-Enregistrer-Personnage-Avancée:hover {
+            background-color: green;
+            color: white;
+            border: 2px solid green;
+        }
+
+    /*#endregion CreationAvancee*/
+
+    /*#region ListePouvoirPsychique*/
+    .Table-Liste-Domaine-Psychique{
+            border-collapse: collapse;
+            background-color: black;
+            width: 50vw;
+            margin: auto;
+            margin-bottom: 20rem;
+    }
+        .Table-Liste-Domaine-Psychique thead{
+            background-color: grey;
+        }
+        .Table-Liste-Domaine-Psychique thead label {
+            color: black;
+        }
+        .Table-Liste-Domaine-Psychique tbody tr:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+        .Table-Liste-Domaine-Psychique tbody tr:hover label {
+            color: black;
+            cursor: pointer;
+        }
+    .Div-Liste-Pouvoirs-Psychiques{
+        display: block;
+        border: 2px solid var(--main-color);
+        border-radius: 40px;
+        width: 70vw;
+        background-color: black;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+        padding: 5rem;
+    }
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques{
+            margin: 5rem;
+            margin-bottom: 7.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .Div-Liste-Pouvoirs-Psychiques h3 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+    /*#endregion*/
+
+    /*#region ListeArme*/
+    .Container-Global-Liste-Armes{
+        background-color: black;
+        border: 2px solid var(--main-color);
+        border-radius: 20px;
+        width: 70vw;
+        margin: auto;
+        padding: 5rem;
+        margin-top: 10rem;
+        margin-bottom: 20rem;
+    }
+
+    .Container-Filtre-Arme{
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        padding: 1rem;
+        border: 2px solid hsl(0 0% 60%);
+        border-radius: 10px;
+        height: 64px;
+    }
+    .Filtre-Arme{
+        display: flex;
+        flex-direction: row; 
+        gap: 0.5rem;
+    }
+        .Filtre-Arme label{
+            align-content: center;
+        }
+        .Filtre-Arme input {
+            padding: 0.5rem;
+            min-width: 250px;
+            border: 2px solid hsl(0 0% 60%);
+            border-radius: 5px;
+            background-color: black;
+            color: hsl(0 0% 60%);
+            font-size: 1rem;
+        }
+        .Filtre-Arme select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            background-color: black;
+            color: hsl(0 0% 60%);
+            font-size: 1rem;
+            border: 2px solid hsl(0 0% 60%);
+        }
+        .Bouton-Reset-Filtre-Arme{
+            border: 2px solid hsl(0 0% 60%);
+            background-color: black;
+            color: hsl(0 0% 60%);
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+    .Container-Type-Arme{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+        .Container-Type-Arme h4 {
+            border-bottom: 2px solid;
+        }
+    .Arme{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 2.5rem;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 10px;
+        border: 2px solid var(--main-color);
+    }
+    .Arme .Nom-Arme{
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    /*#endregion*/
+
+    /*#region ListePersonnage*/
+    .Table-Liste-Personnages{
+        border-collapse: collapse;
+        border: none;
+        background-color: black;
+        width: 80vw;
+        max-width: 80vw;
+        margin-top: 10rem;
+    }
+        .Table-Liste-Domaine-Psychique tr, td{
+            border: none;
+            padding: 1rem;
+        }
+    .Bouton-Liste-Personnage{
+         width: 30px;
+        height: 30px;
+        border: 2px solid var(--main-color);
+        border-radius: 10px;
+        background-color: black;
+        padding: 1rem;
+    }
+    /*#endregion*/
+
+/*#endregion WrAtHaNdGlOrY*/
 

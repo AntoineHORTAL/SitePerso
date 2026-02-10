@@ -17,6 +17,11 @@
     /*#endregion PAGE CONNEXION ET INSCRIPTION*/
 
     /*#region ACCUEIL*/
+    .Container-Carte-JDR {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
     .CarteJDR{
         max-width: 400px;
     }
@@ -364,6 +369,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
     }
 
     .CarteJDR {
@@ -741,6 +749,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
     }
 
     .CarteJDR {
@@ -1117,6 +1128,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
     }
 
     .CarteJDR {
@@ -1496,6 +1510,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
     }
 
     .CarteJDR {
@@ -1872,6 +1889,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
     }
 
     .CarteJDR {
@@ -2246,6 +2266,9 @@
     /*#region ACCUEIL*/
     .Container-Carte-JDR {
         padding: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
     }
 
     .CarteJDR {

@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Launch Chrome",
-      "type": "chrome",
+      Type: "chrome",
       "request": "launch",
       "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}/src"
