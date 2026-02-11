@@ -95,7 +95,7 @@ function ListePouvoirPsychiques() {
                     <span>Retour</span>
                 </Link>
             </div>
-            <div>
+            <div className="Container-Global-Pouvoirs-Psychiques">
                 <h1 style={{ textAlign: 'center' }}>POUVOIRS PSYCHIQUES</h1>
                 <h2 style={{ textAlign: 'center' }}>DOMAINES PSYCHIQUES</h2>
                 <table className="Table-Liste-Domaine-Psychique">

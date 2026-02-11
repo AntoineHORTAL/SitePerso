@@ -202,10 +202,10 @@ function ListePersonnages() {
                         </div>
                         <h2 style={{ textAlign: 'center' }}>Création d'un nouveau personnage</h2>
                         <div style={{ display: 'flex', flexDirection: 'row', gap: '4rem', padding: '4rem' }}>
-                            <Link to='/WrathAndGlory_CreationPersonnageArchetype' style={{ border: '2px solid hsl(0 0% 60%)', borderRadius: '10px', padding: '1rem', width: '50%', alignContent: 'center' }} >
+                            <Link to='/WrathAndGlory_CreationPersonnageArchetype' className="Bouton-Creation-Personnage">
                                 <h3 style={{ textAlign: 'center' }}>Création par Archétype</h3>
                             </Link>
-                            <Link to='/WrathAndGlory_CreationPersonnageAvancee' style={{ border: '2px solid hsl(0 0% 60%)', borderRadius: '10px', padding: '1rem', width: '50%', alignContent: 'center' }}>
+                            <Link to='/WrathAndGlory_CreationPersonnageAvancee' className="Bouton-Creation-Personnage">
                                 <h3 style={{ textAlign: 'center' }}>Création Avancée</h3>
                             </Link>
                         </div>

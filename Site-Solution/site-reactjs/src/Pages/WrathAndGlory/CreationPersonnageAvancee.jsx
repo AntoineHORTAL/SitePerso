@@ -1134,12 +1134,12 @@ function CreationPersonnageAvancee() {
             </div>
             <div className="Container-Creation-Avancee-Global">
                 <h1>CRÉATION DE PERSONNAGE AVANCÉE</h1>
-                <div style={{ margin: 'auto', display: 'block', width: 'fit-content', position: 'sticky', top: '5rem', backgroundColor: 'black', padding: '1rem', borderRadius: '20px', border: '2px solid hsl(0 0% 60%)', zIndex: '999999' }}>
+                <div className="Container-PX-Restant">
                     <label>Il vous reste {pxRestant} PX</label>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    <div style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div>
+                    <div className="Container-Bloc-1-1">
                         <div className="Input">
                             <label>Nom : </label>
                             <input className="Input-Personage" type="text" style={{ width: '400px' }} value={nom} onChange={(e) => setNom(e.target.value)} />
@@ -1195,7 +1195,7 @@ function CreationPersonnageAvancee() {
                         <div className="Input" style={{ position: "relative" }}>
                             <label>Sous-Faction : </label>
                             {/*DDL Sous-Faction*/}
-                            <div className='dropdown' style={{ position: "absolute", left: '14rem', top: '-0.5rem' }}>
+                            <div className='dropdown DropDown-Sous-Faction'>
                                 <div className='dropdown-header' onClick={toggleDropdownSousFaction} style={{ height: '1rem' }}>
                                     {selectedItemSousFaction ? SousFaction.find(item => item.id === selectedItemSousFaction || item.sousfaction === sousFactionSelectionnée).sousfaction : "Toutes les Sous-Factions"}
                                     <i className={`fa fa-chevron-right icon ${isOpenSousFaction && "open"}`}></i>
@@ -1220,7 +1220,7 @@ function CreationPersonnageAvancee() {
                             <label>Historique : </label>
                             <textarea style={{ height: '11rem', resize: 'none' }} value={historique} onChange={(e) => setHistorique(e.target.value)}></textarea>
                         </div>
-                        <h3 style={{ textAlign: 'center', marginLeft: '15rem' }}>ATTRIBUTS</h3>
+                        <h3 className="Titre-Attributs" style={{ textAlign: 'center', marginLeft: '15rem' }}>ATTRIBUTS</h3>
                         <table style={{ width: '75%', marginLeft: '8rem' }}>
                             <thead>
                                 <tr>

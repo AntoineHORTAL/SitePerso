@@ -1197,72 +1197,74 @@ body {
 
     /*#region SystèmeGilead*/
     /*#region Modile_Low_Desktop*/
+        .SystemGilead_Mobil_LowDesktop_Display{
+            min-height: 100vh;
+            margin-top: 15vh;
+            margin-bottom: 15vh;
+        }
 
-    .SystemGilead_Mobil_LowDesktop_Display{
-        min-height: 100vh;
-        margin-top: 15vh;
-    }
-
-    .Container_Global_Btn_Planete {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-    .Container_Btn_Image_Planete {
-        display: flex;
-        flex-direction: column;
-        width: 204px;
-    }
-    .Container_Btn_Image_Planete span{
-        text-align: center;
-        width: 204px;
-        color: black;
-    }
-        .Container_Btn_Image_Planete:hover{
-            cursor: pointer;
+        .Container_Global_Btn_Planete {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 10vh;
         }
-        .Container_Btn_Image_Planete:hover .Btn_Image_Planete {
-            border-color: purple;
+        .Container_Btn_Image_Planete {
+            display: flex;
+            flex-direction: column;
+            width: 204px;
+            margin: auto;
         }
-        .Container_Btn_Image_Planete:hover span{
-            color: purple;
-            text-shadow: 1px 1px 2px black;
-        }
-    .Btn_Image_Planete {
-        width: 204px;
-        height: 204px;
-        padding: 0;
-        border-radius: 10px;
-        border: 2px solid var(--main-color);
-    }
-        .Btn_Image_Planete img {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-        }
-    .Container_Infos_Planetes_Mobile{
-        border: 2px solid;
-        border-radius: 20px;
-        background-color: black;
-        padding: 2rem;
-        width: 50vw;
-        margin: auto;
-    }
-        .Container_Infos_Planetes_Mobile h2{
+        .Container_Btn_Image_Planete span{
             text-align: center;
+            width: 204px;
+            color: black;
         }
+            .Container_Btn_Image_Planete:hover{
+                cursor: pointer;
+            }
+            .Container_Btn_Image_Planete:hover .Btn_Image_Planete {
+                border-color: purple;
+            }
+            .Container_Btn_Image_Planete:hover span{
+                color: purple;
+                text-shadow: 1px 1px 2px black;
+            }
+        .Btn_Image_Planete {
+            width: 204px;
+            height: 204px;
+            padding: 0;
+            border-radius: 10px;
+            border: 2px solid var(--main-color);
+        }
+            .Btn_Image_Planete img {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+            }
+        .Container_Infos_Planetes_Mobile{
+            border: 2px solid;
+            border-radius: 20px;
+            background-color: black;
+            padding: 2rem;
+            width: 50vw;
+            margin: auto;
+        }
+            .Container_Infos_Planetes_Mobile h2{
+                text-align: center;
+            }
     /*#endregion Modile_Low_Desktop*/
     /*#region Desktop*/
         @keyframes orb {
             from {
-        transform: rotate(0deg);
-    }
+                transform: rotate(0deg);
+            }
 
-    to {
-        transform: rotate(-360deg);
-    }
-}
+            to {
+                transform: rotate(-360deg);
+            }
+        }
 
 
 /* --- SOLAR SYSTEM STRUCTURE --- */
@@ -1688,19 +1690,24 @@ body {
         width: 80%;
         margin: auto;
     }
-    /*#endregion Augmentique*/
+    .Option-Mécadendrite{
+        width: 30vw;
+        margin: auto; 
+        margin-bottom: 2rem;
+    }
+/*#endregion Augmentique*/
 
     /*#region Equipement*/
-    .Container-Equipement-Global{
-        border: 2px solid var(--main-color);
-        border-radius: 20px;
-        padding: 5rem;
-        margin: auto;
-        width: 60vw;
-        background-color: black;
-        margin-top: 10rem;
-        margin-bottom: 20rem;
-    }
+.Container-Equipement-Global {
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    padding: 5rem;
+    margin: auto;
+    width: 60vw;
+    background-color: black;
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+}
     .Container-Equipement{
         display: flex;
         flex-direction: column;
@@ -1733,6 +1740,7 @@ body {
         gap: 3rem;
         margin: auto;
         width: fit-content;
+        margin-bottom: 5rem;
     }
     .Bouton-Tier{
         border: 2px solid var(--main-color);
@@ -1740,6 +1748,7 @@ body {
         cursor: pointer;
         background-color: black;
         padding: 1rem;
+        margin: auto;
     }
         .Bouton-Tier:hover{
             background-color: var(--main-color);
@@ -2006,15 +2015,39 @@ body {
     }
 }
 
-    /*#endregion*/
+.Label-CoutPX-Archetype {
+    position: absolute;
+    top: 4rem; 
+    right: 4rem;
+    font-weight: bold;
+}
 
+.Label-Faction-Archetype {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    font-weight: bold;
+}
+
+.Label-SousFaction-Archetype {
+    position: absolute;
+    top: 8rem;
+    right: 4rem;
+    font-weight: bold;
+}
+
+.Titre-Attributs-Conseil{
+    display: flex;
+}
+    /*#endregion*/
+    
     /*#region CreationAvancee*/
-    .Container-Creation-Avancee-Global{
-        width: 90vw;
-        margin-top: 20rem;
-        min-height: 75vh;
-        margin-bottom: 20rem;
-    }
+.Container-Creation-Avancee-Global {
+    width: 90vw;
+    margin-top: 20rem;
+    min-height: 75vh;
+    margin-bottom: 20rem;
+}
         .Container-Creation-Avancee-Global h1 {
             font-size: 3.5rem;
             text-align: center;
@@ -2052,6 +2085,7 @@ body {
         border: none;
         color: var(--main-color);
         font-size: 1.5rem;
+        border-bottom: 2px solid var(--main-color);
     }
         .Input-Personage:focus{
             border: none;
@@ -2114,39 +2148,6 @@ body {
     border-radius: 15px;
     position: relative;
 }
-
-    /*.Grand-Container-Select-Pouvoir-Psychique{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: none;
-        z-index: 999999;
-    }
-    .Container-Select-Pouvoir-Psychique{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(12px);
-        overflow-y: auto;
-        align-items: flex-start;
-        padding: 40px 0;
-    }
-    .Select-Pouvoir-Psychique {
-        position: relative;
-        border: 2px solid var(--main-color);
-        border-radius: 20px;
-        background-color: black;
-        min-width: 40vw;
-        min-height: 40vh;
-        max-width: 95%;
-        margin-bottom: 20px;
-    }*/
         .Select-Pouvoir-Psychique .DDL-Pouvoir-Psychique{
             margin: auto;
             margin-top: 2rem;
@@ -2178,6 +2179,25 @@ body {
             background-color: green;
             color: white;
             border: 2px solid green;
+        }
+
+        .Container-PX-Restant{
+            margin: auto;
+            display: block; 
+            width: fit-content;
+            position: sticky;
+            top: 5rem;
+            background-color: black;
+            padding: 1rem;
+            border-radius: 20px;
+            border: 2px solid hsl(0 0% 60%);
+            z-index: 999999;
+        }
+
+        .DropDown-Sous-Faction{
+            position: absolute;
+            top: -0.5rem;
+            left: 14rem;
         }
 
     /*#endregion CreationAvancee*/
@@ -2325,6 +2345,22 @@ body {
         background-color: black;
         padding: 1rem;
     }
+
+    .Bouton-Creation-Personnage{
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 10px;
+        padding: 1rem;
+        width: 50%;
+        align-content: center;
+    }
+        .Bouton-Creation-Personnage a {
+            color: var(--main-color);
+            text-decoration: none;
+        }
+            .Bouton-Creation-Personnage a:visited {
+                color: var(--main-color);
+                text-decoration: none;
+            }
     /*#endregion*/
 
 /*#endregion WrAtHaNdGlOrY*/

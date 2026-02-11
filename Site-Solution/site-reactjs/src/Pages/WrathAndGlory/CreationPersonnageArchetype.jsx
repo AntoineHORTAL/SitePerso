@@ -634,13 +634,14 @@ function CreationPersonnageArchetype() {
                     {archetypesFiltrés.length > 0 ? (
                         archetypesFiltrés.map((Arc) => (
                             <div className="Archetype" key={Arc.Id}>
-                                <label style={{ position: 'absolute', top: '4rem', right: '4rem', fontWeight: 'bold' }}>Coût PX :  {Arc.CoûtPX}</label>
-                                <label style={{ position: 'absolute', top: '4rem', left: '4rem', fontWeight: 'bold' }}>Faction :  {Faction.find(f => f.id === Arc.Faction).faction}</label>
-                                <label style={{ position: 'absolute', top: '8rem', left: '4rem', fontWeight: 'bold' }}>Sous-Faction :  {SousFaction.find(f => f.id === Arc.SousFaction).sousfaction}</label>
-
                                 <h4>{Arc.Nom}</h4><br />
-                                <label style={{ margin: 'auto', textAlign: 'center', display: 'block' }}>Espèce :  {ListeEspeces.find(e => e.Id === Arc.Espèces).Espèce}</label><br />
-                                <label style={{ margin: 'auto', textAlign: 'center', display: 'block' }}>Tier :  {Arc.Tier}</label><br />
+
+                                <label className="Label-CoutPX-Archetype">Coût PX :  {Arc.CoûtPX}</label>
+                                <label className="Label-Faction-Archetype">Faction :  {Faction.find(f => f.id === Arc.Faction).faction}</label>
+                                <label className="Label-SousFaction-Archetype">Sous-Faction :  {SousFaction.find(f => f.id === Arc.SousFaction).sousfaction}</label>
+
+                                <label style={{ margin: 'auto', textAlign: 'center', display: 'block' }}>Espèce :  {ListeEspeces.find(e => e.Id === Arc.Espèces).Espèce}</label>
+                                <label style={{ margin: 'auto', textAlign: 'center', display: 'block' }}>Tier :  {Arc.Tier}</label>
                                 <p><strong>{Arc.DescriptionCourte}</strong></p><br />
                                 <p>{Arc.DescriptionLongue}</p>
                                 <div>
@@ -796,7 +797,7 @@ function CreationPersonnageArchetype() {
                                                     Arc.Armes.map((arme, index) => (
                                                         <li key={index}>
                                                             <label><strong>{arme.Nom}</strong></label><br />
-                                                            <ul className="Liste-Armes-Archétype">
+                                                            <ul className="Liste-Armes-Archétype Sous-Liste-Attributs-Armes">
                                                                 <li>
                                                                     <label><strong>Description : </strong>{arme.Description}</label>
                                                                 </li>
@@ -882,10 +883,10 @@ function CreationPersonnageArchetype() {
 
                                     {Arc?.CoûtAttributConseil && Arc.CoûtAttributConseil > 0 && (
                                         <div>
-                                            <h3 style={{ display: 'flex' }}>ATTRIBUTS CONSEILLÉS<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CoûtAttributConseil}</span></h3>
+                                            <h3 className="Titre-Attributs-Conseil">ATTRIBUTS CONSEILLÉS<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CoûtAttributConseil}</span></h3>
                                             <table>
-                                                <tbody>
-                                                    <tr>
+                                                <tbody className="Tbody-Table-Attributs-Conseil">
+                                                    <tr className="Tr-Table-Attributs-Conseil">
                                                         <td>
                                                             <label>Attribut</label>
                                                         </td>
@@ -911,7 +912,7 @@ function CreationPersonnageArchetype() {
                                                             <label>Sociabilité</label>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr className="Tr-Table-Attributs-Conseil">
                                                         <td>
                                                             <label>Score</label>
                                                         </td>
@@ -944,7 +945,7 @@ function CreationPersonnageArchetype() {
 
                                     {Arc?.CompétencesConseilCoût && Arc.CompétencesConseilCoût > 0 && (
                                         <div>
-                                            <h3 style={{ display: 'flex' }}>COMPTENCES CONSEILLÉES<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CompétencesConseilCoût}</span></h3>
+                                            <h3 className="Titre-Attributs-Conseil">COMPTENCES CONSEILLÉES<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CompétencesConseilCoût}</span></h3>
                                             <ul className="Liste-Attributs-Archétype">
                                                 {Arc.CompetenceConseil?.Athlétisme && (
                                                     <li>

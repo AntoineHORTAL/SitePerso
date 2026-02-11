@@ -116,7 +116,7 @@ function ListeAugmentiques() {
                                 <h3 style={{ textAlign: 'center' }}>OPTION DE MÉCADENDRITE</h3>
                                 {Aug.Nom === "Mécadendrite" && Aug.Remarque && Aug.Remarque.trim() !== "" && (
                                     ListeOptionMécadendrite.map((Opt) => (
-                                        <p style={{ width: '30vw', margin: 'auto', marginBottom: '2rem' }}>
+                                        <p className="Option-Mécadendrite">
                                             <strong>{Opt.Nom}</strong><br />
                                             {Opt.Description}
                                         </p>
