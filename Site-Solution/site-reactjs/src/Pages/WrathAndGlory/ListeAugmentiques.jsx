@@ -113,7 +113,7 @@ function ListeAugmentiques() {
                                 <span><strong>Effet :</strong> {Aug.Effet}</span><br />
                                 <span><strong>Valeur :</strong> {Aug.Valeur}</span><br />
                                 <span><strong>Rareté :</strong> {Aug.Rareté}</span><br /><br />
-                                <h3 style={{ textAlign: 'center' }}>OPTION DE MÉCADENDRITE</h3>
+                                <h3 style={{ textAlign: 'center', display: (Aug.Nom === "Mécadendrite") ? 'block' : 'none' }}>OPTION DE MÉCADENDRITE</h3>
                                 {Aug.Nom === "Mécadendrite" && Aug.Remarque && Aug.Remarque.trim() !== "" && (
                                     ListeOptionMécadendrite.map((Opt) => (
                                         <p className="Option-Mécadendrite">
