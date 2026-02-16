@@ -123,7 +123,7 @@ function WrathAndGlory() {
                     <div className="Icone-Chevron-Right-CygnusProjects-Redirect">
                         <ChevronRightIcon
                             size={40}
-                            color={setIsHoveredBouton4 ? 'black' : 'hsl(0 0% 60%)'}
+                            color={setIsHoveredBouton4 ? 'hsl(0 0% 60%)' : 'black'}
                             style={{ margin: 'auto' }}
                         />
                     </div>
@@ -145,7 +145,7 @@ function WrathAndGlory() {
                     <div className="Icone-Chevron-Right-CygnusProjects-Redirect">
                         <ChevronRightIcon
                             size={40}
-                            color={setIsHoveredBouton5 ? 'black' : 'hsl(0 0% 60%)'}
+                            color={setIsHoveredBouton5 ? 'hsl(0 0% 60%)' : 'black'}
                             style={{ margin: 'auto' }}
                         />
                     </div>
@@ -167,7 +167,7 @@ function WrathAndGlory() {
                     <div className="Icone-Chevron-Right-CygnusProjects-Redirect">
                         <ChevronRightIcon
                             size={40}
-                            color={setIsHoveredBouton6 ? 'black' : 'hsl(0 0% 60%)'}
+                            color={setIsHoveredBouton6 ? 'hsl(0 0% 60%)' : 'black'}
                             style={{ margin: 'auto' }}
                         />
                     </div>
@@ -189,7 +189,7 @@ function WrathAndGlory() {
                     <div className="Icone-Chevron-Right-CygnusProjects-Redirect">
                         <ChevronRightIcon
                             size={40}
-                            color={setIsHoveredBouton7 ? 'black' : 'hsl(0 0% 60%)'}
+                            color={setIsHoveredBouton7 ? 'hsl(0 0% 60%)' : 'black'}
                             style={{ margin: 'auto' }}
                         />
                     </div>
