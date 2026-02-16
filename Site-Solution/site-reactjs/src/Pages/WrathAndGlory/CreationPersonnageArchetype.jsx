@@ -883,7 +883,7 @@ function CreationPersonnageArchetype() {
 
                                     {Arc?.CoûtAttributConseil && Arc.CoûtAttributConseil > 0 && (
                                         <div>
-                                            <h3 className="Titre-Attributs-Conseil">ATTRIBUTS CONSEILLÉS<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CoûtAttributConseil}</span></h3>
+                                            <h3 className="Titre-Attributs-Conseil">ATTRIBUTS CONSEILLÉS<span className="Span-Attributs-Conseil">Coût PX : {Arc.CoûtAttributConseil}</span></h3>
                                             <table>
                                                 <tbody className="Tbody-Table-Attributs-Conseil">
                                                     <tr className="Tr-Table-Attributs-Conseil">
@@ -945,7 +945,7 @@ function CreationPersonnageArchetype() {
 
                                     {Arc?.CompétencesConseilCoût && Arc.CompétencesConseilCoût > 0 && (
                                         <div>
-                                            <h3 className="Titre-Attributs-Conseil">COMPTENCES CONSEILLÉES<span style={{ marginRight: '5rem', marginLeft: 'auto', display: 'block' }}>Coût PX : {Arc.CompétencesConseilCoût}</span></h3>
+                                            <h3 className="Titre-Attributs-Conseil">COMPTENCES CONSEILLÉES<span className="Span-Compétences-Conseil">Coût PX : {Arc.CompétencesConseilCoût}</span></h3>
                                             <ul className="Liste-Attributs-Archétype">
                                                 {Arc.CompetenceConseil?.Athlétisme && (
                                                     <li>
@@ -1043,7 +1043,7 @@ function CreationPersonnageArchetype() {
 
                                     {Arc?.TallentConseil && Object.keys(Arc.TallentConseil).length > 0 && (
                                         <div>
-                                            <h3>TALENTS CONSEILLÉS</h3>
+                                            <h3 style={{ textAlign: 'center' }}>TALENTS CONSEILLÉS</h3>
                                             <ul className="Liste-Armes-Archétype">
                                                 {Arc?.TallentConseil && (
                                                     Arc?.TallentConseil.map((talent, index) => (

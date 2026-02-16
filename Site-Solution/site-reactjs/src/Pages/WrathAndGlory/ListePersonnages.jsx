@@ -201,7 +201,7 @@ function ListePersonnages() {
                             />
                         </div>
                         <h2 style={{ textAlign: 'center' }}>Création d'un nouveau personnage</h2>
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '4rem', padding: '4rem' }}>
+                        <div className="Container-Bouton-Creation-Personnage">
                             <Link to='/WrathAndGlory_CreationPersonnageArchetype' className="Bouton-Creation-Personnage">
                                 <h3 style={{ textAlign: 'center' }}>Création par Archétype</h3>
                             </Link>
@@ -268,7 +268,7 @@ function ListePersonnages() {
                     </tbody>
                 </table>
             ) : (
-                <h1>Vous n'avez pas encore créé de Personnage</h1>
+                <h1 className="Titre-Pas-Encore-Perso">Vous n'avez pas encore créé de Personnage</h1>
             )}
         </>
     );

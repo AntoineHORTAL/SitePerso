@@ -370,7 +370,8 @@
             width: 80vw;
         }
         .Container-Filtre-Arme{
-            min-height: 25vh;
+            min-height: 30vh;
+            height: auto;
         }
         /*#endregion Armes*/
 
@@ -431,12 +432,29 @@
             padding: 1rem;
             width: 80vw;
         }
+        .Titre-Systeme-Gilead{
+            top: 5rem;
+        }
         /*#endregion Système Gilead*/
 
         /*#region Liste Personnage*/
-        .Container-Bouton-Creation-Profil{
-            top: 7rem;
-            left: 0;
+        .Container-Bouton-Creation-Profil {
+            top: 7rem !important;
+            left: 20px !important;
+            width: 70vw !important;
+            right: auto !important;
+        }
+        .Titre-Pas-Encore-Perso{
+            margin-top: 15rem;
+            width: 400px;
+            overflow-wrap: break-word;
+        }
+        .Container-Bouton-Creation-Personnage{
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .Bouton-Creation-Personnage{
+            width: auto;
         }
         /*#endregion Liste Personnage*/
 
@@ -515,15 +533,27 @@
             flex-direction: column;
         }
 
+        .Span-Attributs-Conseil{
+            margin-right: 2rem;
+        }
+
+        .Span-Compétences-Conseil{
+            margin-right: 1rem;
+        }
+
         /*#endregion Creation Personnage Archétype*/
 
         /*#region Personnage Avancé*/
+        .Container-PX-Restant{
+            top: 1rem;
+        }
+
         .Container-Bloc-1{
             display: flex;
             flex-direction: column;
         }
         .Container-Bloc-1-1{
-            width: 50%; 
+            width: auto; 
             display: flex; 
             flex-direction: column; 
             gap: 1rem;
@@ -534,13 +564,17 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            margin-left: 0px;
         }
         .dropdown{
             margin: auto;
             margin-bottom: 0;
+            min-width: 62vw;
         }
         .dropdown-header{
             width: auto;
+            padding-left: 0px;
+            padding-right: 0px;
         }
         .DropDown-Sous-Faction{
             position: relative;
@@ -552,6 +586,400 @@
             text-align: center;
             margin-left: 0;
         }
+
+
+        .Table-Attributs-Personnage-Avancée{
+            width: 90vw !important;
+            display: flex;
+            flex-direction: row;
+            padding: 0px;
+        }
+
+            .Table-Attributs-Personnage-Avancée .Input-Personage {
+                width: 60px;
+            }
+
+            .Table-Attributs-Personnage-Avancée thead {
+                display: flex;
+                flex-direction: row;
+                width: 25%;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 0px;
+                }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+            .Table-Attributs-Personnage-Avancée tbody {
+                display: flex;
+                flex-direction: row;
+                width: 75%;
+            }
+
+                .Table-Attributs-Personnage-Avancée tbody tr {
+                    display: flex;
+                    flex-direction: column;
+                    width: 32.5%;
+                    padding: 0px;
+                }
+
+        .Table-Compétences-Personnage-Avancée{
+            width: 90vw !important;
+        }
+            .Table-Compétences-Personnage-Avancée tbody tr td {
+                width: 20vw;
+            }
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+            .Table-Compétences-Personnage-Avancée .Input-Personage{
+                width: 60px !important; 
+            }
+
+        #Table-Survie-Mobile {
+            display: table;
+            width: 90vw !important;
+        }
+            #Table-Survie-Mobile td {
+                width: 22.5vw !important;
+                overflow-wrap: break-word;
+                padding: 0.5rem;
+            }
+            #Table-Survie-Mobile textarea {
+                width: 22.5vw !important;
+            }
+            #Table-Survie-Mobile .Label-Max-Blessure {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+            #Table-Survie-Mobile .Label-Calcul-Blessure {
+                position: absolute; 
+                bottom: 10px; 
+                right: 10px; 
+                font-size: 0.75rem;
+            }
+            #Table-Survie-Mobile .Label-Max-Stress {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+            #Table-Survie-Mobile .Label-Calcul-Stress {
+                position: absolute;
+                bottom: 10px;
+                right: 10px; 
+                font-size: 0.75rem;
+            }
+            #Table-Survie-Mobile .Label-Max-Détermination {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 1rem;
+                font-weight: bold;
+                overflow-wrap: anywhere;
+            }
+            #Table-Survie-Mobile .Label-Calcul-Détermination {
+                position: absolute;
+                bottom: 10px; 
+                right: 10px;
+                font-size: 0.75rem;
+            }
+            #Table-Survie-Mobile .Label-Calcul-Défense {
+                position: absolute;
+                bottom: 10px; 
+                right: 10px;
+                font-size: 0.75rem;
+            }
+            #Table-Survie-Mobile .Label-Calcul-Résistance-Base {
+                position: absolute;
+                top: 0px; 
+                right: 0px;
+                font-size: 0.75rem;
+            }
+        #Table-Survie-Desktop {
+            display: none;
+        }
+
+        .Container-Talent-Aptitude{
+            flex-direction: column;
+        }
+        Container-Talent-Aptitude div:first-child {
+            width: none;
+        }
+        .Container-Talent{
+            width: 80vw;
+            margin: auto;
+        }
+        .Container-Talent-Bloc {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+            background-color: black;
+            padding: 2rem;
+            width: 70vw;
+        }
+            .Container-Talent .Bouton-Pouvoirs-Psychiques{
+                margin: auto;
+            }
+            .Container-Talent .Liste-Talent{
+                display: flex; 
+                flex-direction: column; 
+                gap: 2rem;
+                margin-top: 1rem;
+            }
+
+        .Container-Aptitudes {
+            width: 80vw;
+            margin: auto;
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile {
+            display: block;
+            border-collapse: collapse;
+            border: none;
+            width: 80vw;
+            margin-top: 3rem;
+        }
+            #Table-Pouvoirs-Psychique-Mobile td {
+                border-bottom: 2px solid rgb(153, 153, 153);
+                border-right: 2px solid rgb(153, 153, 153);
+            }
+            #Table-Pouvoirs-Psychique-Mobile thead tr td:first-child{
+                width: 60vw;
+            }
+
+        #Table-Pouvoirs-Psychique-Desktop {
+            display: none;
+        }
+
+        .Container-Pouvoirs-Psychiques {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+            min-height: 20vh;
+            width: 80vw;
+            margin: auto;
+            padding: 1rem;
+        }
+        .Container-Boutons-Pouvoirs-Psychiques {
+            display: flex;
+            flex-flow: wrap;
+            width: 100%;
+            gap: 1rem;
+        }
+        .Bouton-Pouvoirs-Psychiques{
+            margin: auto;
+        }
+
+
+
+        #Table-Armes-Mobile {
+            display: block;
+            border-collapse: collapse;
+            border: none;
+            width: 80vw;
+            margin-top: 3rem;
+        }
+
+            #Table-Armes-Mobile td {
+                border-bottom: 2px solid rgb(153, 153, 153);
+                border-right: 2px solid rgb(153, 153, 153);
+            }
+
+            #Table-Armes-Mobile thead tr td:first-child {
+                width: 60vw;
+            }
+
+        #Table-Armes-Desktop {
+            display: none;
+        }
+
+        .Container-Armes {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+            min-height: 20vh;
+            width: 80vw;
+            margin: auto;
+            padding: 1rem;
+        }
+        .Container-Boutons-Armes {
+            display: flex;
+            flex-flow: wrap;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        #Table-Armures-Mobile {
+            display: block;
+            border-collapse: collapse;
+            border: none;
+            width: 80vw;
+            margin-top: 3rem;
+        }
+
+            #Table-Armures-Mobile td {
+                border-bottom: 2px solid rgb(153, 153, 153);
+                border-right: 2px solid rgb(153, 153, 153);
+            }
+
+            #Table-Armures-Mobile thead tr td:first-child {
+                width: 60vw;
+            }
+
+        #Table-Armures-Desktop {
+            display: none;
+        }
+
+
+        .Container-Equipement-Influence-Richesse {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(153, 153, 153);
+            background-color: black;
+            border-radius: 20px;
+            width: 80vw;
+            margin: 5rem auto auto;
+        }
+
+        .Container-Equipement {
+            position: relative;
+        }
+            .Container-Equipement label {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .Container-Equipement textarea {
+                margin-top: auto;
+                margin-bottom: 0px;
+                display: block;
+                padding: 3rem 1rem 1rem;
+                resize: none;
+                border: none;
+                border-radius: 20px;
+            }
+        .Container-Influence-Richesse {
+            display: flex;
+            flex-direction: row;
+            height: 10vh;
+            border-top: 2px solid hsl(0 0% 60%);
+        }
+        .Container-Influence {
+            width: 50%;
+            position: relative;
+        }
+        .Container-Richesse {
+            border-left: 2px solid hsl(0 0% 60%);
+            width: 50%;
+            position: relative;
+        }
+
+        .Container-Influence .Label-Max-Influence {
+            position: absolute;
+            top: 0px;
+            left: 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .Container-Influence .Label-Calcul-Influence {
+            position: absolute; 
+            bottom: 10px; 
+            right: 10px; 
+            font-size: 0.75rem;
+        }
+
+        .Container-Richesse .Label-Max-Richesse {
+            position: absolute;
+            top: 0px;
+            left: 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .Container-Richesse .Label-Calcul-Richesse {
+            position: absolute; 
+            bottom: 10px; 
+            right: 10px; 
+            font-size: 0.75rem;
+        }
+
+        .Container-Richesse input {
+            margin: auto;
+            display: block;
+            height: 90%;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            align-items: stretch;
+        }
+        .Container-BlessureGrave {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+        }
+        .Container-BlessureGrave .Label-Maximum{
+            text-align: center;
+                width: 100%;
+                display: block;
+        }
+            .Container-BlessureGrave input {
+                width: 90%;
+                border-bottom: 2px solid rgb(153, 153, 153);
+            }
+        .Container-BlessureGuerre {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+        }
+            .Container-BlessureGuerre textarea {
+                width: 90%;
+                margin: auto;
+                height: 15vh;
+                display: block;
+                padding: 1rem;
+                resize: none;
+                border: none;
+                border-radius: 20px;
+            }
+        .Container-Mutation {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+        }
+            .Container-Mutation textarea {
+                width: 90%;
+                margin: auto;
+                height: 15vh;
+                display: block;
+                padding: 1rem;
+                resize: none;
+                border: none;
+                border-radius: 20px;
+            }
+        .Container-Corruption {
+            background-color: black;
+            border: 2px solid rgb(153, 153, 153);
+            border-radius: 20px;
+        }
+
         /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
@@ -941,6 +1369,729 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 30vh;
+        height: auto;
+    }
+
+    .Filtre-Arme{
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 5vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+/*#endregion Armes*/
+    
+    /*#region Pouvoirs Psychiques*/
+.Container-Global-Pouvoirs-Psychiques {
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+}
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: none;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: block;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 7rem !important;
+        left: 20px !important;
+        width: 70vw !important;
+        right: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: auto;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Filtre {
+        flex-direction: column;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 70vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Archetype {
+        margin-left: -2.5rem;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+
+    .Label-CoutPX-Archetype {
+        position: relative;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Label-Faction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        left: auto;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: 100%;
+            text-align: center;
+            margin-left: -1.25rem;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Container-Bloc-1-1 {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 62vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 90vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 90vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Mobile td {
+            width: 22.5vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+        #Table-Survie-Mobile textarea {
+            width: 22.5vw !important;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Blessure {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Blessure {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Stress {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Stress {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Détermination {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Détermination {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Défense {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Résistance-Base {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 0.75rem;
+        }
+
+    #Table-Survie-Desktop {
+        display: none;
+    }
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Pouvoirs-Psychique-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td {
+            width: 10vw;
+        }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: none;
+    }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Mobile thead tr td{
+            width: 10vw;
+        }
+
+    #Table-Armes-Desktop {
+        display: none;
+    }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Mobile thead tr td{
+            width: 10vw;
+        }
+
+    #Table-Armures-Desktop {
+        display: none;
+    }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 
@@ -1328,6 +2479,740 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 30vh;
+        height: auto;
+    }
+
+    .Filtre-Arme {
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 5vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+    /*#endregion Armes*/
+
+    /*#region Pouvoirs Psychiques*/
+    .Container-Global-Pouvoirs-Psychiques {
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: none;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: block;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 30px !important;
+        width: 50vw !important;
+        right: 30px !important;
+        left: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: 50%;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Filtre {
+        flex-direction: column;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 70vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Archetype {
+        margin-left: -2.5rem;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Archetype table {
+            width: 40vw !important;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+        }
+
+
+    .Label-CoutPX-Archetype {
+        position: relative;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Label-Faction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        left: auto;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: 100%;
+            text-align: center;
+            margin-left: -1.25rem;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Container-Bloc-1-1 {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    textarea.Input-Personage{
+        width: 70vw !important;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 62vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 90vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 90vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Mobile td {
+            width: 22.5vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+        #Table-Survie-Mobile textarea {
+            width: 22.5vw !important;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Blessure {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Blessure {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Stress {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Stress {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Détermination {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Détermination {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Défense {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Résistance-Base {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 0.75rem;
+        }
+
+    #Table-Survie-Desktop {
+        display: none;
+    }
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Pouvoirs-Psychique-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: none;
+    }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Armes-Desktop {
+        display: none;
+    }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Armures-Desktop {
+        display: none;
+    }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 }
@@ -1718,6 +3603,740 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 30vh;
+        height: auto;
+    }
+
+    .Filtre-Arme {
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 5vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+    /*#endregion Armes*/
+
+    /*#region Pouvoirs Psychiques*/
+    .Container-Global-Pouvoirs-Psychiques {
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: none;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: block;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 30px !important;
+        width: 42vw !important;
+        right: 30px !important;
+        left: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: 50%;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Filtre {
+        flex-direction: column;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 70vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Archetype {
+        margin-left: -2.5rem;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Archetype table {
+            width: 40vw !important;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+        }
+
+
+    .Label-CoutPX-Archetype {
+        position: relative;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Label-Faction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        left: auto;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: sticky;
+        width: 100%;
+        display: block;
+        text-align: center;
+        top: auto;
+        right: auto;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: 100%;
+            text-align: center;
+            margin-left: -1.25rem;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Container-Bloc-1-1 {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    textarea.Input-Personage {
+        width: 70vw !important;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 62vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 90vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 90vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Mobile td {
+            width: 22.5vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+        #Table-Survie-Mobile textarea {
+            width: 22.5vw !important;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Blessure {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Blessure {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Stress {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Stress {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Max-Détermination {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Détermination {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Défense {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+        }
+
+        #Table-Survie-Mobile .Label-Calcul-Résistance-Base {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 0.75rem;
+        }
+
+    #Table-Survie-Desktop {
+        display: none;
+    }
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Pouvoirs-Psychique-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: none;
+    }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Armes-Desktop {
+        display: none;
+    }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: block;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Mobile td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Mobile thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Mobile thead tr td {
+            width: 15vw;
+        }
+
+    #Table-Armures-Desktop {
+        display: none;
+    }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.75rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 90%;
+            margin: auto;
+            height: 15vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 }
@@ -2106,6 +4725,775 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 10vh;
+        height: auto;
+    }
+
+    .Filtre-Arme {
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 5vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+    /*#endregion Armes*/
+
+    /*#region Pouvoirs Psychiques*/
+    .Container-Global-Pouvoirs-Psychiques {
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: block;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: none;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+    .trollius {
+        box-shadow: black 0px 0px 40px 6rem !important;
+    }
+    .Div-Infos-PLanetes{
+        top: 7rem;
+        max-width: 20vw !important;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 30px !important;
+        width: 35vw !important;
+        right: 30px !important;
+        left: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: 50%;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Archetype-Global {
+        width: 90vw;
+    }
+
+    .Container-Filtre {
+        flex-direction: column;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 70vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Container-Archetype{
+        gap: 5rem;
+    }
+
+    .Archetype {
+        padding: 1rem;
+        width: 80vw;
+        margin: auto;
+    }
+
+        .Archetype table {
+            width: 80vw !important;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+
+    .Label-CoutPX-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .Label-Faction-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: absolute;
+        max-width: 20vw;
+        top: 4rem;
+        left: 1rem;
+        text-align: left;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: fit-content;
+            text-align: center;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0;
+    }
+
+        .Tr-Table-Attributs-Conseil td {
+            overflow-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+        .Tr-Table-Attributs-Conseil td label {
+            overflow-wrap: break-word;
+        }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    .Container-Bloc-1-1 {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    textarea.Input-Personage {
+        width: 70vw !important;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 30vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 40vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 40vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: none;
+        width: 90vw !important;
+    }
+
+    #Table-Survie-Desktop {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Desktop td {
+            width: 11.25vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+    #Table-Survie-Desktop textarea {
+        width: 11.25vw !important;
+    }
+
+    #Table-Survie-Desktop .Label-Max-Blessure {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    #Table-Survie-Desktop .Label-Calcul-Blessure {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    #Table-Survie-Desktop .Label-Max-Stress {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    #Table-Survie-Desktop .Label-Calcul-Stress {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    #Table-Survie-Desktop .Label-Max-Détermination {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        overflow-wrap: anywhere;
+    }
+
+    #Table-Survie-Desktop .Label-Calcul-Détermination {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    #Table-Survie-Desktop .Label-Calcul-Défense {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    #Table-Survie-Desktop .Label-Calcul-Résistance-Base {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        font-size: 1rem;
+    }
+
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: none;
+    }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+        #Table-Pouvoirs-Psychique-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td {
+            width: 15vw;
+        }
+
+        #Table-Pouvoirs-Psychique-Mobile thead tr td:last-child {
+            display: none;
+        }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: none;
+    }
+
+    #Table-Armes-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Desktop thead tr td {
+            width: 15vw;
+        }
+
+        #Table-Armes-Desktop thead tr td:last-child {
+            display: none;
+        }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: none;
+    }
+
+    #Table-Armures-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Desktop thead tr td {
+            width: 15vw;
+        }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+            height: 20vh;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 }
@@ -2491,6 +5879,782 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 10vh;
+        height: auto;
+    }
+
+    .Filtre-Arme {
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 5vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+    /*#endregion Armes*/
+
+    /*#region Pouvoirs Psychiques*/
+    .Container-Global-Pouvoirs-Psychiques {
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: block;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: none;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+
+    .trollius {
+        box-shadow: black 0px 0px 40px 6rem !important;
+    }
+
+    .Div-Infos-PLanetes {
+        top: 7rem;
+        max-width: 25vw !important;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 30px !important;
+        width: 26vw !important;
+        right: 30px !important;
+        left: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: 50%;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Archetype-Global {
+        width: 90vw;
+    }
+
+    .dropdown{
+        min-width: 25vw !important;
+    }
+
+    .Container-Filtre {
+        flex-direction: row;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 25vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Container-Archetype {
+        gap: 5rem;
+    }
+
+    .Archetype {
+        padding: 1rem;
+        width: 80vw;
+        margin: auto;
+    }
+
+        .Archetype table {
+            width: 80vw !important;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+
+    .Label-CoutPX-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .Label-Faction-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: absolute;
+        max-width: 20vw;
+        top: 4rem;
+        left: 1rem;
+        text-align: left;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: fit-content;
+            text-align: center;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0;
+    }
+
+        .Tr-Table-Attributs-Conseil td {
+            overflow-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+            .Tr-Table-Attributs-Conseil td label {
+                overflow-wrap: break-word;
+            }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    .Container-Bloc-1-1 {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    textarea.Input-Personage {
+        width: 70vw !important;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 30vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 40vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 40vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: none;
+        width: 90vw !important;
+    }
+
+    #Table-Survie-Desktop {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Desktop td {
+            width: 11.25vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+        #Table-Survie-Desktop textarea {
+            width: 11.25vw !important;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Blessure {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Blessure {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Stress {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Stress {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Détermination {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Détermination {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Défense {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Résistance-Base {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 1rem;
+        }
+
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: none;
+    }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Pouvoirs-Psychique-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td {
+            width: 15vw;
+        }
+
+            #Table-Pouvoirs-Psychique-Desktop thead tr td:last-child {
+                display: table-cell;
+            }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: none;
+    }
+
+    #Table-Armes-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Desktop thead tr td {
+            width: 15vw;
+        }
+
+            #Table-Armes-Desktop thead tr td:last-child {
+                display: table-cell;
+            }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: none;
+    }
+
+    #Table-Armures-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Desktop thead tr td {
+            width: 15vw;
+        }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+            height: 20vh;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 }
@@ -2877,6 +7041,782 @@
     /*#endregion CYGNUS'SPROJECTS*/
 
     /*#region WRATH AND GLORY*/
+    /*#region Augmentique*/
+    .Container-Augmentiques-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Option-Mécadendrite {
+        width: auto;
+    }
+    /*#endregion Augmentique*/
+
+    /*#region Equipement*/
+    .Container-Equipement-Global {
+        padding: 1rem;
+        width: 80vw;
+    }
+    /*#endregion Equipement*/
+
+    /*#region Armes*/
+    .Container-Global-Liste-Armes {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Container-Filtre-Arme {
+        min-height: 10vh;
+        height: auto;
+    }
+
+    .Filtre-Arme {
+        align-items: center;
+    }
+
+        .Filtre-Arme select {
+            height: 3vh;
+        }
+
+    .Bouton-Reset-Filtre-Arme {
+        margin: auto;
+    }
+    /*#endregion Armes*/
+
+    /*#region Pouvoirs Psychiques*/
+    .Container-Global-Pouvoirs-Psychiques {
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+    }
+
+    .Div-Liste-Pouvoirs-Psychiques {
+        margin-top: 0;
+        margin: auto;
+        padding: 1rem;
+        width: 80vw;
+    }
+
+        .Div-Liste-Pouvoirs-Psychiques .Pouvoirs-Psychiques {
+            margin: 0;
+            margin-bottom: 10rem;
+        }
+    /*#endregion Pouvoirs Psychiques*/
+
+    /*#region RèglesJeu*/
+    .Container_Regles_WrathAndGlory {
+        width: 80vw;
+        padding: 1rem;
+    }
+
+    .section-content h2 {
+        text-align: center;
+    }
+
+    .exemple-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .exemple-grid-equipement {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        .exemple-grid-equipement .exemple {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+    .Tableau-Agravation-Effet-Survie td {
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .regle-card a {
+        width: auto;
+        display: block;
+    }
+    /*#endregion RèglesJeu*/
+
+    /*#region Système Gilead*/
+    .SystemeGilead_Desktop_Display {
+        display: block;
+        margin-top: 30vh;
+    }
+
+    .SystemGilead_Mobil_LowDesktop_Display {
+        display: none;
+    }
+
+    .Container_Infos_Planetes_Mobile {
+        padding: 1rem;
+        width: 80vw;
+    }
+
+    .Titre-Systeme-Gilead {
+        top: 5rem;
+    }
+
+    .trollius {
+        box-shadow: black 0px 0px 40px 6rem !important;
+    }
+
+    .Div-Infos-PLanetes {
+        top: 7rem;
+        max-width: 30vw !important;
+    }
+    /*#endregion Système Gilead*/
+
+    /*#region Liste Personnage*/
+    .Container-Bouton-Creation-Profil {
+        top: 30px !important;
+        width: 20vw !important;
+        right: 30px !important;
+        left: auto !important;
+    }
+
+    .Titre-Pas-Encore-Perso {
+        margin-top: 15rem;
+        width: 400px;
+        overflow-wrap: break-word;
+    }
+
+    .Container-Bouton-Creation-Personnage {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .Bouton-Creation-Personnage {
+        width: 50%;
+    }
+    /*#endregion Liste Personnage*/
+
+    /*#region Creation Personnage Archétype*/
+    .Container-Archetype-Global {
+        width: 90vw;
+    }
+
+    .dropdown {
+        min-width: 25vw !important;
+    }
+
+    .Container-Filtre {
+        flex-direction: row;
+    }
+
+        .Container-Filtre .dropdown {
+            width: 25vw;
+        }
+
+            .Container-Filtre .dropdown .drowdown-header {
+                width: auto;
+            }
+
+    .Container-Archetype {
+        gap: 5rem;
+    }
+
+    .Archetype {
+        padding: 1rem;
+        width: 80vw;
+        margin: auto;
+    }
+
+        .Archetype table {
+            width: 80vw !important;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+
+    .Label-CoutPX-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .Label-Faction-Archetype {
+        position: absolute;
+        width: fit-content;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .Label-SousFaction-Archetype {
+        position: absolute;
+        max-width: 20vw;
+        top: 4rem;
+        left: 1rem;
+        text-align: left;
+    }
+
+    .Liste-Attributs-Archétype {
+        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .Liste-Attributs-Archétype li {
+            width: fit-content;
+            text-align: center;
+        }
+
+    .Liste-Armes-Archétype {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+        .Liste-Armes-Archétype .Sous-Liste-Attributs-Armes {
+            margin-left: 4rem;
+        }
+
+    .Titre-Attributs-Conseil {
+        text-align: center;
+    }
+
+    .Tbody-Table-Attributs-Conseil {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Tr-Table-Attributs-Conseil {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        padding: 0;
+    }
+
+        .Tr-Table-Attributs-Conseil td {
+            overflow-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+            border: 2px solid hsl(0 0% 60%);
+        }
+
+            .Tr-Table-Attributs-Conseil td label {
+                overflow-wrap: break-word;
+            }
+
+    .Span-Attributs-Conseil {
+        margin-right: 2rem;
+    }
+
+    .Span-Compétences-Conseil {
+        margin-right: 1rem;
+    }
+
+    /*#endregion Creation Personnage Archétype*/
+
+    /*#region Personnage Avancé*/
+    .Container-PX-Restant {
+        top: 1rem;
+    }
+
+    .Container-Bloc-1 {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    .Container-Bloc-1-1 {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    textarea.Input-Personage {
+        width: 70vw !important;
+    }
+
+    .Container-Creation-Avancee-Global .Input {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
+
+    .dropdown {
+        margin: auto;
+        margin-bottom: 0;
+        min-width: 30vw;
+    }
+
+    .dropdown-header {
+        width: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .DropDown-Sous-Faction {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 80vw;
+    }
+
+    .Titre-Attributs {
+        text-align: center;
+        margin-left: 0;
+    }
+
+
+    .Table-Attributs-Personnage-Avancée {
+        width: 40vw !important;
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+        .Table-Attributs-Personnage-Avancée .Input-Personage {
+            width: 60px;
+        }
+
+        .Table-Attributs-Personnage-Avancée thead {
+            display: flex;
+            flex-direction: row;
+            width: 25%;
+        }
+
+            .Table-Attributs-Personnage-Avancée thead tr {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+            }
+
+                .Table-Attributs-Personnage-Avancée thead tr td {
+                    height: 12.5%;
+                }
+
+        .Table-Attributs-Personnage-Avancée tbody {
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+        }
+
+            .Table-Attributs-Personnage-Avancée tbody tr {
+                display: flex;
+                flex-direction: column;
+                width: 32.5%;
+                padding: 0px;
+            }
+
+    .Table-Compétences-Personnage-Avancée {
+        width: 40vw !important;
+    }
+
+        .Table-Compétences-Personnage-Avancée tbody tr td {
+            width: 20vw;
+        }
+
+            .Table-Compétences-Personnage-Avancée tbody tr td:first-child {
+                overflow-wrap: break-word;
+                display: block;
+            }
+
+        .Table-Compétences-Personnage-Avancée .Input-Personage {
+            width: 60px !important;
+        }
+
+    #Table-Survie-Mobile {
+        display: none;
+        width: 90vw !important;
+    }
+
+    #Table-Survie-Desktop {
+        display: table;
+        width: 90vw !important;
+    }
+
+        #Table-Survie-Desktop td {
+            width: 11.25vw !important;
+            overflow-wrap: break-word;
+            padding: 0.5rem;
+        }
+
+        #Table-Survie-Desktop textarea {
+            width: 11.25vw !important;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Blessure {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Blessure {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Stress {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Stress {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Max-Détermination {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Détermination {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Défense {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1rem;
+        }
+
+        #Table-Survie-Desktop .Label-Calcul-Résistance-Base {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 1rem;
+        }
+
+
+    .Container-Talent-Aptitude {
+        flex-direction: column;
+    }
+
+    Container-Talent-Aptitude div:first-child {
+        width: none;
+    }
+
+    .Container-Talent {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .Container-Talent-Bloc {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        background-color: black;
+        padding: 2rem;
+        width: 70vw;
+    }
+
+    .Container-Talent .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+    .Container-Talent .Liste-Talent {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .Container-Aptitudes {
+        width: 80vw;
+        margin: auto;
+    }
+
+    #Table-Pouvoirs-Psychique-Mobile {
+        display: none;
+    }
+
+    #Table-Pouvoirs-Psychique-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Pouvoirs-Psychique-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Pouvoirs-Psychique-Desktop thead tr td {
+            width: 15vw;
+        }
+
+            #Table-Pouvoirs-Psychique-Desktop thead tr td:last-child {
+                display: table-cell;
+            }
+
+    .Container-Pouvoirs-Psychiques {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Pouvoirs-Psychiques {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .Bouton-Pouvoirs-Psychiques {
+        margin: auto;
+    }
+
+
+
+    #Table-Armes-Mobile {
+        display: none;
+    }
+
+    #Table-Armes-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armes-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armes-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armes-Desktop thead tr td {
+            width: 15vw;
+        }
+
+            #Table-Armes-Desktop thead tr td:last-child {
+                display: table-cell;
+            }
+
+    .Container-Armes {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+        min-height: 20vh;
+        width: 80vw;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .Container-Boutons-Armes {
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    #Table-Armures-Mobile {
+        display: none;
+    }
+
+    #Table-Armures-Desktop {
+        display: table;
+        border-collapse: collapse;
+        border: none;
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+        #Table-Armures-Desktop td {
+            border-bottom: 2px solid rgb(153, 153, 153);
+            border-right: 2px solid rgb(153, 153, 153);
+        }
+
+        #Table-Armures-Desktop thead tr td:first-child {
+            width: 60vw !important;
+        }
+
+        #Table-Armures-Desktop thead tr td {
+            width: 15vw;
+        }
+
+
+    .Container-Equipement-Influence-Richesse {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(153, 153, 153);
+        background-color: black;
+        border-radius: 20px;
+        width: 80vw;
+        margin: 5rem auto auto;
+    }
+
+    .Container-Equipement {
+        position: relative;
+    }
+
+        .Container-Equipement label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .Container-Equipement textarea {
+            margin-top: auto;
+            margin-bottom: 0px;
+            display: block;
+            padding: 3rem 1rem 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+            height: 20vh;
+        }
+
+    .Container-Influence-Richesse {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        border-top: 2px solid hsl(0 0% 60%);
+    }
+
+    .Container-Influence {
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Richesse {
+        border-left: 2px solid hsl(0 0% 60%);
+        width: 50%;
+        position: relative;
+    }
+
+    .Container-Influence .Label-Max-Influence {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Influence .Label-Calcul-Influence {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse .Label-Max-Richesse {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .Container-Richesse .Label-Calcul-Richesse {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .Container-Richesse input {
+        margin: auto;
+        display: block;
+        height: 90%;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .Container-BlessureGrave-BlessureGuerre-Mutation-Corruption {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .Container-BlessureGrave {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGrave .Label-Maximum {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .Container-BlessureGrave input {
+            width: 90%;
+            border-bottom: 2px solid rgb(153, 153, 153);
+        }
+
+    .Container-BlessureGuerre {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-BlessureGuerre textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Mutation {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+        .Container-Mutation textarea {
+            width: 94%;
+            margin: auto;
+            height: 30vh;
+            display: block;
+            padding: 1rem;
+            resize: none;
+            border: none;
+            border-radius: 20px;
+        }
+
+    .Container-Corruption {
+        background-color: black;
+        border: 2px solid rgb(153, 153, 153);
+        border-radius: 20px;
+    }
+
+    /*#endregion Personnage Avancée*/
 
     /*#endregion WRATH AND GLORY*/
 }

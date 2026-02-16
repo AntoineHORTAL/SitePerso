@@ -1138,7 +1138,7 @@ function CreationPersonnageAvancee() {
                     <label>Il vous reste {pxRestant} PX</label>
                 </div>
 
-                <div>
+                <div className="Container-Bloc-1">
                     <div className="Container-Bloc-1-1">
                         <div className="Input">
                             <label>Nom : </label>
@@ -1214,14 +1214,14 @@ function CreationPersonnageAvancee() {
                         </div>
                         <div className="Input">
                             <label>Mots-Clés : </label>
-                            <input className="Input-Personage" type="text" style={{ width: '400px' }} value={motsCles} onChange={(e) => setMotsCles(e.target.value)} />
+                            <textarea className="Input-Personage" type="text" style={{ width: '400px' }} value={motsCles} onChange={(e) => setMotsCles(e.target.value)}></textarea>
                         </div>
                         <div className="Input" style={{ flexDirection: 'column', display: 'flex' }}>
                             <label>Historique : </label>
                             <textarea style={{ height: '11rem', resize: 'none' }} value={historique} onChange={(e) => setHistorique(e.target.value)}></textarea>
                         </div>
-                        <h3 className="Titre-Attributs" style={{ textAlign: 'center', marginLeft: '15rem' }}>ATTRIBUTS</h3>
-                        <table style={{ width: '75%', marginLeft: '8rem' }}>
+                        <h3 className="Titre-Attributs" style={{ textAlign: 'center' }}>ATTRIBUTS</h3>
+                        <table className="Table-Attributs-Personnage-Avancée">
                             <thead>
                                 <tr>
                                     <td style={{ width: '15%' }}>
@@ -1506,9 +1506,9 @@ function CreationPersonnageAvancee() {
                             </tbody>
                         </table>
                     </div>
-                    <div style={{ width: '50%' }}>
-                        <h3 style={{ textAlign: 'center' }}>COMPÉTENCES</h3>
-                        <table style={{ width: '75%', margin: 'auto', height: '60vh' }}>
+                    <div>
+                        <h3 className="Titre-Attributs" style={{ textAlign: 'center' }}>COMPÉTENCES</h3>
+                        <table className="Table-Compétences-Personnage-Avancée">
                             <thead>
                                 <tr>
                                     <td colSpan='2'>
@@ -2086,13 +2086,14 @@ function CreationPersonnageAvancee() {
                 </div>
 
                 <h3 style={{ textAlign: 'center' }}>SURVIE</h3>
-                <table style={{ width: '90%', margin: 'auto'}}>
+
+                <table id="Table-Survie-Desktop">
                     <thead>
                         <tr>
-                            <td style={{ width: '12.5%' }}>
+                            <td style={{ width: '11.25%' }}>
                                 <h4 style={{ textAlign: 'center' }}>Défense</h4>
                             </td>
-                            <td colSpan='3' style={{ width: '37.5%' }}>
+                            <td colSpan='3' style={{ width: '38.75%' }}>
                                 <h4 style={{ textAlign: 'center' }}>Résistance</h4>
                             </td>
                             <td colSpan='2' style={{ width: '25%' }}>
@@ -2126,8 +2127,8 @@ function CreationPersonnageAvancee() {
                                 <textarea style={{ height: '11rem', resize: 'none', border: 'none' }} value={blessures} onChange={(e) => setBlessures(e.target.value)}></textarea>
                                 </td>
                             <td rowSpan='2' style={{ position: 'relative' }}>
-                                <label style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '1.25rem', fontWeight: 'bold' }}>MAX</label>
-                                <label style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '1rem' }}>= E + (2x Tier)</label>
+                                <label className="Label-Max-Blessure">MAX</label>
+                                <label className="Label-Calcul-Blessure">= E + (2x Tier)</label>
                                 <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
                                     {
                                         endurance + (2 * tier)
@@ -2138,8 +2139,8 @@ function CreationPersonnageAvancee() {
                                 <textarea style={{ height: '11rem', resize: 'none', border: 'none' }} value={stress} onChange={(e) => setStress(e.target.value)}></textarea>
                             </td>
                             <td style={{ position: 'relative', width: '15%' }}>
-                                <label style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '1.25rem', fontWeight: 'bold' }}>MAX</label>
-                                <label style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '1rem' }}>= FM + Tier</label>
+                                <label className="Label-Max-Stress">MAX</label>
+                                <label className="Label-Calcul-Stress">= FM + Tier</label>
                                 <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
                                     {
                                         forceMentale + tier
@@ -2171,19 +2172,125 @@ function CreationPersonnageAvancee() {
                                 </label>
                             </td>
                             <td style={{ position: 'relative' }}>
-                                <label style={{ position: 'absolute', top: '10px', left: '10px', fontSize: '1.25rem', fontWeight: 'bold' }}>Détermination</label>
-                                <label style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '1rem' }}>= E</label>
+                                <label className="Label-Max-Détermination">Détermination</label>
+                                <label className="Label-Calcul-Détermination">= E</label>
                                 <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}> { endurance } </label>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div style={{ display: 'flex', flexDirection: 'row', gap: '5rem' }}>
-                    <div style={{ width: '40%', margin: 'auto' }}>
+
+                <table id="Table-Survie-Mobile">
+                    <thead>
+                        <tr>
+                            <td style={{ width: '12.5%' }}>
+                                <h4 style={{ textAlign: 'center' }}>Défense</h4>
+                            </td>
+                            <td colSpan='3' style={{ width: '37.5%' }}>
+                                <h4 style={{ textAlign: 'center' }}>Résistance</h4>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowSpan='2' style={{ position: 'relative', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        initiative - 1
+                                    }
+                                </label>
+                                <label className="Label-Calcul-Défense">= Initiative - 1</label>
+                            </td>
+                            <td>
+                                <label style={{ textAlign: 'center', margin: 'auto', display: 'block' }}>Base</label>
+                            </td>
+                            <td>
+                                <label style={{ textAlign: 'center', margin: 'auto', display: 'block' }}>Armure</label>
+                            </td>
+                            <td>
+                                <label style={{ textAlign: 'center', margin: 'auto', display: 'block' }}>Total</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{ position: 'relative' }}>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        endurance + 1
+                                    }
+                                </label>
+                                <label className="Label-Calcul-Résistance-Base">= Endurance + 1</label>
+                            </td>
+                            <td>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        Math.max(0, ...ArmurePossedees.map(a => Number(a.Ar) || 0))
+                                    }
+                                </label>
+                            </td>
+                            <td>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        (endurance + 1) + (Math.max(0, ...ArmurePossedees.map(a => Number(a.Ar) || 0)))
+                                    }
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <td colSpan='2' style={{ width: '25%' }}>
+                                <h4 style={{ textAlign: 'center' }}>Bléssures</h4>
+                            </td>
+                            <td colSpan='2' style={{ width: '25%' }}>
+                                <h4 style={{ textAlign: 'center' }}>Stress</h4>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowSpan='2' style={{ width: '12.5%' }}>
+                                <textarea style={{ height: '11rem', resize: 'none', border: 'none' }} value={blessures} onChange={(e) => setBlessures(e.target.value)}></textarea>
+                            </td>
+                            <td rowSpan='2' style={{ position: 'relative' }}>
+                                <label className="Label-Max-Blessure">MAX</label>
+                                <label className="Label-Calcul-Blessure">= E + (2x Tier)</label>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        endurance + (2 * tier)
+                                    }
+                                </label>
+                            </td>
+                            <td rowSpan='2' style={{ borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                <textarea style={{ height: '11rem', resize: 'none', border: 'none' }} value={stress} onChange={(e) => setStress(e.target.value)}></textarea>
+                            </td>
+                            <td style={{ position: 'relative', width: '15%' }}>
+                                <label className="Label-Max-Stress">MAX</label>
+                                <label className="Label-Calcul-Stress">= FM + Tier</label>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}>
+                                    {
+                                        forceMentale + tier
+                                    }
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{ position: 'relative' }}>
+                                <label className="Label-Max-Détermination">Détermination</label>
+                                <label className="Label-Calcul-Détermination">= E</label>
+                                <label style={{ margin: 'auto', display: 'block', textAlign: 'center' }}> {endurance} </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+                <div className="Container-Talent-Aptitude">
+                    <div className="Container-Talent">
                         <h3 style={{ textAlign: 'center' }}>TALENTS</h3>
-                        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', border: '2px solid hsl(0 0% 60%)', borderRadius: '20px', backgroundColor: 'black', padding: '2rem'  }}>
+                        <div className="Container-Talent-Bloc">
                             <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeTalents(ListeTalents); AfficheDivSelectTalents() }}><label>Talents</label></div>
-                            <div style={{ display: 'flex', flexDirection: 'row', gap: '2rem' }}>
+                            <div className="Liste-Talent">
                                 {
                                     TalentsPossedees.map(Talents => (
                                         <label style={{ position: 'relative' }}>
@@ -2200,15 +2307,15 @@ function CreationPersonnageAvancee() {
                             </div>
                         </div>
                     </div>
-                    <div style={{ width: '40%', margin: 'auto' }}>
+                    <div className="Container-Aptitudes">
                         <h3 style={{ textAlign: 'center' }}>APTITUDES</h3>
                         <textarea style={{ resize: 'none', width: '100%', height: '20rem' }} value={aptitudes} onChange={(e) => setAptitudes(e.target.value)}></textarea>
                     </div>
                 </div>
 
                 <h3 style={{ textAlign: 'center' }}>POUVOIRS PSYCHIQUES</h3>
-                <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', borderRadius: '20px', minHeight: '20vh', width: '80vw', margin: 'auto', padding: '1rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', gap: '1rem' }}>
+                <div className="Container-Pouvoirs-Psychiques">
+                    <div className="Container-Boutons-Pouvoirs-Psychiques">
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListePouvoirPsychique(ListePouvoirsPsychiquesMineurs); AfficheDivSelectPouvoirPsychique() }}><label>Pouvoirs Psychiques Mineurs</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListePouvoirPsychique(ListePouvoirsPsychiquesUniversels); AfficheDivSelectPouvoirPsychique() }}><label>Pouvoirs Psychiques Universels</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListePouvoirPsychique(ListeDomainePsychiqueUniversel); AfficheDivSelectPouvoirPsychique() }}><label>Domaine Psychique Universel</label></div>
@@ -2221,288 +2328,380 @@ function CreationPersonnageAvancee() {
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListePouvoirPsychique(ListeDomaineDesRunesDeBataille); AfficheDivSelectPouvoirPsychique() }}><label>Domaine Des Runes De Bataille</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListePouvoirPsychique(ListePouvoirsFoi); AfficheDivSelectPouvoirPsychique() }}><label>Pouvoirs de Foi</label></div>
                     </div>
-                    <div style={{ margin: '1.5rem' }}>
-                        <table style={{ borderCollapse: 'collapse', border: 'none', width: '100%' }}>
-                            <thead>
-                                <tr>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Pouvoir</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>SD</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Activation</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Durée</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Portée</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Cible</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Effet</label>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    pouvoirPsychiquePossedees.map(pouvPsy => (
+                    <table id="Table-Pouvoirs-Psychique-Mobile">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <label>Pouvoir</label>
+                                </td>
+                                <td>
+                                    <label>SD</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                pouvoirPsychiquePossedees.map(pouvPsy => (
 
-                                        <tr style={{ position: 'relative' }}>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.Nom}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.SD}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.Activation}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.Durée}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.Portée}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.CiblesMultiples}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{pouvPsy.Effet}</label>
-                                            </td>
-                                            <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellPouvoirPsychique(pouvPsy)}>
-                                                <CroixIcon
-                                                    size={30}
-                                                    color="red"
-                                                />
-                                            </div>
-                                        </tr>
-                                    ))
-                                }
+                                    <tr style={{ position: 'relative' }}>
+                                        <td>
+                                            <label>{pouvPsy.Nom}</label>
+                                        </td>
+                                        <td>
+                                            <label>{pouvPsy.SD}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellPouvoirPsychique(pouvPsy)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
                                 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
+                    <table style={{ borderCollapse: 'collapse', border: 'none', width: '100%' }} id="Table-Pouvoirs-Psychique-Desktop">
+                        <thead>
+                            <tr>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Pouvoir</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>SD</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Activation</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Durée</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Portée</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Cible</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Effet</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                pouvoirPsychiquePossedees.map(pouvPsy => (
 
-                        
-                    </div>
+                                    <tr style={{ position: 'relative' }}>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.Nom}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.SD}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.Activation}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.Durée}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.Portée}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.CiblesMultiples}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{pouvPsy.Effet}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellPouvoirPsychique(pouvPsy)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
+                                
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3 style={{ textAlign: 'center' }}>ARMES</h3>
-                <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', borderRadius: '20px', minHeight: '20vh', width: '80vw', margin: 'auto', padding: '1rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', gap: '1rem' }}>
+                <div className="Container-Armes">
+                    <div className="Container-Boutons-Armes">
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArme(ListeArmesImpériales); AfficheDivSelectArme() }}><label>Armes Impériales</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArme(ListeArmesAeldari); AfficheDivSelectArme() }}><label>Armes Aeldari</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArme(ListeArmesOrk); AfficheDivSelectArme() }}><label>Armes Ork</label></div>
                     </div>
-                    <div style={{ margin: '1.5rem' }}>
-                        <table style={{ borderCollapse: 'collapse', border: 'none', width: '100%' }}>
-                            <thead>
-                                <tr>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Arme</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Dégâts</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>DS</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>PA</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Portée</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Rafale</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Traits</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Valeur</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Rareté</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Mots-Clés</label>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    ArmePossedees.map(arme => (
+                    <table id="Table-Armes-Mobile">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <label>Arme</label>
+                                </td>
+                                <td>
+                                    <label>Dégâts</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                ArmePossedees.map(arme => (
 
-                                        <tr style={{ position: 'relative' }}>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Nom}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Dégâts}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.DésDégâtsSupplémentaires}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.PénétrationArmure}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Portée}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Rafale}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Traits}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Valeur}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.Rareté}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{arme.MotsClés}</label>
-                                            </td>
-                                            <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArme(arme)}>
-                                                <CroixIcon
-                                                    size={30}
-                                                    color="red"
-                                                />
-                                            </div>
-                                        </tr>
-                                    ))
-                                }
+                                    <tr style={{ position: 'relative' }}>
+                                        <td>
+                                            <label>{arme.Nom}</label>
+                                        </td>
+                                        <td>
+                                            <label>{arme.Dégâts}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArme(arme)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
                                 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
+                    <table id="Table-Armes-Desktop">
+                        <thead>
+                            <tr>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Arme</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Dégâts</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>DS</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>PA</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Portée</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Rafale</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Traits</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Valeur</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Rareté</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Mots-Clés</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                ArmePossedees.map(arme => (
 
-                        
-                    </div>
+                                    <tr style={{ position: 'relative' }}>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Nom}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Dégâts}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.DésDégâtsSupplémentaires}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.PénétrationArmure}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Portée}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Rafale}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Traits}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Valeur}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.Rareté}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{arme.MotsClés}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArme(arme)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
+                                
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3 style={{ textAlign: 'center' }}>ARMURES</h3>
-                <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', borderRadius: '20px', minHeight: '20vh', width: '80vw', margin: 'auto', padding: '1rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', gap: '1rem' }}>
+                <div className="Container-Armes">
+                    <div className="Container-Boutons-Armes">
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArmure(ListeArmureImpériales); AfficheDivSelectArmure() }}><label>Armures Impériales</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArmure(ListeArmureAeldari); AfficheDivSelectArmure() }}><label>Armures Aeldari</label></div>
                         <div className="Bouton-Pouvoirs-Psychiques" onClick={() => { setSelectedListeArmure(ListeArmureOrk); AfficheDivSelectArmure() }}><label>Armure Ork</label></div>
                     </div>
-                    <div style={{ margin: '1.5rem' }}>
-                        <table style={{ borderCollapse: 'collapse', border: 'none', width: '100%' }}>
-                            <thead>
-                                <tr>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Armure</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Ar</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Traits</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Valeur</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Rareté</label>
-                                    </td>
-                                    <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                        <label>Mots-Clés</label>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    ArmurePossedees.map(Armure => (
+                    <table id="Table-Armures-Mobile">
+                        <thead>
+                            <tr>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Armure</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Ar</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                ArmurePossedees.map(Armure => (
 
-                                        <tr style={{ position: 'relative' }}>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.Nom}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.Ar}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.Traits}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.Valeur}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.Rareté}</label>
-                                            </td>
-                                            <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
-                                                <label>{Armure.MotsClés}</label>
-                                            </td>
-                                            <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArmure(Armure)}>
-                                                <CroixIcon
-                                                    size={30}
-                                                    color="red"
-                                                />
-                                            </div>
-                                        </tr>
-                                    ))
-                                }
+                                    <tr style={{ position: 'relative' }}>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Nom}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Ar}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArmure(Armure)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
                                 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
 
-                        
-                    </div>
+
+                    <table id="Table-Armures-Desktop">
+                        <thead>
+                            <tr>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Armure</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Ar</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Traits</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Valeur</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Rareté</label>
+                                </td>
+                                <td style={{ borderBottom: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                    <label>Mots-Clés</label>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                ArmurePossedees.map(Armure => (
+
+                                    <tr style={{ position: 'relative' }}>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Nom}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Ar}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Traits}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Valeur}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderRight: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.Rareté}</label>
+                                        </td>
+                                        <td style={{ borderTop: '2px solid hsl(0 0% 60%)', borderLeft: '2px solid hsl(0 0% 60%)' }}>
+                                            <label>{Armure.MotsClés}</label>
+                                        </td>
+                                        <div style={{ width: "30px", height: '30px', position: 'absolute', top: '0px', left: '0px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => sellArmure(Armure)}>
+                                            <CroixIcon
+                                                size={30}
+                                                color="red"
+                                            />
+                                        </div>
+                                    </tr>
+                                ))
+                            }
+                                
+                        </tbody>
+                    </table>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'row', border: '2px solid hsl( 0 0% 60%)', backgroundColor: 'black', height: '20vh', borderRadius: '20px', width: '80vw', margin: 'auto', marginTop: '5rem'}}>
-                    <div style={{ width: '90%', position: 'relative' }} >
-                        <label style={{ position: 'absolute', top: '10px', left: '10px' }}>Équipement</label>
-                        <textarea style={{ width: '98%', height: '74%', marginTop: 'auto', marginBottom: '0px', display: 'block', padding: '1rem', paddingTop: '3rem', resize: 'none', border: 'none', borderRadius: '20px' }} value={equipement} onChange={(e) => setEquipement(e.target.value)}></textarea>
+                <div className="Container-Equipement-Influence-Richesse">
+                    <div className="Container-Equipement">
+                        <label>Équipement</label>
+                        <textarea value={equipement} onChange={(e) => setEquipement(e.target.value)}></textarea>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', borderLeft: '2px solid hsl(0 0% 60%)', width: '10%' }}>
-                        <div style={{ height: '50%', position: 'relative' }}>
-                            <label style={{ position: 'absolute', top: '10px', left: '10px' }}>Influece</label>
+                    <div className="Container-Influence-Richesse">
+                        <div className="Container-Influence">
+                            <label className="Label-Max-Influence">Influece</label>
                             <label style={{ textAlign: 'center', display: 'block', height: '100%', alignContent: 'center' }}>{sociabilité - 1}</label>
-                            <label style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '1rem' }}>= Soc - 1</label>
+                            <label className="Label-Calcul-Influence">= Soc - 1</label>
                         </div>
-                        <div style={{ borderTop: '2px solid hsl(0 0% 60%)', height: '50%', position: 'relative' }}>
-                            <label style={{ position: 'absolute', top: '10px', left: '10px' }}>Richesse</label>
-                            <input type="number" className="Input-Personage" style={{ margin: 'auto', width: '95%', display: 'block', height: '90%', textAlign: 'center' }} value={richesse} onChange={(e) => setRichesse(e.target.value)} />
-                            <label style={{ position: 'absolute', bottom: '10px', right: '10px', fontSize: '1rem' }}>Initialement = Tier</label>
+                        <div className="Container-Richesse">
+                            <label className="Label-Max-Richesse">Richesse</label>
+                            <input type="number" className="Input-Personage" value={richesse} onChange={(e) => setRichesse(e.target.value)} />
+                            <label className="Label-Calcul-Richesse">Initialement = Tier</label>
                         </div>
                     </div>
                 </div>
 
 
                 <h3 style={{ textAlign: 'center' }}>BLESSURES & CORRUPTION</h3>
-                <div style={{ display: 'flex', flexDirection: 'row', gap: '2rem', width: '100%', alignItems: 'stretch' }}>
-                    <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', width: '25%', borderRadius: '20px' }}>
+                <div className="Container-BlessureGrave-BlessureGuerre-Mutation-Corruption">
+                    <div className="Container-BlessureGrave">
                         <h4 style={{ textAlign: 'center' }}>Blessures Graves</h4>
-                        <label style={{ marginLeft: '1rem' }}>Maximum <span style={{ fontSize: '1rem' }}>= Tier + 1</span></label>
+                        <label className="Label-Maximum">Maximum <span style={{ fontSize: '1rem' }}>= Tier + 1</span></label>
                         <ul style={{ listStyleType: 'decimal', paddingLeft: '2rem', marginLeft: '2rem' }}>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave1} onChange={(e) => setBlessureGrave1(e.target.value)} /></li>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave2} onChange={(e) => setBlessureGrave2(e.target.value)} /></li>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave3} onChange={(e) => setBlessureGrave3(e.target.value)} disabled={tier < 2} placeholder={tier < 2 ? "Bloqué (Tier 2 requis)" : ""} /></li>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave4} onChange={(e) => setBlessureGrave4(e.target.value)} disabled={tier < 3} placeholder={tier < 2 ? "Bloqué (Tier 3 requis)" : ""} /></li>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave5} onChange={(e) => setBlessureGrave5(e.target.value)} disabled={tier < 4} placeholder={tier < 2 ? "Bloqué (Tier 4 requis)" : ""} /></li>
-                            <li><input type='text' className="Input-Personage" style={{ width: '90%', borderBottom: '2px solid hsl(0 0% 60%)' }} value={blessureGrave6} onChange={(e) => setBlessureGrave6(e.target.value)} disabled={tier < 5} placeholder={tier < 2 ? "Bloqué (Tier 5 requis)" : ""} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave1} onChange={(e) => setBlessureGrave1(e.target.value)} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave2} onChange={(e) => setBlessureGrave2(e.target.value)} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave3} onChange={(e) => setBlessureGrave3(e.target.value)} disabled={tier < 2} placeholder={tier < 2 ? "Bloqué (Tier 2 requis)" : ""} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave4} onChange={(e) => setBlessureGrave4(e.target.value)} disabled={tier < 3} placeholder={tier < 2 ? "Bloqué (Tier 3 requis)" : ""} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave5} onChange={(e) => setBlessureGrave5(e.target.value)} disabled={tier < 4} placeholder={tier < 2 ? "Bloqué (Tier 4 requis)" : ""} /></li>
+                            <li><input type='text' className="Input-Personage" value={blessureGrave6} onChange={(e) => setBlessureGrave6(e.target.value)} disabled={tier < 5} placeholder={tier < 2 ? "Bloqué (Tier 5 requis)" : ""} /></li>
                         </ul>
                     </div>
-                    <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', width: '25%', borderRadius: '20px' }}>
+                    <div className="Container-BlessureGuerre">
                         <h4 style={{ textAlign: 'center' }}>Blessures de Guerre</h4>
-                        <textarea style={{ width: '94%', height: '65%', display: 'block', padding: '1rem', resize: 'none', border: 'none', borderRadius: '20px' }} value={blessuresGuerre} onChange={(e) => setBlessuresGuerre(e.target.value)}></textarea>
+                        <textarea value={blessuresGuerre} onChange={(e) => setBlessuresGuerre(e.target.value)}></textarea>
                     </div>
-                    <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', width: '25%', borderRadius: '20px' }}>
+                    <div className="Container-Mutation">
                         <h4 style={{ textAlign: 'center' }}>Mutations</h4>
-                        <textarea style={{ width: '94%', height: '65%', display: 'block', padding: '1rem', resize: 'none', border: 'none', borderRadius: '20px' }} value={mutations} onChange={(e) => setMutations(e.target.value)}></textarea>
+                        <textarea value={mutations} onChange={(e) => setMutations(e.target.value)}></textarea>
                     </div>
-                    <div style={{ backgroundColor: 'black', border: '2px solid hsl(0 0% 60%)', width: '25%', borderRadius: '20px' }}>
+                    <div className="Container-Corruption">
                         <table style={{ borderCollapse: 'collapse', backgroundColor: 'black', color: 'hsl(0 0% 60%)', border: 'none', width: '90%', height: '100%', margin: 'auto' }}>
-                            <thead style={{ border: 'none' } }>
-                                <tr>
+                            <thead style={{ border: 'none' }}>
+                                <tr style={{border: 'none'}}>
                                     <th style={{ textAlign: 'center', padding: '5px', textTransform: 'uppercase' }}>Corruption</th>
                                     <th style={{ padding: '5px', textTransform: 'uppercase' }}>Level</th>
                                 </tr>
@@ -2690,7 +2889,7 @@ function CreationPersonnageAvancee() {
                             {/*DDL Talentss*/}
                             <div className='dropdown DDL-Pouvoir-Psychique'>
                                 <div className='dropdown-header' onClick={toggleDropdownTalents} style={{ height: '1rem' }}>
-                                    {selectedItemTalents ? selectedListeTalents.find(item => item.Id === selectedItemTalents).Nom : "Toutes les Talentss"}
+                                    {selectedItemTalents ? selectedListeTalents.find(item => item.Id === selectedItemTalents).Nom : "Toutes les Talents"}
                                     <i className={`fa fa-chevron-right icon ${isOpenTalents && "open"}`}></i>
                                 </div>
                                 {isOpenTalents && (

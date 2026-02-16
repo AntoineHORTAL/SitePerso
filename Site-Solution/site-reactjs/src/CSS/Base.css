@@ -1199,8 +1199,8 @@ body {
     /*#region Modile_Low_Desktop*/
         .SystemGilead_Mobil_LowDesktop_Display{
             min-height: 100vh;
-            margin-top: 15vh;
-            margin-bottom: 15vh;
+            margin-top: 15rem;
+            margin-bottom: 15rem;
         }
 
         .Container_Global_Btn_Planete {
@@ -1309,6 +1309,23 @@ body {
         .solar-syst div:not(.asteroids-belt):before {
             box-shadow: inset 0 6px 0 -2px rgba(0, 0, 0, 0.25);
         }
+
+
+.Div-Infos-PLanetes {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    display: none;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-left: none;
+    border-image: initial;
+    border-radius: 0px 20px 20px 0px;
+    background-color: black;
+    padding: 2rem;
+}
+
 
 /* --- PLANETS --- */
 /*soleil*/
@@ -1514,6 +1531,16 @@ body {
         margin-left: -4px;
     }
 /*#endregion*/
+
+    .Titre-Systeme-Gilead {
+        position: absolute;
+        top: 20px; 
+        left: 0;
+        color: black;
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+    }
     /*#endregion*/
 
     /*#region Règles*/
@@ -1765,6 +1792,7 @@ body {
         gap: 3rem;
         margin: auto; 
         width: fit-content;
+        margin-bottom: 5rem;
     }
     .Filtre{
         border: 2px solid var(--main-color);
@@ -2039,15 +2067,27 @@ body {
 .Titre-Attributs-Conseil{
     display: flex;
 }
+.Span-Attributs-Conseil {
+    margin-right: 5rem;
+    margin-left: auto;
+    display: block;
+}
+.Span-Compétences-Conseil {
+    margin-right: 5rem;
+    margin-left: auto;
+    display: block;
+}
+
+
     /*#endregion*/
     
     /*#region CreationAvancee*/
-.Container-Creation-Avancee-Global {
-    width: 90vw;
-    margin-top: 20rem;
-    min-height: 75vh;
-    margin-bottom: 20rem;
-}
+    .Container-Creation-Avancee-Global {
+        width: 90vw;
+        margin-top: 20rem;
+        min-height: 75vh;
+        margin-bottom: 20rem;
+    }
         .Container-Creation-Avancee-Global h1 {
             font-size: 3.5rem;
             text-align: center;
@@ -2200,6 +2240,11 @@ body {
             left: 14rem;
         }
 
+
+        .Container-Talent-Aptitude{
+            display: flex;
+            gap: 5rem;
+        }
     /*#endregion CreationAvancee*/
 
     /*#region ListePouvoirPsychique*/
@@ -2345,15 +2390,26 @@ body {
         background-color: black;
         padding: 1rem;
     }
-
+    .Container-Bouton-Creation-Personnage{
+        display: flex; 
+        flex-direction: row;
+        gap: 4rem;
+        padding: 4rem;
+    }
     .Bouton-Creation-Personnage{
         border: 2px solid rgb(153, 153, 153);
         border-radius: 10px;
         padding: 1rem;
         width: 50%;
         align-content: center;
+        color: var(--main-color);
+        text-decoration: none;
     }
         .Bouton-Creation-Personnage a {
+            color: var(--main-color);
+            text-decoration: none;
+        }
+        .Bouton-Creation-Personnage:visited {
             color: var(--main-color);
             text-decoration: none;
         }
@@ -2361,7 +2417,9 @@ body {
                 color: var(--main-color);
                 text-decoration: none;
             }
+        .dropdown-item-dot{
+            display: none;
+        }
     /*#endregion*/
 
 /*#endregion WrAtHaNdGlOrY*/
-

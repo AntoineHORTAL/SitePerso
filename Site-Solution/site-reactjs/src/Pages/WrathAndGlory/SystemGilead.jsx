@@ -111,17 +111,7 @@ function SystemGilead() {
                 </Link>
             </div>
 
-            <h2
-                style={{
-                    position: 'absolute',
-                    top: '20px',
-                    left: '0',
-                    color: 'black',
-                    fontSize: '3rem',
-                    width: '100%',
-                    textAlign: 'center',
-                }}
-            >SYSTÈME GILEAD</h2>
+            <h2 className="Titre-Systeme-Gilead">SYSTÈME GILEAD</h2>
 
             <div className="SystemGilead_Mobil_LowDesktop_Display">
                 <div className="Container_Global_Btn_Planete">
@@ -337,17 +327,10 @@ function SystemGilead() {
             <div className="SystemeGilead_Desktop_Display">
                 {/*Div Explications Planètes*/}
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredAvachrus ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Avachrus</h2>
@@ -362,17 +345,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredNethreus ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Nethreus</h2>
@@ -386,17 +362,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredOstia ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Ostia</h2>
@@ -410,17 +379,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredEnoch ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Enoch</h2>
@@ -434,17 +396,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredGileadPrimus ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Gilead Primus</h2>
@@ -458,17 +413,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredCharybdion ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Charybdion</h2>
@@ -482,51 +430,30 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredBourbierVide ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Bourbier du vide</h2>
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredPersephonesRegret ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Persephone's Regret</h2>
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredVulkaris ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Vulkaris</h2>
@@ -539,17 +466,10 @@ function SystemGilead() {
                 </div>
 
                 <div
+                    className="Div-Infos-PLanetes"
                     style={{
-                        position: 'absolute',
-                        left: '0px',
-                        top: '30px',
                         display: isHoveredTrollius ? 'block' : 'none',
-                        border: '2px solid',
-                        borderRadius: '0px 20px 20px 0px',
                         maxWidth: `${widthDivInfo}px`,
-                        backgroundColor: 'black',
-                        borderLeft: 'none',
-                        padding: '2rem',
                     }}
                 >
                     <h2>Trollius</h2>
