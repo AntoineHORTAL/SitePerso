@@ -33,6 +33,9 @@ function ListePouvoirPsychiques() {
     const [displayListePouvoirsPsychiquesUniversels, setDisplayListePouvoirsPsychiquesUniversels] = useState(false);
     const [displayListePouvoirsFoi, setDisplayListePouvoirsFoi] = useState(false);
 
+
+    const [displayListePouvoirsDomaine, setDisplayListePouvoirsDomaine] = useState(null);
+
     const toggleDisplayDivListeDomaineBiomancie = () => {
         console.log("slkdjdhfjksdhgfkjhgsdjkdfghs");
         setDisplayListeDomaineBiomancie(!displayListeDomaineBiomancie);
@@ -110,7 +113,7 @@ function ListePouvoirPsychiques() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onClick={() => toggleDisplayDivListeDomaineBiomancie() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Biomancie") }>
                             <td>
                                 <label>Biomancie</label>
                             </td>
@@ -118,7 +121,7 @@ function ListePouvoirPsychiques() {
                                 <label>Manipuler une forme biologique</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomaineDivination() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Divination") }>
                             <td>
                                 <label>Divination</label>
                             </td>
@@ -126,7 +129,7 @@ function ListePouvoirPsychiques() {
                                 <label>Prédire ou lire le futur</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomainePyromancie() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Pyromancie") }>
                             <td>
                                 <label>Pyromancie</label>
                             </td>
@@ -134,7 +137,7 @@ function ListePouvoirPsychiques() {
                                 <label>Manipuler ou produire du feu</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomaineTelekinesie() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Télékinésie") }>
                             <td>
                                 <label>Télékinésie</label>
                             </td>
@@ -142,7 +145,7 @@ function ListePouvoirPsychiques() {
                                 <label>Exercer une force cinétique par la pensée</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomaineTelepathie() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Télépathie") }>
                             <td>
                                 <label>Télépathie</label>
                             </td>
@@ -150,7 +153,7 @@ function ListePouvoirPsychiques() {
                                 <label>Manipuler l'esprit</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomaineMaleficarum() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Maleficarum") }>
                             <td>
                                 <label>Maleficarum</label>
                             </td>
@@ -158,7 +161,7 @@ function ListePouvoirPsychiques() {
                                 <label>Déchaîner les pouvoirs impies du Chaos</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDiListeDomaineDesRunesDeBataille() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Runes de Bataille") }>
                             <td>
                                 <label>Runes de Bataille</label>
                             </td>
@@ -166,7 +169,7 @@ function ListePouvoirPsychiques() {
                                 <label>Renforcer des alliés ou affaiblir des ennemis</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListeDomainePsychiqueUniversel() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Pouvoirs Psychiques Universel") }>
                             <td>
                                 <label>Pouvoirs Psychiques Universel</label>
                             </td>
@@ -174,7 +177,7 @@ function ListePouvoirPsychiques() {
                                 <label>Phénomènes psychiques moins puissants qui n'appartiennent à aucun Domaine</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListePouvoirsFoi() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Pouvoirs de Foi") }>
                             <td>
                                 <label>Pouvoirs de Foi</label>
                             </td>
@@ -219,19 +222,19 @@ function ListePouvoirPsychiques() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onClick={() => toggleDisplayDivListePouvoirsPsychiquesUniversels() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Pouvoirs Psychiques Universels") }>
                             <td colSpan='2'>
                                 <label>Pouvoirs Psychiques Universels</label>
                             </td>
                         </tr>
-                        <tr onClick={() => toggleDisplayDivListePouvoirsPsychiquesMineurs() }>
+                        <tr onClick={() => setDisplayListePouvoirsDomaine("Pouvoirs Psychiques Mineurs") }>
                             <td colSpan='2'>
                                 <label>Pouvoirs Psychiques Mineurs</label>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div id="DivListeDomaineBiomancie" style={{ display: displayListeDomaineBiomancie ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineBiomancie" style={{ display: (displayListePouvoirsDomaine == "Biomancie") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE BIOMANCIE</h3>
                     {
                         ListeDomaineBiomancie.map(pouvoir => (
@@ -251,7 +254,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomaineDesRunesDeBataille" style={{ display: displayListeDomaineDesRunesDeBataille ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineDesRunesDeBataille" style={{ display: (displayListePouvoirsDomaine == "Runes de Bataille") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE DES RUNES DE BATAILLE</h3>
                     {
                         ListeDomaineDesRunesDeBataille.map(pouvoir => (
@@ -271,7 +274,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomaineDivination" style={{ display: displayListeDomaineDivination ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineDivination" style={{ display: (displayListePouvoirsDomaine == "Divination") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE DIVINATION</h3>
                     {
                         ListeDomaineDivination.map(pouvoir => (
@@ -291,7 +294,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomaineMaleficarum" style={{ display: displayListeDomaineMaleficarum ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineMaleficarum" style={{ display: (displayListePouvoirsDomaine == "Maleficarum") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE MALEFICARUM</h3>
                     {
                         ListeDomaineMaleficarum.map(pouvoir => (
@@ -311,7 +314,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomainePsychiqueUniversel" style={{ display: displayListeDomainePsychiqueUniversel ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomainePsychiqueUniversel" style={{ display: (displayListePouvoirsDomaine == "Pouvoirs Psychiques Universel") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE PSYCHIQUE UNIVERSEL</h3>
                     {
                         ListeDomainePsychiqueUniversel.map(pouvoir => (
@@ -331,7 +334,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomainePyromancie" style={{ display: displayListeDomainePyromancie ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomainePyromancie" style={{ display: (displayListePouvoirsDomaine == "Pyromancie") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE PYROMANCIE</h3>
                     {
                         ListeDomainePyromancie.map(pouvoir => (
@@ -351,7 +354,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomaineTelekinesie" style={{ display: displayListeDomaineTelekinesie ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineTelekinesie" style={{ display: (displayListePouvoirsDomaine == "Télékinésie") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE TÉLÉKINÉSIE</h3>
                     {
                         ListeDomaineTelekinesie.map(pouvoir => (
@@ -371,7 +374,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListeDomaineTelepathie" style={{ display: displayListeDomaineTelepathie ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListeDomaineTelepathie" style={{ display: (displayListePouvoirsDomaine == "Télépathie") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>DOMAINE TÉLÉPATHIE</h3>
                     {
                         ListeDomaineTelepathie.map(pouvoir => (
@@ -391,7 +394,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListePouvoirsPsychiquesMineurs" style={{ display: displayListePouvoirsPsychiquesMineurs ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListePouvoirsPsychiquesMineurs" style={{ display: (displayListePouvoirsDomaine == "Pouvoirs Psychiques Mineurs") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>POUVOIRS PSYCHIQUES MINEURS</h3>
                     {
                         ListePouvoirsPsychiquesMineurs.map(pouvoir => (
@@ -411,7 +414,7 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListePouvoirsPsychiquesUniversels" style={{ display: displayListePouvoirsPsychiquesUniversels ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                <div id="DivListePouvoirsPsychiquesUniversels" style={{ display: (displayListePouvoirsDomaine == "Pouvoirs Psychiques Universels") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
                     <h3>POUVOIRS PSYCHIQUES UNIVERSELS</h3>
                     {
                         ListePouvoirsPsychiquesUniversels.map(pouvoir => (
@@ -431,8 +434,8 @@ function ListePouvoirPsychiques() {
                         ))
                     }
                 </div>
-                <div id="DivListePouvoirsFoi" style={{ display: displayListePouvoirsFoi ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
-                    <h3>POUVOIRS PSYCHIQUES UNIVERSELS</h3>
+                <div id="DivListePouvoirsFoi" style={{ display: (displayListePouvoirsDomaine == "Pouvoirs de Foi") ? 'block' : 'none' }} className="Div-Liste-Pouvoirs-Psychiques">
+                    <h3>POUVOIRS DE FOI</h3>
                     {
                         ListePouvoirsFoi.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListePouvoirsFoi"} className="Pouvoirs-Psychiques">
