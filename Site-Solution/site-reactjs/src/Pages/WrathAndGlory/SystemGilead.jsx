@@ -14,16 +14,9 @@ function SystemGilead() {
     const [isHoveredPersephonesRegret, setIsHoveredPersephonesRegret] = useState(false);
     const [isHoveredVulkaris, setIsHoveredVulkaris] = useState(false);
     const [isHoveredTrollius, setIsHoveredTrollius] = useState(false);
-    const [displayAvachrus, setDisplayAvachrus] = useState(false);
-    const [displayNethreus, setDisplayNethreus] = useState(false);
-    const [displayOstia, setDisplayOstia] = useState(false);
-    const [displayEnoch, setDisplayEnoch] = useState(false);
-    const [displayGileadPrimus, setDisplayGileadPrimus] = useState(false);
-    const [displayCharybdion, setDisplayCharybdion] = useState(false);
-    const [displayBourbierDuVide, setDisplayBourbierDuVide] = useState(false);
-    const [displayPersephonesRegret, setDisplayPersephonesRegret] = useState(false);
-    const [displayVulkaris, setDisplayVulkaris] = useState(false);
-    const [displayTrollius, setDisplayTrollius] = useState(false);
+
+    const [displayPlanete, setDisplayPlanete] = useState(null);
+
 
     const [widthShadow, setWidthShadow] = useState(0);
     const [widthDivInfo, setWidthDivInfo] = useState(0);
@@ -112,64 +105,64 @@ function SystemGilead() {
             </div>
 
             <h2 className="Titre-Systeme-Gilead">SYSTÈME GILEAD</h2>
-
+            {/*MOBILE*/}
             <div className="SystemGilead_Mobil_LowDesktop_Display">
                 <div className="Container_Global_Btn_Planete">
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayAvachrus(!displayAvachrus)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Avachrus")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Avachrus.png" />
                         </button>
                         <span>AVACHRUS</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayNethreus(!displayNethreus)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Nethreus")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Nethreus.png" />
                         </button>
                         <span>NETHREUS</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayOstia(!displayOstia)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Ostia")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Ostia.png" />
                         </button>
                         <span>OSTIA</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayEnoch(!displayEnoch)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Enoch")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Enoch.png" />
                         </button>
                         <span>ENOCH</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayGileadPrimus(!displayGileadPrimus)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("GileadPrimus")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/GileadPrimus.png" />
                         </button>
                         <span>GILEAD PRIMUS</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayCharybdion(!displayCharybdion)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Charybdion")}>
                         <button className="Btn_Image_Planete">
-                            <img src="/Images/WrathAndGlory/Planetes/Charibdion.png" />
+                            <img src="/Images/WrathAndGlory/Planetes/Charybdion.png" />
                         </button>
                         <span>CHARYBDION</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayBourbierDuVide(!displayBourbierDuVide)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("BourbierDuVide")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/BourbierDuVide.png" />
                         </button>
                         <span>BOURBIER DU VIDE</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPersephonesRegret(!displayPersephonesRegret)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("PersephonesRegret")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/PersephonesRegret.png" />
                         </button>
                         <span>PERSEPHONE'S REGRET</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayVulkaris(!displayVulkaris)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Vulkaris")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Vulkaris.png" />
                         </button>
                         <span>VULKARIS</span>
                     </div>
-                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayTrollius(!displayTrollius)}>
+                    <div className="Container_Btn_Image_Planete" onClick={() => setDisplayPlanete("Trollius")}>
                         <button className="Btn_Image_Planete">
                             <img src="/Images/WrathAndGlory/Planetes/Trollius.png" />
                         </button>
@@ -180,7 +173,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayAvachrus ? 'block' : 'none',
+                        display: (displayPlanete == "Avachrus") ? 'block' : 'none',
                     }}
                 >
                     <h2>Avachrus</h2>
@@ -197,7 +190,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayNethreus ? 'block' : 'none',
+                        display: (displayPlanete == "Nethreus") ? 'block' : 'none',
                     }}
                 >
                     <h2>Nethreus</h2>
@@ -213,7 +206,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayOstia ? 'block' : 'none',
+                        display: (displayPlanete == "Ostia") ? 'block' : 'none',
                     }}
                 >
                     <h2>Ostia</h2>
@@ -229,7 +222,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayEnoch ? 'block' : 'none',
+                        display: (displayPlanete == "Enoch") ? 'block' : 'none',
                     }}
                 >
                     <h2>Enoch</h2>
@@ -245,7 +238,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayGileadPrimus ? 'block' : 'none',
+                        display: (displayPlanete == "GileadPrimus") ? 'block' : 'none',
                     }}
                 >
                     <h2>Gilead Primus</h2>
@@ -261,7 +254,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayCharybdion ? 'block' : 'none',
+                        display: (displayPlanete == "Charybdion") ? 'block' : 'none',
                     }}
                 >
                     <h2>Charybdion</h2>
@@ -277,7 +270,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayBourbierDuVide ? 'block' : 'none',
+                        display: (displayPlanete == "BourbierDuVide") ? 'block' : 'none',
                     }}
                 >
                     <h2>Bourbier du vide</h2>
@@ -286,7 +279,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayPersephonesRegret ? 'block' : 'none',
+                        display: (displayPlanete == "PersephonesRegret")  ? 'block' : 'none',
                     }}
                 >
                     <h2>Persephone's Regret</h2>
@@ -295,7 +288,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayVulkaris ? 'block' : 'none',
+                        display: (displayPlanete == "Vulkaris") ? 'block' : 'none',
                     }}
                 >
                     <h2>Vulkaris</h2>
@@ -310,7 +303,7 @@ function SystemGilead() {
                 <div
                     className="Container_Infos_Planetes_Mobile"
                     style={{
-                        display: displayTrollius ? 'block' : 'none',
+                        display: (displayPlanete == "Trollius") ? 'block' : 'none',
                     }}
                 >
                     <h2>Trollius</h2>
@@ -323,7 +316,7 @@ function SystemGilead() {
                 </div>
 
             </div>
-
+            {/*DESKTOP*/}
             <div className="SystemeGilead_Desktop_Display">
                 {/*Div Explications Planètes*/}
                 <div
