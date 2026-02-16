@@ -236,7 +236,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineBiomancie.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineBiomancie"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -256,7 +256,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineDesRunesDeBataille.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineDesRunesDeBataille"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -276,7 +276,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineDivination.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineDivination"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -296,7 +296,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineMaleficarum.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineMaleficarum"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -316,7 +316,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomainePsychiqueUniversel.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomainePsychiqueUniversel"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -336,7 +336,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomainePyromancie.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomainePyromancie"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -356,7 +356,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineTelekinesie.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineTelekinesie"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -376,7 +376,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListeDomaineTelepathie.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListeDomaineTelepathie"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -396,7 +396,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListePouvoirsPsychiquesMineurs.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListePouvoirsPsychiquesMineurs"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -416,7 +416,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListePouvoirsPsychiquesUniversels.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListePouvoirsPsychiquesUniversels"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
@@ -436,7 +436,7 @@ function ListePouvoirPsychiques() {
                     {
                         ListePouvoirsFoi.map(pouvoir => (
                             <div key={pouvoir.Id + "_ListePouvoirsFoi"} className="Pouvoirs-Psychiques">
-                                <label>Nom : {pouvoir.Nom}</label>
+                                <label style={{ textDecoration: 'underline', fontSize: '2rem' }}><strong>{pouvoir.Nom}</strong></label>
                                 <label style={{ display: pouvoir.CoutPX ? 'block' : 'none' }}>Coût PX : {pouvoir.CoutPX}</label>
                                 <label style={{ display: pouvoir.SD ? 'block' : 'none' }}>SD : {pouvoir.SD}</label>
                                 <label style={{ display: pouvoir.Activation ? 'block' : 'none' }}>Activation : {pouvoir.Activation}</label>
