@@ -23,6 +23,7 @@ import WrathAndGlory_ListePouvoirPsychiques from './Pages/WrathAndGlory/ListePou
 import WrathAndGlory_CreationPersonnageAvancee from './Pages/WrathAndGlory/CreationPersonnageAvancee.jsx'
 import WrathAndGlory_CreationPersonnageArchetype from './Pages/WrathAndGlory/CreationPersonnageArchetype.jsx'
 import WrathAndGlory_JouerPersonnage from './Pages/WrathAndGlory/JouerPersonnage.jsx'
+import Calculator_LOL from './Pages/Calculator_LOL.jsx'
 
 
 
@@ -62,8 +63,10 @@ function App() {
                   <Route path="/WrathAndGlory_ListePouvoirPsychiques" element={<WrathAndGlory_ListePouvoirPsychiques />} />    
                   <Route path="/WrathAndGlory_CreationPersonnageAvancee" element={<WrathAndGlory_CreationPersonnageAvancee />} />    
                   <Route path="/WrathAndGlory_CreationPersonnageArchetype" element={<WrathAndGlory_CreationPersonnageArchetype />} />    
-                  <Route path="/WrathAndGlory_JouerPersonnage" element={<WrathAndGlory_JouerPersonnage />} />    
-                  
+                  <Route path="/WrathAndGlory_JouerPersonnage" element={<WrathAndGlory_JouerPersonnage />} />  
+
+
+                  <Route path="/Calculator_LOL" element={<Calculator_LOL />} />    
 
 
               </Routes>

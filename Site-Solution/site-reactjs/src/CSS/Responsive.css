@@ -6683,17 +6683,25 @@
     .Container-Carte-JDR {
         padding: 50px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 10rem;
     }
+    .Demi-Container-Carte-JDR {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+        .Demi-Container-Carte-JDR .CarteJDR {
+            margin: auto;
+        }
 
     .CarteJDR {
-        max-width: 800px;
+        width: 800px;
     }
 
         .CarteJDR img {
-            max-width: 800px;
-            max-height: 1050px;
+            width: 800px;
+            height: 1050px;
         }
 
         .CarteJDR h2 {
