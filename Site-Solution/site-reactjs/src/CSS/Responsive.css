@@ -5534,6 +5534,7 @@
         .CarteJDR img {
             max-width: 600px;
             max-height: 850px;
+            width: 600px;
         }
 
         .CarteJDR h2 {

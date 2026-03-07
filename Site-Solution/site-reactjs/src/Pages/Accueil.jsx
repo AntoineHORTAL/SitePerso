@@ -6,13 +6,9 @@ function Acceuil() {
   return (
       <>
           <div className="Container-Carte-JDR">
-              <div className="Demi-Container-Carte-JDR">
-                  <CygnusProjects />
-                  <WrathAndGlory />
-              </div>
-              <div className="Demi-Container-Carte-JDR">
-                  <CalculatorLOL />
-              </div>
+                <CygnusProjects />
+                <WrathAndGlory />
+                <CalculatorLOL />
           </div>
       </>
   );
