@@ -18,6 +18,7 @@ function ItemDraggable({ id, item, version, SeeItemDetails }) {
 
     const handlePointerDown = (e) => {
         pointerStartPos.current = { x: e.clientX, y: e.clientY };
+        listeners?.onPointerDown?.(e);
     };
 
     const handlePointerUp = (e) => {

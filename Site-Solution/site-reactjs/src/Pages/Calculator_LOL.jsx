@@ -245,9 +245,6 @@ function Calculator_LOL() {
     }, [version]);
 
     const SeeItemDetails = (item) => {
-
-        console.log("dslghsdjkhfgklsdjhfgkjhsdkldfjhqslkhjdflkqsjhdfljkhqsdf");
-
         var labelNom = document.getElementById("Nom-Item-Detail");
         var labelPrixBase = document.getElementById("Prix-Base-Item-Detail");
         var labelPrixTotal = document.getElementById("Prix-Total-Item-Detail");
