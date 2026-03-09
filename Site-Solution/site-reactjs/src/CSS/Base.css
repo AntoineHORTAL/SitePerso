@@ -2604,6 +2604,7 @@ body {
     flex-wrap: wrap;
     gap: 2rem;
     height: fit-content;
+    cursor: pointer;
 }
 .Item {
     display: flex;
@@ -2618,10 +2619,25 @@ body {
         text-align: center;
     }
 
+.Nom-Item-Hover {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
 .Container-Detail-Item {
     display: none;
     position: sticky;
-    width: 35.5vw;
+    width: 45vw;
     min-height: 30vh;
     background-color: black;
     border: 2px solid var(--main-color);
@@ -2629,6 +2645,8 @@ body {
     flex-direction: column;
     border-radius: 20px;
     margin-left: -3vw;
+    z-index: 99;
+    padding: 2rem;
 }
 .Detail-Item{
     position: relative;
@@ -2636,8 +2654,8 @@ body {
 .Bouton-Close-Detail {
     text-align: center;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: -25px;
+    right: -20px;
     width: 40px;
     height: 40px;
     font-size: 2rem;

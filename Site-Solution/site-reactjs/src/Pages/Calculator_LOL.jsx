@@ -245,6 +245,9 @@ function Calculator_LOL() {
     }, [version]);
 
     const SeeItemDetails = (item) => {
+
+        console.log("dslghsdjkhfgklsdjhfgkjhsdkldfjhqslkhjdflkqsjhdfljkhqsdf");
+
         var labelNom = document.getElementById("Nom-Item-Detail");
         var labelPrixBase = document.getElementById("Prix-Base-Item-Detail");
         var labelPrixTotal = document.getElementById("Prix-Total-Item-Detail");
@@ -758,7 +761,7 @@ function Calculator_LOL() {
                                         )
                                             .sort(([, a], [, b]) => (a.gold?.total || 0) - (b.gold?.total || 0))
                                             .map(([id, item]) => (
-                                                <ItemDraggable key={id} id={id} item={item} version={version} />
+                                                <ItemDraggable key={id} id={id} item={item} version={version} SeeItemDetails={SeeItemDetails} />
                                             ))}
                                     </div>
                                 </div>
@@ -768,8 +771,8 @@ function Calculator_LOL() {
                         {/* Droite - zone de drop */}
                         <div className="Bloc-Drop-Zone">
                             <label>Laning Phase (&lt; 14 min)</label>
-                            <ZoneDrop itemsDrop={itemsDropLaningPhase1} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase1" droppableId="DropZone-Laning-Phase1" />
-                            <ZoneDrop itemsDrop={itemsDropLaningPhase2} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase2" droppableId="DropZone-Laning-Phase2" />
+                            <ZoneDrop itemsDrop={itemsDropLaningPhase1} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase1" droppableId="DropZone-Laning-Phase1" selectedRole={selectedRole} />
+                            <ZoneDrop itemsDrop={itemsDropLaningPhase2} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase2" droppableId="DropZone-Laning-Phase2" selectedRole={selectedRole} />
 
                             <label>Post Laning Phase (&gt; 14 min)</label>
                             <ZoneDrop itemsDrop={itemsDropPostLaningPhase} version={version} removeItemDrop={removeItemDrop} className="DropZone-Post-Laning-Phase" droppableId="DropZone-Post-Laning-Phase" />
@@ -782,8 +785,8 @@ function Calculator_LOL() {
                 <div className="Container-Detail-Item">
                     <div className="Detail-Item">
                         <div className="Bouton-Close-Detail" onClick={() => HideItemDetails() }>x</div>
-                        <label id="Nom-Item-Detail"></label>
-                        <label id="Prix-Base-Item-Detail"></label>
+                        <label id="Nom-Item-Detail"></label><br />
+                        <label id="Prix-Base-Item-Detail"></label><br />
                         <label id="Prix-Total-Item-Detail"></label>
                         <div dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
                     </div>

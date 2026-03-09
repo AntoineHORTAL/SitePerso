@@ -1,7 +1,7 @@
 ﻿import { useDroppable } from "@dnd-kit/core";
 import { useState, useEffect } from 'react'
 
-function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId }) {
+function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId, selectedRole }) {
     const { setNodeRef, isOver } = useDroppable({ id: droppableId});
 
     const [coutTotal, setCoutTotal] = useState(0);
@@ -27,6 +27,14 @@ function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId }
     const [efficaciteSoinsBoucliers, setEfficaciteSoinsBoucliers] = useState(0);
     const [regenerationVie, setRegenerationVie] = useState(0);
     const [regenerationMana, setRegenerationMana] = useState(0);
+
+    const MoyenneGoldTop = 5200;
+    const MoyenneGoldJungle = 4800;
+    const MoyenneGoldMiddle = 5300;
+    const MoyenneGoldBottom = 5500;
+    const MoyenneGoldSupport = 3600;
+
+    const [moyenneGoldRoleActif, setMoyenneGoldRoleActif] = useState(0);
 
     const parseItemStats = (item) => {
         const stats = { ...(item.stats || {}) };
@@ -196,6 +204,24 @@ function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId }
         setRegenerationMana(getStats("FlatMPRegenMod"));
     }, [itemsDrop]);
 
+    useEffect(() => {
+        if (selectedRole === "/public/Images/LOL/Top_icon.png") {
+            setMoyenneGoldRoleActif(MoyenneGoldTop);
+        }
+        else if (selectedRole === "/public/Images/LOL/Jungle_icon.png") {
+            setMoyenneGoldRoleActif(MoyenneGoldJungle);
+        }
+        else if (selectedRole === "/public/Images/LOL/Middle_icon.png") {
+            setMoyenneGoldRoleActif(MoyenneGoldMiddle);
+        }
+        else if (selectedRole === "/public/Images/LOL/Bottom_icon.png") {
+            setMoyenneGoldRoleActif(MoyenneGoldBottom);
+        }
+        else if (selectedRole === "/public/Images/LOL/Support_icon.png") {
+            setMoyenneGoldRoleActif(MoyenneGoldSupport);
+        }
+    }, [selectedRole]);
+
     return (
         <div ref={setNodeRef} className={className}>
             <div className="Item-Container">
@@ -209,6 +235,7 @@ function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId }
             </div>
             <div className="Stats-Build-Container">
                 <label style={{ display: coutTotal ? "block" : "none" }}>Coût total : {coutTotal}</label>
+                <label style={{ display: ((moyenneGoldRoleActif != 0) && coutTotal) ? "block" : "none" }}>Moyenne des golds : {moyenneGoldRoleActif}</label>
                 <div className="Stat-Container">
                     <div className="Stat-Family">
                         <label style={{ display: (pointsVie || mana || armure || resistanceMagique || tenacite) ? "block" : "none" }} className="Titre-Stat-Family">Durabilité (Défense)</label>
