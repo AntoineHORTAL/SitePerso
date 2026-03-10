@@ -29,6 +29,9 @@ mongoose.connect(URI)
 // Routes
 app.get('/', (req, res) => res.send('API opérationnelle.'));
 
+app.get('/ping', (req, res) => res.send('ok'));
+
+
 app.use('/API/API_User', userRoutes);     
 app.use('/API/API_Profil', profilRoutes);
 app.use('/API/API_Progression', progressionRoutes);
@@ -43,3 +46,11 @@ app.listen(PORT, () => {
 
     console.log(`🚀 [${mode}] Serveur lancé sur ${host}`);
 });
+
+
+/*ping automatique*/
+setInterval(() => {
+    fetch('https://site-perso-jdr.onrender.com')
+        .then(() => console.log('Ping envoyé'))
+        .catch((err) => console.error('Ping échoué', err));
+}, 10 * 60 * 1000);
