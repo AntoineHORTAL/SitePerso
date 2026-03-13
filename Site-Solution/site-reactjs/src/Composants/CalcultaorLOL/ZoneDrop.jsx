@@ -1,7 +1,8 @@
 ﻿import { useDroppable } from "@dnd-kit/core";
 import { useState, useEffect } from 'react'
 
-function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId, selectedRole }) {
+function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId, selectedRole, updateItemCount }) {
+
     const { setNodeRef, isOver } = useDroppable({ id: droppableId});
 
     const [coutTotal, setCoutTotal] = useState(0);
@@ -171,16 +172,16 @@ function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId, 
     useEffect(() => {
         const getStats = (statKey) =>
             itemsDrop.reduce((acc, item) => {
-                // D'abord on prend depuis item.stats directement
+                const count = item.count || 1;
                 const fromApi = item.stats?.[statKey] || 0;
-                if (fromApi) return acc + fromApi;
+                if (fromApi) return acc + fromApi * count;
 
-                // Si absent, on essaie de parser la description
                 const parsed = parseItemStats(item);
-                return acc + (parsed[statKey] || 0);
+                return acc + (parsed[statKey] || 0) * count;
             }, 0);
 
-        setCoutTotal(itemsDrop.reduce((acc, item) => acc + (item.gold?.total || 0), 0));
+        setCoutTotal(itemsDrop.reduce((acc, item) => acc + (item.gold?.total || 0) * (item.count || 1), 0));
+
         setPointsVie(getStats("FlatHPPoolMod"));
         setArmure(getStats("FlatArmorMod"));
         setResistanceMagique(getStats("FlatSpellBlockMod"));
@@ -222,14 +223,24 @@ function ZoneDrop({ itemsDrop, version, removeItemDrop, className, droppableId, 
         }
     }, [selectedRole]);
 
+    const handleClick = (e, item) => {
+        if (e.button === 0) {
+            updateItemCount(item.uniqueId, +1);
+        }
+        else if (e.button === 2) {
+            updateItemCount(item.uniqueId, -1);
+        }
+    };
+
     return (
         <div ref={setNodeRef} className={className}>
             <div className="Item-Container">
                 {itemsDrop.map((item) => (
-                    <div key={item.uniqueId} className="Item">
+                    <div key={item.uniqueId} className="Item" onMouseDown={(e) => handleClick(e, item)} onContextMenu={(e) => e.preventDefault()}>
                         <div onClick={() => removeItemDrop(item.uniqueId)} className="Bouton-Remove-Item-Drop">x</div>
                         <img src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image?.full}`} />
                         <label>{item.gold?.total}</label>
+                        <label className="label-Item-Count-Drop-Zone" style={{ display: (item.count > 1) ? "block" : "none" }}>{item.count}</label>
                     </div>
                 ))}
             </div>

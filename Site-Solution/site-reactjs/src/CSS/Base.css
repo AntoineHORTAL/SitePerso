@@ -2604,12 +2604,12 @@ body {
     flex-wrap: wrap;
     gap: 2rem;
     height: fit-content;
-    cursor: pointer;
 }
 .Item {
     display: flex;
     flex-direction: column;
     position: relative;
+    cursor: pointer;
 }
     .Item img {
         width: 64px;
@@ -2636,17 +2636,19 @@ body {
 
 .Container-Detail-Item {
     display: none;
-    position: sticky;
-    width: 45vw;
-    min-height: 30vh;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    min-width: 300px;
+    max-height: 70vh;
+    overflow-y: auto;
     background-color: black;
     border: 2px solid var(--main-color);
-    bottom: 0;
     flex-direction: column;
     border-radius: 20px;
-    margin-left: -3vw;
     z-index: 99;
     padding: 2rem;
+    max-width: 1150px;
 }
 .Detail-Item{
     position: relative;
@@ -2738,6 +2740,7 @@ body {
     background-color: black;
     text-align: center;
     cursor: pointer;
+    padding: 1rem;
 }
     .Bouton-Build-Finish:hover {
         background-color: green;
@@ -2745,7 +2748,7 @@ body {
     }
 
 .Bloc-Drop-Zone {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     gap: 2rem;
     width: 50%;
@@ -2756,31 +2759,31 @@ body {
 }
 
 .DropZone-Laning-Phase1 {
-    width: 37vw;
+    width: 40vw;
     height: 30vh;
     background-color: black;
     border-radius: 20px;
     border: 2px solid;
-    padding: 4rem;
+    padding: 1.5rem 1rem;
     overflow: auto;
 }
 .DropZone-Laning-Phase2 {
-    width: 37vw;
+    width: 40vw;
     height: 30vh;
     background-color: black;
     border-radius: 20px;
     border: 2px solid;
-    padding: 4rem;
+    padding: 1.5rem 1rem;
     overflow: auto;
 }
 
 .DropZone-Post-Laning-Phase {
-    width: 37vw;
+    width: 40vw;
     height: 30vh;
     background-color: black;
     border-radius: 20px;
     border: 2px solid;
-    padding: 4rem;
+    padding: 1.5rem 1rem;
     overflow: auto;
 }
 
@@ -2818,6 +2821,7 @@ body {
     border-radius: 10px;
     background-color: black;
     cursor: pointer;
+    margin-top: 5vh;
 }
     .Bouton-Statistiques-Avancees:hover {
         background-color: var(--main-color);
@@ -2964,5 +2968,535 @@ body {
             color: black !important;
         }
 
+.label-Item-Count-Drop-Zone {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 1.5rem;
+    bottom: 2rem;
+    right: 0;
+}
 
+.Titre-Choix-Rune {
+    display: none;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.Rune-Principale-Pick-Container {
+    display: none;
+    flex-direction: row;
+}
+.Rune-Choice {
+    width: 86px;
+    height: 86px;
+    margin: auto;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+    .Rune-Choice:hover{
+        filter: grayscale(0%);
+    }
+    .Rune-Choice img {
+        width: 86px;
+        height: 86px;
+    }
+.Rune-Choice--actif {
+    width: 86px;
+    height: 86px;
+    margin: auto;
+    cursor: pointer;
+}
+    .Rune-Choice--actif img {
+        width: 86px;
+        height: 86px;
+    }
+
+.Rune-Principale-1-Pick-Container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+.Rune-Slot {
+    display: flex;
+    flex-direction: row;
+}
+.Rune-1{
+    display: flex;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+    .Rune-1 img {
+        width: 250px;
+        height: 250px;
+    }
+    .Rune-1:hover {
+        filter: grayscale(0%);
+    }
+.Rune-1--actif {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    cursor: pointer;
+}
+.Rune-2 {
+    display: flex;
+    filter: grayscale(100%);
+    cursor: pointer;
+    margin: auto;
+}
+    .Rune-2 img {
+        width: 64px;
+        height: 64px;
+        margin: auto;
+    }
+    .Rune-2:hover {
+        filter: grayscale(0%);
+    }
+.Rune-2--actif {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.Nom-Rune-Hover {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 9999;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.Rune-Pages-Secondaires-Choix {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.Runes-Tertiaires{
+    margin-top: 5vh;
+}
+
+.Rune-Tertiaire-Ligne {
+    display: flex;
+    flex-direction: row;
+}
+.Rune-Tertiaire{
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    cursor: pointer;
+}
+    .Rune-Tertiaire:hover {
+        filter: grayscale(100%) drop-shadow(0 0 6px #C89B3C);
+    }
+    .Rune-Tertiaire img:hover {
+        filter: grayscale(100%) drop-shadow(0 0 6px #C89B3C);
+    }
+.Rune-Tertiaire img{
+    width: 64px;
+    height: 64px;
+    filter: grayscale(100%);
+}
+.Rune-Tertiaire--actif {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px #C89B3C);
+}
+    .Rune-Tertiaire--actif img {
+        width: 64px;
+        height: 64px;
+        filter: grayscale(100%) drop-shadow(0 0 6px #C89B3C);
+    }
+
+.Bouton-Terminer-Build-Rune {
+    margin-bottom: 5vh;
+    border: 2px solid green;
+    background-color: black;
+    color: green;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 20vh;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+    .Bouton-Terminer-Build-Rune:hover{
+        background-color: green;
+        color: white;
+    }
+
+.Rune-Slots-Secondaires{
+    flex-direction: column;
+}
+
+.Rune-Tertiaire--disabled {
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+/* le hover ne s'applique que si pas disabled */
+.Rune-Tertiaire:not(.Rune-Tertiaire--disabled):hover {
+    filter: drop-shadow(0 0 6px #C89B3C);
+}
+
+.Runes-Selected {
+    width: 43px;
+    height: 43px;
+    margin: auto;
+}
+
+.RuneS-Selected {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+}
+
+.Rune-Selected-Principale {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+}
+
+.Rune-Selected-Secondaire {
+    width: 43px;
+    height: 43px;
+    margin: auto;
+}
+
+.RuneS-Selected-SecondaireS {
+    width: 64px;
+    height: 64px;
+    margin: auto;
+}
+
+.RuneS-Selected-TertiaireS {
+    width: 43px;
+    height: 43px;
+    margin: auto;
+}
+.All-Runes-Selected{
+    display: none;
+    flex-direction: row;
+    margin: auto;
+}
+
+
+.Modal-Export-Content {
+    overflow-x: hidden;
+}
+
+.Champion-Selected-Export-Image {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin: auto;
+    width: fit-content;
+}
+.Role-Selected-Export-Image {
+    margin: auto;
+    width: fit-content;
+    display: block;
+}
+.All-Items-Selected-Export-Image {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10vh;
+}
+    .All-Items-Selected-Export-Image .Item-Selected-Export-Image img {
+        margin: auto;
+        display: block;
+    }
+
+
+.All-Runes-Selected-Export-Image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Rune-Export-Row {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+}
+    .Rune-Export-Row > div {
+        flex: 1;
+    }
+
+.Rune-Selected-Export-Image {
+    text-align: center;
+}
+
+    .Rune-Selected-Export-Image img {
+        width: 64px;
+        height: 64px;
+    }
+
+.Rune-Export-Row:first-child .Rune-Selected-Export-Image img {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.Bouton-Close-Affichage-Export-Image {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    color: red;
+    cursor: pointer;
+}
+.Button-Finish-Export-Image{
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+    .Button-Finish-Export-Image:hover{
+        background-color: var(--main-color);
+        color: black;
+    }
+
+    .Modal-Export-Overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.Modal-Export-Content {
+    position: relative;
+    background-color: black;
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.Bouton-Affiche-Export-Image{
+    border: 2px solid green;
+    color: green;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: black;
+    cursor: pointer;
+    width: 20vw;
+    text-align: center;
+    margin: auto;
+    position: sticky;
+    bottom: 12vh;
+    display: none;
+}
+.Bouton-Affiche-Export-Image:hover{
+    background-color: green;
+    color: white;
+}
+.Bouton-Export-Build-JSON {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: black;
+    cursor: pointer;
+    width: 20vw;
+    text-align: center;
+    margin: auto;
+    position: sticky;
+    bottom: 5vh;
+    display: none;
+}
+    .Bouton-Export-Build-JSON:hover {
+        background-color: var(--main-color);
+        color: black;
+    }
+.Bouton-Export-Runes {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: black;
+    cursor: pointer;
+    width: 20vw;
+    text-align: center;
+    margin: auto;
+    position: sticky;
+    bottom: 5vh;
+    display: none;
+}
+    .Bouton-Export-Runes:hover {
+        background-color: var(--main-color);
+        color: black;
+    }
+
+
+
+.Drop-Zone-Starter {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Drop-Zone-First-Back {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Drop-Zone-Core-Item {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Drop-Zone-Core-Build-Suite {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Drop-Zone-Items-Situationnels {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Drop-Zone-Consommables {
+    width: 40vw;
+    height: 15vh;
+    background-color: black;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 1.5rem 1rem;
+    overflow: auto;
+    margin-bottom: 5rem;
+}
+
+.Bloc-Drop-Zone-Avancee {
+    width: 50%;
+    position: sticky;
+    top: 2vh;
+    right: 2vw;
+    height: 90vh;
+    overflow: auto;
+}
+
+.switch {
+    width: 50px;
+    height: 26px;
+    background-color: hsl(0 0% 30%);
+    border-radius: 999px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.switch--on {
+    background-color: var(--main-color);
+}
+
+.switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.2s;
+}
+
+.switch--on .switch-thumb {
+    left: 27px;
+}
+
+.Switch-Classic-Avancee{
+    display: none;
+    flex-direction: row;
+    gap: 2rem;
+    margin: auto;
+    width: fit-content;
+    margin-top: 5vh;
+}
+
+.Groupe-Items-Export-Avancee{
+    display: flex;
+    flex-direction: column;
+}
+.Items-Groupe-Export-Avancee {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+    .Items-Groupe-Export-Avancee > div {
+        flex: 1;
+    }
+.Label-Groupe-Export-Avancee {
+    text-align: center;
+    font-size: 3rem;
+}
+.Complete-Build-Export-Image{
+    padding: 3rem;
+}
 /*#endregion CaLcUlAtOrLoL*/

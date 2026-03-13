@@ -1,6 +1,6 @@
 ﻿import { Link } from 'react-router-dom'
 import * as Lucide from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { DndContext, useDroppable, useDraggable } from "@dnd-kit/core";
 import ZoneDrop from '../Composants/CalcultaorLOL/ZoneDrop';
 import ItemDraggable from '../Composants/CalcultaorLOL/ItemDraggable';
@@ -11,6 +11,8 @@ import SupportIcon from '../../public/Images/LOL/Support_icon.png';
 import MiddleIcon from '../../public/Images/LOL/Middle_icon.png';
 import JungleIcon from '../../public/Images/LOL/Jungle_icon.png';
 import BottomIcon from '../../public/Images/LOL/Bottom_icon.png';
+
+import ExportToImage from '../Composants/CalcultaorLOL/ExportToImage';
 
 
 function Calculator_LOL() {
@@ -41,6 +43,13 @@ function Calculator_LOL() {
     const [itemsDropLaningPhase2, setItemsDropLaningPhase2] = useState([]);
     const [itemsDropPostLaningPhase, setItemsDropPostLaningPhase] = useState([]);
 
+    const [itemsDropStarter, setItemsDropStarter] = useState([]);
+    const [itemsDropFirstBack, setItemsDropFirstBack] = useState([]);
+    const [itemsDropCoreItem, setItemsDropCoreItem] = useState([]);
+    const [itemsDropCoreBuildSuite, setItemsDropCoreBuildSuite] = useState([]);
+    const [itemsDropSituationnels, setItemsDropSituationnels] = useState([]);
+    const [itemsDropConsommables, setItemsDropConsommables] = useState([]);
+
     const [hp, setHp] = useState(0);
     const [hpPerLevel, setHpLevel] = useState(0);
     const [hpRegen, setHpRegen] = useState(0);
@@ -65,6 +74,7 @@ function Calculator_LOL() {
     const [imageChampion, setImageChampion] = useState("");
 
     const [isRoleSelected, setIsRoleSelected] = useState(false);
+    const [isRuneSelected, setIsRuneSelected] = useState(false);
     const [isChampionSelected, setIsChampionSelected] = useState(false);
 
     const [attackRangeChamp, setAttackRangeChamp] = useState(0);
@@ -119,6 +129,15 @@ function Calculator_LOL() {
     const [filtreChampion, setFiltreChampion] = useState("");
     const [filtreItem, setFiltreItem] = useState("");
 
+    const [selectedRunePrincipale, setSelectedRunePrincipale] = useState(null);
+    const [selectedRunes, setSelectedRunes] = useState([]);
+    const [hoveredRune, setHoveredRune] = useState(null);
+    const [selectedRuneSecondaire, setSelectedRuneSecondaire] = useState(null);
+    const [selectedRunesSecondaires, setSelectedRunesSecondaires] = useState([]);
+    const [selectedRunesTertiaires, setSelectedRunesTertiaires] = useState([]);
+
+    const [showExport, setShowExport] = useState(false);
+
     const filtres = [
         { id: "ad", label: "Dégâts d'attaque", icon: "/Images/LOL/icons-stats/ad.png" },
         { id: "ap", label: "Puissance", icon: "/Images/LOL/icons-stats/puissance.png" },
@@ -136,6 +155,10 @@ function Calculator_LOL() {
     ];
 
     const [filtresActifs, setFiltresActifs] = useState([]);
+
+    const [showDiv, setShowDiv] = useState(true);
+
+    const [avancee, setAvancee] = useState(false);
 
     const toggleFiltre = (filtre) => {
         setFiltresActifs((prev) =>
@@ -157,11 +180,23 @@ function Calculator_LOL() {
         const id = active.data.current.id;
 
         if (over?.id === "DropZone-Laning-Phase1") {
-            setItemsDropLaningPhase1((prev) => [...prev, { ...item, id, uniqueId: Date.now() }]);
+            setItemsDropLaningPhase1((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
         } else if (over?.id === "DropZone-Laning-Phase2") {
-            setItemsDropLaningPhase2((prev) => [...prev, { ...item, id, uniqueId: Date.now() }]);
+            setItemsDropLaningPhase2((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
         } else if (over?.id === "DropZone-Post-Laning-Phase") {
-            setItemsDropPostLaningPhase((prev) => [...prev, { ...item, id, uniqueId: Date.now() }]);
+            setItemsDropPostLaningPhase((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-Starter") {
+            setItemsDropStarter((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-First-Back") {
+            setItemsDropFirstBack((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-Core-Item") {
+            setItemsDropCoreItem((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-Core-Build-Suite") {
+            setItemsDropCoreBuildSuite((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-Items-Situationnels") {
+            setItemsDropSituationnels((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
+        } else if (over?.id === "Drop-Zone-Consommables") {
+            setItemsDropConsommables((prev) => [...prev, { ...item, id, uniqueId: Date.now(), count: 1 }]);
         }
     };
 
@@ -194,7 +229,6 @@ function Calculator_LOL() {
             .then((data) => {
                 setListeChampions(data);
                 setLoadingChampions(false);
-                console.log(data);
             })
             .catch((err) => {
                 setErrorChampions(err.message);
@@ -205,8 +239,6 @@ function Calculator_LOL() {
     /*Récupère tous les items*/
     useEffect(() => {
         if (!version) return;
-
-        console.log(`https://ddragon.leagueoflegends.com/cdn/${version}/data/fr_FR/item.json`);
         fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/fr_FR/item.json`)
             .then((res) => {
                 if (!res.ok) throw new Error("Erreur réseau Liste Items");
@@ -226,8 +258,6 @@ function Calculator_LOL() {
     /*Récupère tous les runes*/
     useEffect(() => {
         if (!version) return;
-
-        console.log(`https://ddragon.leagueoflegends.com/cdn/${version}/data/fr_FR/runesReforged.json`);
         fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/fr_FR/runesReforged.json`)
             .then((res) => {
                 if (!res.ok) throw new Error("Erreur réseau Liste Runes");
@@ -244,7 +274,7 @@ function Calculator_LOL() {
             });
     }, [version]);
 
-    const SeeItemDetails = (item) => {
+    const SeeItemDetails = (item, id) => {
         var labelNom = document.getElementById("Nom-Item-Detail");
         var labelPrixBase = document.getElementById("Prix-Base-Item-Detail");
         var labelPrixTotal = document.getElementById("Prix-Total-Item-Detail");
@@ -256,6 +286,7 @@ function Calculator_LOL() {
         var divDetail = document.querySelector(".Container-Detail-Item");
         divDetail.style.display = "flex";
 
+        setSelectedItemId(id);
         setSelectedItem(item);
     }
 
@@ -268,6 +299,12 @@ function Calculator_LOL() {
         setItemsDropLaningPhase1((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
         setItemsDropLaningPhase2((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
         setItemsDropPostLaningPhase((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropStarter((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropFirstBack((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropCoreItem((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropCoreBuildSuite((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropSituationnels((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
+        setItemsDropConsommables((prev) => prev.filter((item) => item.uniqueId !== uniqueId));
     };
 
     const SelectChampion = (champ) => {
@@ -339,27 +376,66 @@ function Calculator_LOL() {
         var inputChoixChampion = document.querySelector(".Input-Choix-Champion");
         inputChoixChampion.style.display = "block";
 
+        var divAllRunesSelected = document.querySelector(".All-Runes-Selected");
+        divAllRunesSelected.style.display = "none";
+
+        var divBoutonAfficheExportImage = document.querySelector(".Bouton-Affiche-Export-Image");
+        divBoutonAfficheExportImage.style.display = "none";
+
+        var divBoutonExportBuildJSON = document.querySelector(".Bouton-Export-Build-JSON");
+        divBoutonExportBuildJSON.style.display = "none";
+
+        var divSwitchClassicAvancee = document.querySelector(".Switch-Classic-Avancee");
+        divSwitchClassicAvancee.style.display = "none";
+
+        var divContainerStatsFinales = document.querySelector(".Container-Stats-Finales");
+        divContainerStatsFinales.style.display = "none";
+
         window.scrollTo({ top: 0, behavior: "instant" });
 
         setIsChampionSelected(false);
         setIsRoleSelected(false);
+
+        setSelectedRunePrincipale(null);
+        setSelectedRunes([]);
+        setSelectedRuneSecondaire(null);
+        setSelectedRunesSecondaires([]);
+        setSelectedRunesTertiaires([]);
     }
 
     const SelectRole = (Role) => {
         var divRoleSelected = document.querySelector(".Role-Selected");
-        var divRoleChoiceContainer = document.querySelector(".Role-Choice-Container");
-        var divChampionSelected = document.querySelector(".Champion-Selected");
-        var labelTitreChoixRole = document.querySelector(".Titre-Choix-Role");
-        var imageRole = divRoleSelected.querySelector("img");
-
         divRoleSelected.style.display = "flex";
+
+        var divRoleChoiceContainer = document.querySelector(".Role-Choice-Container");
         divRoleChoiceContainer.style.display = "none";
-        divChampionSelected.style.marginTop = "20vh";
+
+        var labelTitreChoixRole = document.querySelector(".Titre-Choix-Role");
         labelTitreChoixRole.style.display = "none";
+
+        var imageRole = divRoleSelected.querySelector("img");
         imageRole.src = Role;
 
+        var labelTitreChoixRune = document.querySelector(".Titre-Choix-Rune");
+        labelTitreChoixRune.style.display = "block";
+
+        var diRunePrincipalePickContainer = document.querySelector(".Rune-Principale-Pick-Container");
+        if (diRunePrincipalePickContainer) {
+            diRunePrincipalePickContainer.style.display = "flex";
+        }
+
+        var divRunePrincipalePickContainer = document.querySelector(".Rune-Principale-1-Pick-Container");
+        divRunePrincipalePickContainer.style.display = "flex";
+
+        var divRuneSlotsSecondaires = document.querySelector(".Rune-Slots-Secondaires");
+        if (divRuneSlotsSecondaires) {
+            divRuneSlotsSecondaires.style.display = "flex";
+        }
+
+        var divBoutonTerminerBuildRune = document.querySelector(".Bouton-Terminer-Build-Rune");
+        divBoutonTerminerBuildRune.style.display = "block";
+
         setSelectedRole(Role.toString());
-        console.log(Role.toString());
 
         setIsRoleSelected(true);
     }
@@ -367,30 +443,81 @@ function Calculator_LOL() {
     const ChangeRole = () => {
 
         var divRoleSelected = document.querySelector(".Role-Selected");
-        var divRoleChoiceContainer = document.querySelector(".Role-Choice-Container");
-        var divChampionSelected = document.querySelector(".Champion-Selected");
-        var labelTitreChoixRole = document.querySelector(".Titre-Choix-Role");
-
         divRoleSelected.style.display = "none";
+
+        var divRoleChoiceContainer = document.querySelector(".Role-Choice-Container");
         divRoleChoiceContainer.style.display = "flex";
+
+        var divChampionSelected = document.querySelector(".Champion-Selected");
         divChampionSelected.style.marginTop = "0vh";
+
+        var labelTitreChoixRole = document.querySelector(".Titre-Choix-Role");
         labelTitreChoixRole.style.display = "block";
 
+        var labelTitreChoixRune = document.querySelector(".Titre-Choix-Rune");
+        labelTitreChoixRune.style.display = "none";
+
+        var divRunePrincipalePickContainer = document.querySelector(".Rune-Principale-Pick-Container");
+        divRunePrincipalePickContainer.style.display = "none";
+
+        var divRuneSlotsSecondaires = document.querySelector(".Rune-Slots-Secondaires");
+        divRuneSlotsSecondaires.style.display = "none";
+
+        var divBoutonTerminerBuildRune = document.querySelector(".Bouton-Terminer-Build-Rune");
+        divBoutonTerminerBuildRune.style.display = "none";
+
+        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
+        divContainerGlobalBuild.style.display = "none";
+
+        var divAllRunesSelected = document.querySelector(".All-Runes-Selected");
+        divAllRunesSelected.style.display = "none";
+
+        var divBoutonAfficheExportImage = document.querySelector(".Bouton-Affiche-Export-Image");
+        divBoutonAfficheExportImage.style.display = "none";
+
+        var divBoutonExportBuildJSON = document.querySelector(".Bouton-Export-Build-JSON");
+        divBoutonExportBuildJSON.style.display = "none";
+
+        var divSwitchClassicAvancee = document.querySelector(".Switch-Classic-Avancee");
+        divSwitchClassicAvancee.style.display = "none";
+
+        var divContainerStatsFinales = document.querySelector(".Container-Stats-Finales");
+        divContainerStatsFinales.style.display = "none";
+
         setIsRoleSelected(false);
+
+        setSelectedRunePrincipale(null);
+        setSelectedRunes([]);
+        setSelectedRuneSecondaire(null);
+        setSelectedRunesSecondaires([]);
+        setSelectedRunesTertiaires([]);
     }
 
     const FinishBuild = () => {
         var divContainerStatsFinales = document.querySelector(".Container-Stats-Finales");
-        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
-        var boutonStatistiquesAvancees = document.querySelector(".Bouton-Statistiques-Avancees");
-        var divContainerBoutonRetourJDR = document.querySelector(".Container-Bouton-Retour-JDR");
-        var divContainerBoutonRetourCreationBuild = document.querySelector(".Container-Bouton-Retour-Creation-Build");
-
         divContainerStatsFinales.style.display = "flex";
+
+        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
         divContainerGlobalBuild.style.display = "none";
+
+        var boutonStatistiquesAvancees = document.querySelector(".Bouton-Statistiques-Avancees");
         boutonStatistiquesAvancees.style.display = "block";
+
+        var divContainerBoutonRetourJDR = document.querySelector(".Container-Bouton-Retour-JDR");
         divContainerBoutonRetourJDR.style.display = "none";
+
+        var divContainerBoutonRetourCreationBuild = document.querySelector(".Container-Bouton-Retour-Creation-Build");
         divContainerBoutonRetourCreationBuild.style.display = "block";
+
+        var divBoutonAfficheExportImage = document.querySelector(".Bouton-Affiche-Export-Image");
+        divBoutonAfficheExportImage.style.display = "block";
+
+        var divBoutonExportBuildJSON = document.querySelector(".Bouton-Export-Build-JSON");
+        divBoutonExportBuildJSON.style.display = "block";
+
+        var divSwitchClassicAvancee = document.querySelector(".Switch-Classic-Avancee");
+        divSwitchClassicAvancee.style.display = "none";
+
 
         window.scrollTo({ top: 0, behavior: "instant" });
     }
@@ -595,19 +722,247 @@ function Calculator_LOL() {
 
     const RetourCreationBuild = () => {
         var divContainerStatsFinales = document.querySelector(".Container-Stats-Finales");
-        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
-        var boutonStatistiquesAvancees = document.querySelector(".Bouton-Statistiques-Avancees");
-        var divContainerBoutonRetourJDR = document.querySelector(".Container-Bouton-Retour-JDR");
-        var divContainerBoutonRetourCreationBuild = document.querySelector(".Container-Bouton-Retour-Creation-Build");
-
         divContainerStatsFinales.style.display = "none";
+
+        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
         divContainerGlobalBuild.style.display = "flex";
+
+        var boutonStatistiquesAvancees = document.querySelector(".Bouton-Statistiques-Avancees");
         boutonStatistiquesAvancees.style.display = "none";
+
+        var divContainerBoutonRetourJDR = document.querySelector(".Container-Bouton-Retour-JDR");
         divContainerBoutonRetourJDR.style.display = "block";
+
+        var divContainerBoutonRetourCreationBuild = document.querySelector(".Container-Bouton-Retour-Creation-Build");
         divContainerBoutonRetourCreationBuild.style.display = "none";
+
+        var divBoutonAfficheExportImage = document.querySelector(".Bouton-Affiche-Export-Image");
+        divBoutonAfficheExportImage.style.display = "none";
+
+        var divBoutonExportBuildJSON = document.querySelector(".Bouton-Export-Build-JSON");
+        divBoutonExportBuildJSON.style.display = "none";
+
+        var divSwitchClassicAvancee = document.querySelector(".Switch-Classic-Avancee");
+        divSwitchClassicAvancee.style.display = "flex";
+
 
         window.scrollTo({ top: 0, behavior: "instant" });
     }
+
+    const updateItemCount = (uniqueId, delta) => {
+        const update = (prev) => prev.map((item) =>
+            item.uniqueId === uniqueId
+                ? { ...item, count: Math.max(1, (item.count || 1) + delta) }
+                : item
+        );
+        setItemsDropLaningPhase1(update);
+        setItemsDropLaningPhase2(update);
+        setItemsDropPostLaningPhase(update);
+        setItemsDropStarter(update);
+        setItemsDropFirstBack(update);
+        setItemsDropCoreItem(update);
+        setItemsDropCoreBuildSuite(update);
+        setItemsDropSituationnels(update);
+        setItemsDropConsommables(update);
+    };
+
+    const RunesTertiaire = [
+        {
+            id: 301,
+            name: "Force Adaptative",
+            shortDesc: "+ 9 force adaptative",
+            img: "/Images/LOL/icons-stats/fa.png"
+        },
+        {
+            id: 302,
+            name: "Vitesse d'Attaque",
+            shortDesc: "+ 10% vitesse d'attaque",
+            img: "/Images/LOL/icons-stats/as.png"
+        },
+        {
+            id: 303,
+            name: "Accélération de Compétences",
+            shortDesc: "+ 8 accélération de compétences",
+            img: "/Images/LOL/icons-stats/ah.png"
+        },
+        {
+            id: 304,
+            name: "Force Adaptative",
+            shortDesc: "+ 9 force adaptative",
+            img: "/Images/LOL/icons-stats/fa.png"
+        },
+        {
+            id: 305,
+            name: "Vitesse de déplacement",
+            shortDesc: "+ 2.5% vitesse de déplacement",
+            img: "/Images/LOL/icons-stats/moove-speed.png"
+        },
+        {
+            id: 306,
+            name: "HP par Niveau",
+            shortDesc: "+ 10 - 180 (selon niveau)",
+            img: "/Images/LOL/icons-stats/pv-scale.png"
+        },
+        {
+            id: 307,
+            name: "PV",
+            shortDesc: "+ 65 PV",
+            img: "/Images/LOL/icons-stats/hp.png"
+        },
+        {
+            id: 308,
+            name: "Ténacité et Résistance aux Ralentissements",
+            shortDesc: "+ 15% ténacité et résistance aux ralentissements",
+            img: "/Images/LOL/icons-stats/tenacite.png"
+        },
+        {
+            id: 309,
+            name: "HP par Niveau",
+            shortDesc: "+ 10 - 180 (selon niveau)",
+            img: "/Images/LOL/icons-stats/pv-scale.png"
+        }
+    ]
+
+    const lignesTertiaires = [
+        RunesTertiaire.slice(0, 3),
+        RunesTertiaire.slice(3, 6),
+        RunesTertiaire.slice(6, 9),
+    ];
+
+    const FinishBuildRune = () => {
+        var labelTitreChoixRune = document.querySelector(".Titre-Choix-Rune");
+        labelTitreChoixRune.style.display = "none";
+
+        var divRunePrincipale1PickContainer = document.querySelector(".Rune-Principale-1-Pick-Container");
+        divRunePrincipale1PickContainer.style.display = "none";
+
+        var divBoutonTerminerBuildRune = document.querySelector(".Bouton-Terminer-Build-Rune");
+        divBoutonTerminerBuildRune.style.display = "none";
+
+        var divContainerGlobalBuild = document.querySelector(".Container-Global-Build");
+        divContainerGlobalBuild.style.display = "flex";
+
+        var divRunePrincipalePickContainer = document.querySelector(".Rune-Principale-Pick-Container");
+        divRunePrincipalePickContainer.style.display = "none";
+
+        var divAllRunesSelected = document.querySelector(".All-Runes-Selected");
+        divAllRunesSelected.style.display = "flex";
+
+        var divChampionSelected = document.querySelector(".Champion-Selected");
+        divChampionSelected.style.marginTop = "20vh";
+
+        var divSwitchClassicAvancee = document.querySelector(".Switch-Classic-Avancee");
+        divSwitchClassicAvancee.style.display = "flex";
+    };
+
+    const getItemById = (id) => listeItems?.data?.[id];
+
+    const renderItemTree = (itemId, depth = 0) => {
+        const item = getItemById(itemId);
+        if (!item) return null;
+        return (
+            <div key={itemId} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2.5rem" }}>
+                <img
+                    src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image?.full}`}
+                    title={item.name}
+                    style={{ width: "64px", height: "64px", cursor: "pointer" }}
+                    onClick={() => SeeItemDetails(item, itemId)}  // ← itemId déjà disponible
+                />
+                {item.from && depth < 2 && (
+                    <div style={{ display: "flex", flexDirection: "row", gap: "2.5rem" }}>
+                        {item.from.map(id => renderItemTree(id, depth + 1))}
+                    </div>
+                )}
+            </div>
+        );
+    };
+
+    const transformationsManquantes = {
+        // Larme de la Déesse → Arme de la Déesse / Séraphin
+        "3070": ["3040"],   // Larme → Arme de la Déesse (AP)
+        "3003": ["3040"],   // Larme (mana) → Séraphin -- à vérifier
+
+        // En réalité :
+        // 3070 = Larme de la Déesse → 3040 = Séraphin
+        // 3003 = Arme de la Déesse (déjà transformée)
+
+        // Méjai → Soulstealer
+        "3802": ["3041"],   // Lost Chapter → Méjai's Soulstealer (précurseur)
+
+        // Items de support (quête)
+        "3858": ["3859"],   // Relic Shield → Targon's Buckler
+        "3859": ["3860"],   // Targon's Buckler → Bulwark of the Mountain
+        "3862": ["3863"],   // Spectral Sickle → Harrowing Crescent
+        "3863": ["3864"],   // Harrowing Crescent → Black Mist Scythe
+        "3866": ["3867"],   // Shepherd's Starforged → ...
+        "3870": ["3871"],   // Dream Maker → Zaz'Zak's Realmspike
+        "3876": ["3877"],   // Solstice Sleigh → Bloodsong
+        "3854": ["3855"],   // Steel Shoulderguards → Runesteel Spaulders
+        "3855": ["3856"],   // Runesteel Spaulders → Pauldrons of Whiterock
+        "3850": ["3851"],   // Spellthief's Edge → Frostfang
+        "3851": ["3853"],   // Frostfang → Shard of True Ice
+    };
+
+    // Au moment où listeItems est chargé, construire la map des transformations
+    const [transformationMap, setTransformationMap] = useState({});
+    const [selectedItemId, setSelectedItemId] = useState(null);
+
+    useEffect(() => {
+        if (!listeItems?.data) return;
+        const map = {};
+        Object.entries(listeItems.data).forEach(([id, item]) => {
+            // Un item "inStore: false" avec un "from" = c'est une transformation
+            if (item.inStore === false && item.from?.length > 0) {
+                item.from.forEach(fromId => {
+                    if (!map[fromId]) map[fromId] = [];
+                    map[fromId].push(id);
+                });
+            }
+        });
+        setTransformationMap(map);
+    }, [listeItems]);
+
+    const intoIds = useMemo(() => {
+        return [
+            ...(selectedItem?.into || []),
+            ...(selectedItemId ? (transformationMap[selectedItemId] || []) : [])
+        ];
+    }, [selectedItem, selectedItemId, transformationMap]);
+
+    const ExporterBuildJSON = () => {
+        const role = selectedRole.replace("/public/Images/LOL/", "").replace("_icon.png", "");
+
+        const build = {
+            title: `Build ${SelectChampion.name} pour ${role}`,
+            associatedMaps: [11],
+            associatedChampions: [],
+            blocks: [
+                {
+                    type: "Laning Phase 1",
+                    items: itemsDropLaningPhase1.map(item => ({
+                        id: item.id,
+                        count: item.count || 1
+                    }))
+                },
+                {
+                    type: "Post Laning Phase",
+                    items: itemsDropPostLaningPhase.map(item => ({
+                        id: item.id,
+                        count: item.count || 1
+                    }))
+                }
+            ]
+        };
+
+        console.log(build);
+
+        const json = JSON.stringify(build, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = `build-${nomChampion}.json`;
+        link.click();
+    };
 
     return (
         <>
@@ -703,9 +1058,241 @@ function Calculator_LOL() {
                     />
                 </div>
             </div>
+
+
+            {/*CHOIX DES RUNES*/}
+            <label className="Titre-Choix-Rune">CHOISISSEZ VOS RUNES</label>
+
+            <div className="Rune-Principale-Pick-Container">
+                {listeRunes && Object.entries(listeRunes)
+                    .map(([id, rune]) => (
+                        <div
+                            key={id}
+                            className={selectedRunePrincipale?.id === rune.id ? "Rune-Choice--actif" : "Rune-Choice"}
+                            onClick={() => setSelectedRunePrincipale(rune)}
+                        >
+                            <img src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} />
+                        </div>
+                    ))}
+            </div>
+
+            <div className="Rune-Principale-1-Pick-Container">
+                {selectedRunePrincipale && (
+                    <>
+                        <div className="Rune-Slot">
+                            {selectedRunePrincipale.slots[0].runes.map((rune) => (
+                                <div
+                                    key={rune.id}
+                                    className={selectedRunes.some(r => r.id === rune.id) ? "Rune-1--actif" : "Rune-1"}
+                                    onMouseEnter={() => setHoveredRune(rune.id)}
+                                    onMouseLeave={() => setHoveredRune(null)}
+                                    onClick={() => {
+                                        setSelectedRunes(prev => {
+                                            const filtered = prev.filter(r =>
+                                                !selectedRunePrincipale.slots[0].runes.some(sr => sr.id === r.id)
+                                            );
+                                            return [...filtered, rune];
+                                        });
+                                    }}
+                                >
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} />
+                                    {hoveredRune === rune.id && (
+                                        <div className="Nom-Rune-Hover">
+                                            <h4>{rune.name}</h4>
+                                            <p>{rune.shortDesc.replace(/<[^>]*>/g, '')}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="Rune-Slots-Secondaires">
+                            {selectedRunePrincipale.slots.slice(1).map((slot, slotIndex) => (
+                                <div key={slotIndex} className="Rune-Slot">
+                                    {slot.runes.map((rune) => (
+                                        <div
+                                            key={rune.id}
+                                            className={selectedRunes.some(r => r.id === rune.id) ? "Rune-2--actif" : "Rune-2"}
+                                            onMouseEnter={() => setHoveredRune(rune.id)}
+                                            onMouseLeave={() => setHoveredRune(null)}
+                                            onClick={() => {
+                                                setSelectedRunes(prev => {
+                                                    const filtered = prev.filter(r =>
+                                                        !slot.runes.some(sr => sr.id === r.id)
+                                                    );
+                                                    return [...filtered, rune];
+                                                });
+                                            }}
+                                        >
+                                            <img src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} />
+                                            {hoveredRune === rune.id && (
+                                                <div className="Nom-Rune-Hover">
+                                                    <h4>{rune.name}</h4>
+                                                    <p>{rune.shortDesc.replace(/<[^>]*>/g, '')}</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="Rune-Pages-Secondaires">
+
+                            {/* Choix de la page secondaire */}
+                            <div className="Rune-Pages-Secondaires-Choix">
+                                {listeRunes
+                                    .filter(page => page.id !== selectedRunePrincipale.id)
+                                    .map(page => (
+                                        <div
+                                            key={page.id}
+                                            className={selectedRuneSecondaire?.id === page.id ? "Rune-Choice--actif" : "Rune-Choice"}
+                                            onClick={() => { setSelectedRuneSecondaire(page); setSelectedRunesSecondaires([]); }}
+                                        >
+                                            <img src={`https://ddragon.leagueoflegends.com/cdn/img/${page.icon}`} />
+                                        </div>
+                                    ))
+                                }
+                            </div>
+
+                            {/* Slots de la page secondaire - 2 runes max, 1 par ligne */}
+                            {selectedRuneSecondaire && (
+                                <div className="Rune-Slots-Secondaires">
+                                    {selectedRuneSecondaire.slots.slice(1).map((slot, slotIndex) => (
+                                        <div key={slotIndex} className="Rune-Slot">
+                                            {slot.runes.map((rune) => {
+                                                const isSelected = selectedRunesSecondaires.some(r => r.id === rune.id);
+                                                const slotAlreadyTaken = selectedRunesSecondaires.some(r =>
+                                                    slot.runes.some(sr => sr.id === r.id)
+                                                );
+                                                const maxReached = selectedRunesSecondaires.length >= 2 && !isSelected;
+
+                                                return (
+                                                    <div
+                                                        key={rune.id}
+                                                        className={isSelected ? "Rune-2--actif" : "Rune-2"}
+                                                        onMouseEnter={() => setHoveredRune(rune.id)}
+                                                        onMouseLeave={() => setHoveredRune(null)}
+                                                        onClick={() => {
+                                                            if (maxReached || slotAlreadyTaken) return;
+                                                            setSelectedRunesSecondaires(prev => {
+                                                                if (isSelected) return prev.filter(r => r.id !== rune.id);
+                                                                return [...prev, rune];
+                                                            });
+                                                        }}
+                                                    >
+                                                        <img
+                                                            src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`}
+                                                            style={{ filter: (maxReached || slotAlreadyTaken) && !isSelected ? "grayscale(100%)" : "none" }}
+                                                        />
+                                                        {hoveredRune === rune.id && (
+                                                            <div className="Nom-Rune-Hover">
+                                                                <h4>{rune.name}</h4>
+                                                                <p>{rune.shortDesc.replace(/<[^>]*>/g, '')}</p>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="Runes-Tertiaires">
+                            {lignesTertiaires.map((ligne, ligneIndex) => (
+                                <div key={ligneIndex} className="Rune-Tertiaire-Ligne">
+                                    {ligne.map((rune) => {
+                                        const isSelected = selectedRunesTertiaires.some(r => r.id === rune.id);
+                                        const ligneDejaSelectionnee = ligne.some(r =>
+                                            selectedRunesTertiaires.some(sr => sr.id === r.id)
+                                        ) && !isSelected;
+
+                                        return (
+                                            <div
+                                                key={rune.id}
+                                                onMouseEnter={() => setHoveredRune(rune.id)}
+                                                onMouseLeave={() => setHoveredRune(null)}
+                                                className={
+                                                    isSelected ? "Rune-Tertiaire--actif" :
+                                                        ligneDejaSelectionnee ? "Rune-Tertiaire Rune-Tertiaire--disabled" :
+                                                            "Rune-Tertiaire"
+                                                }
+                                                onClick={() => {
+                                                    if (ligneDejaSelectionnee) return;
+                                                    setSelectedRunesTertiaires(prev =>
+                                                        isSelected
+                                                            ? prev.filter(r => r.id !== rune.id)
+                                                            : [...prev.filter(r => !ligne.some(lr => lr.id === r.id)), rune]
+                                                    );
+                                                }}
+                                            >
+                                                <img src={rune.img} />
+                                                {hoveredRune === rune.id && (
+                                                    <div className="Nom-Rune-Hover">
+                                                        <h4>{rune.name}</h4>
+                                                        <p>{rune.shortDesc}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ))}
+                        </div>
+                    </>
+                )}
+            </div>
+
+            <div className="All-Runes-Selected">
+                {selectedRunePrincipale && (
+                    <img className="Rune-Selected-Principale"
+                        src={`https://ddragon.leagueoflegends.com/cdn/img/${selectedRunePrincipale.icon}`}
+                        title={selectedRunePrincipale.name}
+                    />
+                )}
+                {selectedRunes.map((rune) => (
+                    <img className="RuneS-Selected"
+                        key={rune.id}
+                        src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`}
+                        title={rune.name}
+                    />
+                ))}
+                {selectedRuneSecondaire && (
+                    <img className="Rune-Selected-Secondaire"
+                        src={`https://ddragon.leagueoflegends.com/cdn/img/${selectedRuneSecondaire.icon}`}
+                        title={selectedRuneSecondaire.name}
+                    />
+                )}
+                {selectedRunesSecondaires.map((rune) => (
+                    <img className="RuneS-Selected-SecondaireS"
+                        key={rune.id}
+                        src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`}
+                        title={rune.name}
+                    />
+                ))}
+                {selectedRunesTertiaires.map((rune) => (
+                    <img className="RuneS-Selected-TertiaireS"
+                        key={rune.id}
+                        src={rune.img}
+                        title={rune.name}
+                    />
+                ))}
+            </div>
+
+            <div className="Bouton-Terminer-Build-Rune" onClick={FinishBuildRune}> TERMINER LE BUILD DES RUNES </div>
             
             {/*CRÉATION DU BUIOLD*/}
-            <div className="Container-Global-Build" style={{ display: (isChampionSelected && isRoleSelected) ? "block" : "none" }}>
+            <div className="Switch-Classic-Avancee">
+                <label>Avancée</label>
+                <div className={`switch ${showDiv ? "switch--on" : ""}`} onClick={() => { setShowDiv(prev => !prev); setAvancee(prev => !prev); }}>
+                    <div className="switch-thumb" />
+                </div>
+                <label>Classic</label>
+            </div>
+
+            <div className="Container-Global-Build" style={{ display: (isChampionSelected && isRoleSelected && isRuneSelected) ? "block" : "none" }}>
                 <DndContext
                     onDragEnd={handleDragEnd}
                     accessibility={{
@@ -751,14 +1338,17 @@ function Calculator_LOL() {
                                                 if (f === "lethality") return item.stats?.FlatArmorPenetrationMod;
                                                 if (f === "pen") return item.stats?.FlatMagicPenetrationMod;
                                                 if (f === "ah") return item.stats?.PercentCooldownMod;
-                                                if (f === "vamp") return item.stats?.PercentLifeStealMod || item.stats?.OmniVamp;
+                                                if (f === "vamp") {
+                                                    const parsed = parseItemStats(item);
+                                                    return parsed?.PercentLifeStealMod || parsed?.OmniVamp;
+                                                }
                                                 return false;
                                             })) &&
                                             item.name.toLowerCase().includes(filtreItem.toLowerCase())
                                         )
                                             .sort(([, a], [, b]) => (a.gold?.total || 0) - (b.gold?.total || 0))
                                             .map(([id, item]) => (
-                                                <ItemDraggable key={id} id={id} item={item} version={version} SeeItemDetails={SeeItemDetails} />
+                                                <ItemDraggable key={id} id={id} item={item} version={version} SeeItemDetails={(item) => SeeItemDetails(item, id)} />
                                             ))}
                                     </div>
                                 </div>
@@ -766,13 +1356,35 @@ function Calculator_LOL() {
                         </div>
 
                         {/* Droite - zone de drop */}
-                        <div className="Bloc-Drop-Zone">
+                        <div className="Bloc-Drop-Zone" style={{ display: showDiv ? "flex" : "none" }}>
                             <label>Laning Phase (&lt; 14 min)</label>
-                            <ZoneDrop itemsDrop={itemsDropLaningPhase1} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase1" droppableId="DropZone-Laning-Phase1" selectedRole={selectedRole} />
-                            <ZoneDrop itemsDrop={itemsDropLaningPhase2} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase2" droppableId="DropZone-Laning-Phase2" selectedRole={selectedRole} />
+                            <ZoneDrop itemsDrop={itemsDropLaningPhase1} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase1" droppableId="DropZone-Laning-Phase1" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+                            <ZoneDrop itemsDrop={itemsDropLaningPhase2} version={version} removeItemDrop={removeItemDrop} className="DropZone-Laning-Phase2" droppableId="DropZone-Laning-Phase2" selectedRole={selectedRole} updateItemCount={updateItemCount} />
 
                             <label>Post Laning Phase (&gt; 14 min)</label>
                             <ZoneDrop itemsDrop={itemsDropPostLaningPhase} version={version} removeItemDrop={removeItemDrop} className="DropZone-Post-Laning-Phase" droppableId="DropZone-Post-Laning-Phase" />
+
+                            <div className="Bouton-Build-Finish" onClick={FinishBuild}>BUILD TERMINÉ</div>
+                        </div>
+
+                        <div className="Bloc-Drop-Zone-Avancee" style={{ display: showDiv ? "none" : "block" }}>
+                            <label>Starter</label>
+                            <ZoneDrop itemsDrop={itemsDropStarter} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-Starter" droppableId="Drop-Zone-Starter" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+
+                            <label>First Back</label>
+                            <ZoneDrop itemsDrop={itemsDropFirstBack} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-First-Back" droppableId="Drop-Zone-First-Back" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+
+                            <label>Core Item (2 items + bottes)</label>
+                            <ZoneDrop itemsDrop={itemsDropCoreItem} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-Core-Item" droppableId="Drop-Zone-Core-Item" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+
+                            <label>Core Build Suite (3 items)</label>
+                            <ZoneDrop itemsDrop={itemsDropCoreBuildSuite} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-Core-Build-Suite" droppableId="Drop-Zone-Core-Build-Suite" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+
+                            <label>Items Situationnels</label>
+                            <ZoneDrop itemsDrop={itemsDropSituationnels} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-Items-Situationnels" droppableId="Drop-Zone-Items-Situationnels" selectedRole={selectedRole} updateItemCount={updateItemCount} />
+
+                            <label>Consommables</label>
+                            <ZoneDrop itemsDrop={itemsDropConsommables} version={version} removeItemDrop={removeItemDrop} className="Drop-Zone-Consommables" droppableId="Drop-Zone-Consommables" selectedRole={selectedRole} updateItemCount={updateItemCount} />
 
                             <div className="Bouton-Build-Finish" onClick={FinishBuild}>BUILD TERMINÉ</div>
                         </div>
@@ -781,11 +1393,49 @@ function Calculator_LOL() {
 
                 <div className="Container-Detail-Item">
                     <div className="Detail-Item">
-                        <div className="Bouton-Close-Detail" onClick={() => HideItemDetails() }>x</div>
+                        <div className="Bouton-Close-Detail" onClick={() => HideItemDetails()}>x</div>
                         <label id="Nom-Item-Detail"></label><br />
                         <label id="Prix-Base-Item-Detail"></label><br />
                         <label id="Prix-Total-Item-Detail"></label>
+
                         <div dangerouslySetInnerHTML={{ __html: selectedItem?.description }} />
+
+                        {intoIds.length > 0 && (
+                            <div style={{ marginTop: "1rem" }}>
+                                <label>Entre dans :</label>
+                                <div style={{ display: "flex", flexDirection: "row", gap: "2.5rem", flexWrap: "wrap" }}>
+                                    {intoIds
+                                        .map(id => getItemById(id))
+                                        .filter(item => item != null)  // ← juste vérifier que l'item existe
+                                        .map(item => (
+                                            <img
+                                                key={item.image?.full}
+                                                src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image?.full}`}
+                                                title={item.name}
+                                                style={{ width: "64px", height: "64px", cursor: "pointer" }}
+                                                onClick={() => {
+                                                    const foundId = Object.entries(listeItems.data).find(([id, i]) => i.name === item.name)?.[0];
+                                                    SeeItemDetails(item, foundId);
+                                                }}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Arbre de craft - composants nécessaires */}
+                        {selectedItem?.from && (
+                            <div style={{ marginTop: "1rem" }}>
+                                <label>Composants :</label>
+                                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                    {renderItemTree(
+                                        Object.entries(listeItems.data).find(([id, i]) => i.name === selectedItem.name)?.[0]
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
                     </div>
                 </div>
 
@@ -954,7 +1604,24 @@ function Calculator_LOL() {
                     </table>
                 </div>
                 <div className="Container-Item-Build-Finish">
-                    {(itemsDropLaningPhase1.length > 0 || itemsDropPostLaningPhase.length > 0) && (
+                    {avancee ? (
+                        (itemsDropStarter.length > 0 || itemsDropFirstBack.length > 0 || itemsDropCoreItem.length > 0 || itemsDropCoreBuildSuite.length > 0 || itemsDropSituationnels.length > 0 || itemsDropConsommables.length > 0) &&
+                        <div className="Liste-Item-Build-Finish">
+                            {[...itemsDropStarter, ...itemsDropFirstBack, ...itemsDropCoreItem, ...itemsDropCoreBuildSuite, ...itemsDropSituationnels, ...itemsDropConsommables].map((item) => (
+                                <div key={item.uniqueId} className="Item-Build-Finish">
+                                    <div className="Item-Build-Finish-Info-Principales">
+                                        <img src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image?.full}`} />
+                                        <label>{item.gold.total}g</label>
+                                        <label>{item.name}</label>
+                                    </div>
+                                    <div className="Item-Build-Finish-Description">
+                                        <label dangerouslySetInnerHTML={{ __html: item.description }} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        (itemsDropLaningPhase1.length > 0 || itemsDropPostLaningPhase.length > 0) &&
                         <div className="Liste-Item-Build-Finish">
                             {[...itemsDropLaningPhase1, ...itemsDropPostLaningPhase].map((item) => (
                                 <div key={item.uniqueId} className="Item-Build-Finish">
@@ -999,7 +1666,10 @@ function Calculator_LOL() {
                 </select>
 
                 <div className="Liste-Items-Checkable-Build-Finish">
-                    {[...itemsDropLaningPhase1, ...itemsDropPostLaningPhase].map((item, index) => (
+                    {(avancee
+                        ? [...itemsDropStarter, ...itemsDropFirstBack, ...itemsDropCoreItem, ...itemsDropCoreBuildSuite, ...itemsDropSituationnels, ...itemsDropConsommables]
+                        : [...itemsDropLaningPhase1, ...itemsDropLaningPhase2, ...itemsDropPostLaningPhase]
+                    ).map((item) => (
                         <label
                             key={item.uniqueId}
                             className={`Item-Select ${checkedItems[item.uniqueId] ? "Item-Select--checked" : ""}`}
@@ -1076,6 +1746,34 @@ function Calculator_LOL() {
                     </tbody>
                 </table>
             </div>
+
+
+            {showExport && (
+                <div className="Modal-Export-Overlay" onClick={() => setShowExport(false)}>
+                    <div className="Modal-Export-Content" onClick={(e) => e.stopPropagation()}>
+                        <div className="Bouton-Close-Affichage-Export-Image" onClick={() => setShowExport(false)}>x</div>
+                        <ExportToImage
+                            ListeItems={[...itemsDropLaningPhase1, ...itemsDropLaningPhase2, ...itemsDropPostLaningPhase] || []}
+                            ListeRunes={[...selectedRunes, ...selectedRunesSecondaires, ...selectedRunesTertiaires]}
+                            ChampionSelected={{ name: nomChampion, image: { full: imageChampion } }}
+                            RoleSelected={selectedRole}
+                            version={version}
+                            Avancee={avancee}
+                            ListeItemsAvancee={{
+                                starter: itemsDropStarter,
+                                firstBack: itemsDropFirstBack,
+                                coreItem: itemsDropCoreItem,
+                                coreBuildSuite: itemsDropCoreBuildSuite,
+                                situationnels: itemsDropSituationnels,
+                                consommables: itemsDropConsommables
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+
+            <div className="Bouton-Affiche-Export-Image" onClick={() => setShowExport(true)}>EXPORTER LE BUILD EN IMAGE</div>
+            <div className="Bouton-Export-Build-JSON" onClick={ExporterBuildJSON}>EXPORTER LE BUILD EN JSON</div>
         </>
     );
 }
